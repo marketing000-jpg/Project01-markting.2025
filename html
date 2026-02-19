@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guidonia Marketing — Agenzia di Marketing a Guidonia Montecelio | Roma</title>
+  <meta name="description" content="Guidonia Marketing è l'agenzia di marketing locale a Guidonia Montecelio. Social Media, SEO, Branding per PMI. Cresci online senza sprecare budget in pubblicità." />
+  <meta name="keywords" content="agenzia marketing Guidonia, marketing Guidonia Montecelio, social media marketing Roma, SEO locale Guidonia, branding piccole imprese Roma" />
+  <meta name="author" content="Guidonia Marketing" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://guidoniamarketing.agency/" />
+  <meta property="og:title" content="Guidonia Marketing — Agenzia di Marketing Locale" />
+  <meta property="og:description" content="Social Media, SEO e Branding per le piccole imprese di Guidonia e Roma." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://guidoniamarketing.agency/" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"MarketingAgency","name":"Guidonia Marketing","url":"https://guidoniamarketing.agency","address":{"@type":"PostalAddress","addressLocality":"Guidonia Montecelio","addressRegion":"RM","addressCountry":"IT"},"areaServed":["Guidonia Montecelio","Roma","Lazio"],"serviceType":["Social Media Marketing","SEO","Branding","Content Marketing"]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════════
+       PALETTE
+       Principali → Crema #F0EDE3 · Cioccolato #2E1A1A
+       Accenti    → Bordeaux #4A1228 · Olive #7A9444
+                    Sky #AECDE1 · Blush #F2C8C4 · Lemon #F5EFA0
+
+       STRATEGIA CROMATICA:
+       · Crema = sfondo dominante (hero, intro, territory, footer)
+       · Cioccolato = sfondo sezioni alternate (services, cta)
+       · Bordeaux = accento primario: titoli corsivi, bottoni, dettagli
+       · Olive = accento secondario: tag, label, frecce
+       · Sky/Blush/Lemon = tocchi nelle card, NON come sfondi di sezione intera
+    ═══════════════════════════════════════════════════ */
+    :root {
+      --cream:    #F4F1E1;
+      --choco:    #2E1A1A;
+      --bordeaux: #4A1228;
+      --olive:    #7A9444;
+      --sky:      #AECDE1;
+      --blush:    #F2C8C4;
+      --lemon:    #F5EFA0;
+
+      --choco-mid:  #6B4040;
+      --cream-off:  #EAE6D4;
+
+      --fd: 'Cormorant Garamond', Georgia, serif;
+      --fb: 'Jost', sans-serif;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: clamp(15px, 1.1vw, 17px); }
+    body {
+      background: var(--cream);
+      color: var(--choco);
+      font-family: var(--fb);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ─── CURSOR ─── */
+    .cursor {
+      position: fixed; width: 8px; height: 8px;
+      background: var(--bordeaux); border-radius: 50%;
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%,-50%);
+      transition: width .3s var(--ease), height .3s var(--ease), background .3s;
+    }
+    .cursor-ring {
+      position: fixed; width: 32px; height: 32px;
+      border: 1.5px solid var(--bordeaux); border-radius: 50%;
+      pointer-events: none; z-index: 9998;
+      transform: translate(-50%,-50%);
+      transition: width .4s var(--ease), height .4s var(--ease), opacity .3s;
+      opacity: 0.35;
+    }
+    .cursor.hov { width: 18px; height: 18px; background: var(--olive); }
+    .cursor-ring.hov { width: 52px; height: 52px; opacity: 0.2; }
+
+    /* ─── HEADER ─────────────────────────────────────────
+       Crema solido sempre visibile. Diventa opaco allo scroll.
+       Logo: cioccolato + bordeaux corsivo.
+    ─────────────────────────────────────────────────────── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.6rem 4rem;
+      background: var(--cream);
+      border-bottom: 1px solid transparent;
+      transition: padding .4s var(--ease), border-color .4s, box-shadow .4s;
+    }
+    header.scrolled {
+      padding: 1rem 4rem;
+      border-color: rgba(46,26,26,0.1);
+      box-shadow: 0 2px 24px rgba(46,26,26,0.06);
+    }
+
+    .logo {
+      font-family: var(--fd); font-size: 1.45rem; font-weight: 400;
+      letter-spacing: 0.03em; color: var(--choco); text-decoration: none;
+    }
+    .logo em { font-style: italic; color: var(--bordeaux); }
+    /* Punto lemon dopo il logo — dettaglio tipografico */
+    .logo::after {
+      content: '·';
+      color: var(--lemon);
+      margin-left: 0.15em;
+      font-style: normal;
+    }
+
+    nav { display: flex; align-items: center; gap: 2.8rem; }
+    nav a {
+      font-family: var(--fb); font-size: 0.75rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--choco-mid); text-decoration: none;
+      position: relative; transition: color .3s;
+    }
+    nav a::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background: var(--bordeaux);
+      transition: width .4s var(--ease);
+    }
+    nav a:hover { color: var(--bordeaux); }
+    nav a:hover::after { width: 100%; }
+
+    .btn-nav {
+      font-family: var(--fb); font-size: 0.73rem; font-weight: 400;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--cream) !important;
+      background: var(--bordeaux);
+      padding: 0.65rem 1.7rem; text-decoration: none;
+      transition: background .3s;
+    }
+    .btn-nav::after { display: none; }
+    .btn-nav:hover { background: var(--choco); color: var(--cream); }
+
+    /* ─── HERO ──────────────────────────────────────────
+       Sfondo crema. Destra: pannello bordeaux scuro con cerchi.
+       Testo sinistra: cioccolato. Destra: crema.
+    ─────────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 55% 45%;
+      padding-top: 0;
+    }
+
+    .hero-l {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 10rem 4rem 6rem 4rem;
+      background: var(--cream);
+    }
+    .hero-eyebrow {
+      font-family: var(--fb); font-size: 0.7rem; font-weight: 400;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 1.8rem;
+      opacity: 0; animation: up 1s var(--ease) .2s forwards;
+    }
+    .hero-h1 {
+      font-family: var(--fd); font-size: clamp(3rem, 5vw, 5.8rem);
+      font-weight: 300; line-height: 1.08; color: var(--choco);
+      margin-bottom: 2rem;
+      opacity: 0; animation: up 1s var(--ease) .4s forwards;
+    }
+    .hero-h1 em {
+      font-style: italic; color: var(--bordeaux);
+      position: relative;
+    }
+    /* Sottile linea lemon sotto la parola corsiva dell'hero */
+    .hero-h1 em::after {
+      content: '';
+      position: absolute; left: 0; bottom: 2px;
+      width: 100%; height: 1px;
+      background: var(--lemon);
+      opacity: 0.7;
+    }
+
+    .hero-p {
+      font-size: 1rem; font-weight: 300; color: var(--choco-mid);
+      max-width: 40ch; line-height: 1.75; margin-bottom: 3rem;
+      opacity: 0; animation: up 1s var(--ease) .6s forwards;
+    }
+    .hero-ctas {
+      display: flex; align-items: center; gap: 2.4rem;
+      opacity: 0; animation: up 1s var(--ease) .8s forwards;
+    }
+    .btn-dark {
+      font-family: var(--fb); font-size: 0.78rem; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--cream); background: var(--choco);
+      padding: 1rem 2.4rem; text-decoration: none;
+      transition: background .3s, transform .2s;
+    }
+    .btn-dark:hover { background: var(--bordeaux); transform: translateY(-2px); }
+
+    .link-ghost {
+      font-family: var(--fb); font-size: 0.78rem; letter-spacing: 0.08em;
+      color: var(--choco-mid); text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem;
+      transition: color .3s, gap .3s;
+    }
+    .link-ghost span { transition: transform .3s; }
+    .link-ghost:hover { color: var(--bordeaux); gap: 0.9rem; }
+
+    /* Hero right — Caffè */
+    .hero-r {
+      background: #3B2214;
+      position: relative; overflow: hidden;
+      display: flex; align-items: flex-end;
+      padding: 4rem 3rem;
+    }
+    /* ── RADAR: centro fisso + 3 anelli che si espandono ── */
+    /* Punto centrale — olive fisso */
+    .hero-r-dot {
+      position: absolute; top: 42%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--olive); z-index: 3;
+      opacity: 0; animation: fadein .6s var(--ease) 1s forwards;
+    }
+    /* Alone sfumato attorno al punto */
+    .hero-r-dot::after {
+      content: ''; position: absolute;
+      inset: -4px; border-radius: 50%;
+      background: var(--olive); opacity: 0.25;
+      filter: blur(3px);
+    }
+
+    /* I 3 anelli radar usano div aggiuntivi nel HTML */
+    .radar-ring {
+      position: absolute; top: 42%; left: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 50%;
+      border: 1px solid rgba(244,241,225,0.18);
+      animation: radar-pulse 3.6s ease-out infinite;
+    }
+    .radar-ring:nth-child(1) { width: 120px; height: 120px; animation-delay: 0s; }
+    .radar-ring:nth-child(2) { width: 120px; height: 120px; animation-delay: 1.2s; }
+    .radar-ring:nth-child(3) { width: 120px; height: 120px; animation-delay: 2.4s; }
+
+    @keyframes radar-pulse {
+      0%   { width: 10px; height: 10px; opacity: 0.7; border-color: rgba(244,241,225,0.5); }
+      100% { width: 500px; height: 500px; opacity: 0; border-color: rgba(244,241,225,0); }
+    }
+    .hero-stat {
+      position: relative; z-index: 2;
+      opacity: 0; animation: up 1s var(--ease) 1s forwards;
+    }
+    /* Lineetta lemon sopra la statistica */
+    .hero-stat::before {
+      content: '';
+      display: block; width: 24px; height: 1px;
+      background: var(--lemon); opacity: 0.65;
+      margin-bottom: 1rem;
+    }
+    .hero-stat-n {
+      font-family: var(--fd); font-size: 5rem; font-weight: 300;
+      color: var(--cream); line-height: 1;
+    }
+    /* Linea sky come accento */
+    .hero-stat-line {
+      width: 40px; height: 1px; background: var(--sky);
+      margin: 0.8rem 0;
+    }
+    .hero-stat-l {
+      font-family: var(--fb); font-size: 0.72rem; font-weight: 300;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(244,241,225,0.55);
+    }
+
+    /* Marquee bordeaux/cioccolato */
+    .marquee-wrap {
+      background: var(--choco);
+      overflow: hidden; padding: 0.85rem 0;
+    }
+    .marquee-inner {
+      display: flex; gap: 3rem;
+      animation: scroll 24s linear infinite; white-space: nowrap;
+    }
+    .marquee-inner span {
+      font-family: var(--fb); font-size: 0.7rem; font-weight: 300;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(244,241,225,0.45); flex-shrink: 0;
+    }
+    .marquee-inner span.sep { color: var(--lemon); opacity: 0.6; }
+
+    /* ─── INTRO ──────────────────────────────────────────
+       Sfondo crema, due colonne. Cards con accenti sky e blush.
+    ─────────────────────────────────────────────────────── */
+    .intro {
+      background: var(--cream);
+      padding: 9rem 4rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center;
+    }
+
+    .label {
+      font-family: var(--fb); font-size: 0.7rem; font-weight: 400;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--olive); margin-bottom: 1.2rem;
+    }
+    .h2 {
+      font-family: var(--fd); font-size: clamp(2rem, 3.2vw, 3.6rem);
+      font-weight: 300; line-height: 1.18; color: var(--choco);
+      margin-bottom: 1.5rem;
+    }
+    .h2 em { font-style: italic; color: var(--bordeaux); }
+
+    .body-txt { font-size: 0.95rem; color: var(--choco-mid); max-width: 44ch; margin-bottom: 1rem; }
+
+    /* Stats: una con bordo bordeaux, una con bordo olive */
+    .stats { display: flex; flex-direction: column; gap: 1.5rem; }
+    /* Stats: bordeaux per la prima, lemon per la seconda */
+    .stat-card {
+      padding: 2rem 2.2rem;
+      border-left: 2px solid var(--bordeaux);
+      background: var(--cream-off);
+    }
+    .stat-card:nth-child(2) { border-color: var(--lemon); }
+
+    .stat-n {
+      font-family: var(--fd); font-size: 3.2rem; font-weight: 300;
+      color: var(--choco); line-height: 1;
+    }
+    .stat-label { font-family: var(--fb); font-size: 0.8rem; color: var(--choco-mid); margin-top: 0.4rem; }
+
+    /* ─── SERVICES ──────────────────────────────────────
+       Sfondo cioccolato. Testi crema. Hover: fill bordeaux.
+       Olive per frecce e numeri decorativi.
+    ─────────────────────────────────────────────────────── */
+    .services {
+      background: var(--choco);
+      padding: 8rem 4rem;
+    }
+    .services .label { color: var(--olive); margin-bottom: 1rem; }
+    .services .h2 { color: var(--cream); margin-bottom: 3.5rem; }
+    .services .h2 em { color: var(--blush); }   /* blush su cioccolato: visibile e raffinato */
+
+    .svc-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: rgba(244,241,225,0.06);
+    }
+    .svc {
+      background: var(--choco); padding: 3rem 2.5rem;
+      position: relative; overflow: hidden;
+      transition: background .5s;
+      cursor: pointer;
+    }
+    .svc::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--lemon);
+      transform: translateY(101%);
+      transition: transform .55s var(--ease); z-index: 0;
+    }
+    .svc:nth-child(2)::before { background: var(--blush); }
+    .svc:nth-child(3)::before { background: var(--sky); }
+    .svc:hover::before { transform: translateY(0); }
+    .svc > * { position: relative; z-index: 1; }
+
+    .svc-num {
+      font-family: var(--fd); font-size: 3rem; font-weight: 300;
+      color: rgba(244,241,225,0.07); line-height: 1;
+      margin-bottom: 1.8rem; transition: color .4s;
+    }
+    .svc:hover .svc-num { color: rgba(46,26,26,0.12); }
+    .svc-title {
+      font-family: var(--fd); font-size: 1.65rem; font-weight: 400;
+      color: var(--cream); margin-bottom: 1rem;
+      transition: color .3s;
+    }
+    .svc:hover .svc-title { color: var(--choco); }
+    .svc-desc { font-size: 0.87rem; color: rgba(244,241,225,0.5); line-height: 1.75; transition: color .3s; }
+    .svc:hover .svc-desc { color: var(--choco-mid); }
+    .svc-arrow { font-size: 1.1rem; color: var(--olive); display: inline-block; margin-top: 2rem; transition: transform .3s, color .3s; }
+    .svc:hover .svc-arrow { transform: translate(5px,-5px); color: var(--choco); }
+
+    /* ─── PROCESS ──────────────────────────────────────
+       Sfondo crema. Bordi bordeaux. Numeri bordeaux.
+       Nessun sfondo colorato di sezione — è già crema.
+    ─────────────────────────────────────────────────────── */
+    .process {
+      background: var(--cream-off);
+      padding: 8rem 4rem;
+    }
+    .process .label { color: var(--olive); }
+    .process .h2 { color: var(--choco); margin-bottom: 4rem; }
+    .process .h2 em { color: var(--bordeaux); }
+
+    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 2.5rem; }
+    .step { border-top: 1px solid rgba(74,18,40,0.2); padding-top: 2rem; }
+    .step-n {
+      font-family: var(--fd); font-size: 0.88rem; font-weight: 400;
+      color: var(--bordeaux); letter-spacing: 0.04em; margin-bottom: 1.2rem;
+    }
+    /* Step 01 e 03 in lemon, 02 e 04 in bordeaux — ritmo cromatico */
+    .step:nth-child(odd) .step-n { color: var(--lemon); filter: saturate(0.8) brightness(0.75); }
+    .step-t {
+      font-family: var(--fd); font-size: 1.35rem; font-weight: 400;
+      color: var(--choco); margin-bottom: 0.8rem;
+    }
+    .step-d { font-size: 0.87rem; color: var(--choco-mid); line-height: 1.72; }
+
+    /* ─── TERRITORY ──────────────────────────────────────
+       Sfondo crema. Visivo: bordeaux con cerchio + punto olive.
+       Badge: bordo bordeaux su crema.
+    ─────────────────────────────────────────────────────── */
+    .territory {
+      background: var(--cream);
+      padding: 8rem 4rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center;
+    }
+    .territory .label { color: var(--olive); }
+    .territory .h2 { color: var(--choco); }
+    .territory .h2 em { color: var(--bordeaux); }
+    .territory .body-txt { margin-bottom: 1rem; }
+
+    /* Pannello visivo: rosso-marrone opaco, tra vino e caffè */
+    .terr-vis {
+      background: #411624;
+      height: 400px; position: relative;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Anelli radar fissi */
+    .terr-ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(244,241,225,0.12);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+    }
+    .terr-ring.r1 { width: 100px; height: 100px; }
+    .terr-ring.r2 { width: 220px; height: 220px; border-color: rgba(244,241,225,0.08); }
+    .terr-ring.r3 { width: 360px; height: 360px; border-color: rgba(244,241,225,0.05); }
+
+
+
+    /* Centro radar — punto fisso */
+    .terr-center-dot {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--olive); z-index: 4;
+    }
+
+    /* Pin animato — posizione controllata da JS */
+    .terr-pin {
+      position: absolute; z-index: 5; text-align: center;
+      opacity: 1;
+      transition: opacity .6s ease, left 0s, top 0s;
+    }
+    .terr-pin.fade {
+      opacity: 0;
+    }
+    .terr-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--lemon);
+      margin: 0 auto 0.5rem;
+      box-shadow: 0 0 0 0 rgba(245,239,160,0.4);
+      animation: ping 2s ease-out infinite;
+    }
+    @keyframes ping {
+      0%   { box-shadow: 0 0 0 0 rgba(245,239,160,0.5); }
+      70%  { box-shadow: 0 0 0 10px rgba(245,239,160,0); }
+      100% { box-shadow: 0 0 0 0 rgba(245,239,160,0); }
+    }
+    .terr-name {
+      font-family: var(--fd); font-size: 0.85rem; font-weight: 300;
+      color: var(--cream); letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+    .badge {
+      font-family: var(--fb); font-size: 0.72rem; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--bordeaux); border: 1px solid rgba(74,18,40,0.35);
+      padding: 0.4rem 1.1rem;
+      transition: background .3s, color .3s;
+    }
+    .badge:hover { background: var(--bordeaux); color: var(--cream); }
+
+    /* ─── TESTIMONIALS ──────────────────────────────────
+       Sfondo crema-off. Card: crema con bordo top accento.
+       Ogni card ha un accento diverso (sky, blush, lemon) come bordo top — elegante.
+    ─────────────────────────────────────────────────────── */
+    .testi {
+      background: var(--cream-off);
+      padding: 8rem 4rem;
+    }
+    .testi .label { color: var(--olive); }
+    .testi .h2 { color: var(--choco); margin-bottom: 3.5rem; }
+    .testi .h2 em { color: var(--bordeaux); }
+
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+
+    .testi-card {
+      background: var(--cream); padding: 2.5rem;
+      border-top: 2px solid var(--lemon);
+      position: relative;
+    }
+    .testi-card:nth-child(2) { border-top-color: var(--sky); }
+    .testi-card:nth-child(3) { border-top-color: var(--blush); }
+
+    /* Virgolette bordeaux grandi come elemento grafico */
+    .testi-card::before {
+      content: '\201C';
+      font-family: var(--fd); font-size: 4rem;
+      color: var(--bordeaux); opacity: 0.15;
+      position: absolute; top: 1rem; right: 1.5rem; line-height: 1;
+    }
+    .testi-txt {
+      font-family: var(--fd); font-size: 1.08rem; font-weight: 300;
+      font-style: italic; color: var(--choco); line-height: 1.65;
+      margin-bottom: 1.8rem;
+    }
+    .testi-auth { font-family: var(--fb); font-size: 0.76rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--choco); }
+    .testi-role { font-family: var(--fb); font-size: 0.74rem; color: var(--olive); margin-top: 0.2rem; }
+
+    /* ─── CTA ────────────────────────────────────────────
+       Sfondo cioccolato. Testo crema. Button: crema su cioccolato.
+       Olive come colore del tag. Sky come linea decorativa.
+    ─────────────────────────────────────────────────────── */
+    .cta {
+      background: var(--choco);
+      padding: 9rem 4rem; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    /* Cerchio crema decorativo grande */
+    .cta::before {
+      content: ''; position: absolute; border-radius: 50%;
+      width: 700px; height: 700px;
+      border: 1px solid rgba(244,241,225,0.06);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+    }
+    .cta::after {
+      content: ''; position: absolute; border-radius: 50%;
+      width: 400px; height: 400px;
+      border: 1px solid rgba(244,241,225,0.04);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+    }
+    .cta-tag {
+      display: inline-block; font-family: var(--fb);
+      font-size: 0.7rem; font-weight: 400; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--olive);  /* olive su cioccolato ✓ */
+      margin-bottom: 2rem; position: relative; z-index: 1;
+    }
+    .cta-h {
+      font-family: var(--fd); font-size: clamp(2.5rem,5vw,5.2rem);
+      font-weight: 300; color: var(--cream); line-height: 1.15;
+      margin-bottom: 1rem; position: relative; z-index: 1;
+    }
+    .cta-h em { font-style: italic; color: var(--blush); }  /* blush su cioccolato ✓ */
+    /* Linea lemon come spaziatore elegante nella CTA */
+    .cta-line {
+      width: 32px; height: 1px; background: var(--lemon);
+      margin: 2rem auto 2.5rem; position: relative; z-index: 1;
+      opacity: 0.7;
+    }
+    .btn-cream {
+      display: inline-block; font-family: var(--fb);
+      font-size: 0.78rem; font-weight: 400; letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--choco); background: var(--cream);  /* cioccolato su crema ✓ */
+      padding: 1.1rem 3rem; text-decoration: none;
+      position: relative; z-index: 1;
+      transition: background .3s, color .3s, transform .2s;
+    }
+    .btn-cream:hover { background: var(--lemon); transform: translateY(-2px); }
+
+    /* ─── FOOTER ──────────────────────────────────────────
+       Sfondo cioccolato. Logo crema. Titoli col sky (leggibile).
+       Testi: crema attenuata.
+    ─────────────────────────────────────────────────────── */
+    footer {
+      background: var(--choco);
+      border-top: 1px solid rgba(244,241,225,0.08);
+      padding: 5rem 4rem 2.5rem;
+    }
+    .foot-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem;
+      padding-bottom: 4rem; border-bottom: 1px solid rgba(244,241,225,0.08);
+    }
+    .foot-brand .logo { color: var(--cream); }
+    .foot-brand .logo em { color: var(--blush); }
+    .foot-brand p { font-size: 0.87rem; color: rgba(244,241,225,0.4); max-width: 30ch; margin-top: 1rem; line-height: 1.75; }
+
+    .foot-col h4 {
+      font-family: var(--fb); font-size: 0.68rem; font-weight: 400;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--sky);          /* sky su cioccolato: raffinato e leggibile ✓ */
+      margin-bottom: 1.3rem;
+    }
+    .foot-col ul { list-style: none; }
+    .foot-col li { margin-bottom: 0.65rem; }
+    .foot-col a { font-size: 0.87rem; color: rgba(244,241,225,0.42); text-decoration: none; transition: color .3s; }
+    .foot-col a:hover { color: var(--cream); }
+
+    .foot-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 2rem; font-size: 0.73rem; color: rgba(244,241,225,0.25);
+    }
+
+    /* ─── ANIMAZIONI ─── */
+    @keyframes up {
+      from { opacity:0; transform:translateY(30px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadein { from { opacity:0; } to { opacity:1; } }
+    @keyframes scroll {
+      from { transform:translateX(0); }
+      to   { transform:translateX(-50%); }
+    }
+
+    .reveal {
+      opacity:0; transform:translateY(28px);
+      transition: opacity .85s var(--ease), transform .85s var(--ease);
+    }
+    .reveal.on { opacity:1; transform:none; }
+    .d1 { transition-delay:.08s; }
+    .d2 { transition-delay:.16s; }
+    .d3 { transition-delay:.24s; }
+    .d4 { transition-delay:.32s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      header, header.scrolled { padding: 1.2rem 2rem; }
+      nav { gap: 1.5rem; }
+      nav a:not(.btn-nav) { display: none; }
+
+      .hero { grid-template-columns: 1fr; }
+      .hero-l { padding: 8rem 2rem 4rem; }
+      .hero-r { height: 280px; }
+
+      .intro { grid-template-columns: 1fr; padding: 6rem 2rem; gap: 3rem; }
+      .services { padding: 5rem 2rem; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .process { padding: 5rem 2rem; }
+      .steps { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .territory { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
+      .terr-vis { height: 250px; }
+      .testi { padding: 5rem 2rem; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .cta { padding: 6rem 2rem; }
+      footer { padding: 4rem 2rem 2rem; }
+      .foot-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cur"></div>
+  <div class="cursor-ring" id="curR"></div>
+
+  <!-- ══ HEADER ══════════════════════════════════════════════
+       Sempre visibile su sfondo crema. Logo chiaro e leggibile.
+  ════════════════════════════════════════════════════════════ -->
+  <header id="hdr">
+    <a href="/" class="logo">Guidonia <em>Marketing</em></a>
+    <nav>
+      <a href="#servizi">Servizi</a>
+      <a href="#processo">Metodo</a>
+      <a href="#territorio">Territorio</a>
+      <a href="#testimonianze">Risultati</a>
+      <a href="#contatti" class="btn-nav">Inizia ora</a>
+    </nav>
+  </header>
+
+  <!-- ══ HERO ════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-l">
+      <p class="hero-eyebrow">Agenzia di Marketing · Guidonia Montecelio · Roma</p>
+      <h1 class="hero-h1">
+        Il tuo business<br>merita di essere<br><em>trovato.</em>
+      </h1>
+      <p class="hero-p">
+        Portiamo le piccole imprese di Guidonia e Roma alla prima pagina di Google — senza sprecare un euro in pubblicità a pagamento.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contatti" class="btn-dark">Parliamo del tuo progetto</a>
+        <a href="#servizi" class="link-ghost">Scopri i servizi <span>→</span></a>
+      </div>
+    </div>
+
+    <div class="hero-r">
+      <div class="radar-ring"></div>
+      <div class="radar-ring"></div>
+      <div class="radar-ring"></div>
+      <div class="hero-r-dot"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">94%</div>
+        <div class="hero-stat-line"></div>
+        <div class="hero-stat-l">Dei clienti trovano<br>la tua attività su Google</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MARQUEE ══════════════════════════════════════════════ -->
+  <div class="marquee-wrap">
+    <div class="marquee-inner">
+      <span>Social Media Marketing</span><span class="sep">✦</span>
+      <span>SEO Locale</span><span class="sep">✦</span>
+      <span>Branding & Identità</span><span class="sep">✦</span>
+      <span>Content Strategy</span><span class="sep">✦</span>
+      <span>Google My Business</span><span class="sep">✦</span>
+      <span>Crescita Organica</span><span class="sep">✦</span>
+      <span>Social Media Marketing</span><span class="sep">✦</span>
+      <span>SEO Locale</span><span class="sep">✦</span>
+      <span>Branding & Identità</span><span class="sep">✦</span>
+      <span>Content Strategy</span><span class="sep">✦</span>
+      <span>Google My Business</span><span class="sep">✦</span>
+      <span>Crescita Organica</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ══ INTRO ════════════════════════════════════════════════ -->
+  <section class="intro">
+    <div class="reveal">
+      <p class="label">Chi siamo</p>
+      <h2 class="h2">Non vendiamo <em>campagne.</em><br>Costruiamo presenza.</h2>
+      <p class="body-txt">Molte agenzie ti vendono click. Noi ti portiamo clienti reali, che cercano esattamente quello che offri, nel momento esatto in cui sono pronti a comprare.</p>
+      <p class="body-txt">Radicati nel territorio tra Guidonia, Tivoli e Roma Est, conosciamo il tuo mercato meglio di chiunque altro.</p>
+    </div>
+    <div class="stats reveal d2">
+      <div class="stat-card">
+        <div class="stat-n">+340%</div>
+        <div class="stat-label">Traffico organico medio nei primi 6 mesi</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-n">3.2×</div>
+        <div class="stat-label">Più richieste senza aumentare il budget</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES ═════════════════════════════════════════════ -->
+  <section class="services" id="servizi">
+    <p class="label reveal">I nostri servizi</p>
+    <h2 class="h2 reveal d1">Tutto quello che serve<br>per <em>crescere online.</em></h2>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="svc-num">01</div>
+        <h3 class="svc-title">Social Media Marketing</h3>
+        <p class="svc-desc">Costruiamo community reali attorno al tuo brand. Contenuti che parlano alla tua audience locale e trasformano follower in clienti paganti.</p>
+        <span class="svc-arrow">↗</span>
+      </div>
+      <div class="svc reveal d1">
+        <div class="svc-num">02</div>
+        <h3 class="svc-title">SEO & Content</h3>
+        <p class="svc-desc">Prima pagina Google per le ricerche che contano. SEO locale, Google My Business ottimizzato, contenuti che rispondono alle domande dei tuoi clienti.</p>
+        <span class="svc-arrow">↗</span>
+      </div>
+      <div class="svc reveal d2">
+        <div class="svc-num">03</div>
+        <h3 class="svc-title">Branding & Identità</h3>
+        <p class="svc-desc">Un'identità visiva che comunica prima ancora che parli. Logo, palette, tono di voce — costruiti attorno a ciò che rende la tua impresa unica.</p>
+        <span class="svc-arrow">↗</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROCESS ══════════════════════════════════════════════ -->
+  <section class="process" id="processo">
+    <p class="label reveal">Come lavoriamo</p>
+    <h2 class="h2 reveal d1">Un metodo <em>semplice.</em><br>Risultati concreti.</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-n">— 01</div>
+        <h3 class="step-t">Ascolto</h3>
+        <p class="step-d">Partiamo da te: il tuo business, i tuoi clienti ideali, i tuoi obiettivi. Nessun template. Solo strategia su misura.</p>
+      </div>
+      <div class="step reveal d1">
+        <div class="step-n">— 02</div>
+        <h3 class="step-t">Analisi</h3>
+        <p class="step-d">Studiamo il territorio, i competitor locali, le keyword che portano clienti pronti ad acquistare nella tua zona.</p>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-n">— 03</div>
+        <h3 class="step-t">Costruzione</h3>
+        <p class="step-d">Creiamo contenuti, ottimizziamo la presenza online, impostiamo i canali. Tutto con cura artigianale, non industriale.</p>
+      </div>
+      <div class="step reveal d3">
+        <div class="step-n">— 04</div>
+        <h3 class="step-t">Crescita</h3>
+        <p class="step-d">Monitoriamo, ottimizziamo, scaliamo. I risultati si misurano in clienti reali e fatturato — non in numeri su uno schermo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TERRITORY ════════════════════════════════════════════ -->
+  <section class="territory" id="territorio">
+    <div class="terr-vis reveal">
+      <!-- Anelli radar statici di sfondo -->
+      <div class="terr-ring r1"></div>
+      <div class="terr-ring r2"></div>
+      <div class="terr-ring r3"></div>
+      <!-- Pin animato JS -->
+      <div class="terr-pin" id="terrPin">
+        <div class="terr-dot"></div>
+        <div class="terr-name" id="terrName">Guidonia Montecelio</div>
+      </div>
+      <div class="terr-line"></div>
+    </div>
+
+    <div class="reveal d1">
+      <p class="label">Il nostro territorio</p>
+      <h2 class="h2">Conosciamo Guidonia.<br>Conosciamo <em>i tuoi clienti.</em></h2>
+      <p class="body-txt">Siamo qui, non a Milano. Conosciamo le dinamiche locali, le abitudini di ricerca di chi vive tra Guidonia, Tivoli e Roma Est.</p>
+      <p class="body-txt">SEO locale significa apparire quando qualcuno cerca "ristorante a Guidonia" o "idraulico Tivoli" — keyword reali, clienti reali.</p>
+      <div class="badges">
+        <span class="badge">Guidonia Montecelio</span>
+        <span class="badge">Tivoli</span>
+        <span class="badge">Roma Est</span>
+        <span class="badge">Monterotondo</span>
+        <span class="badge">Mentana</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══════════════════════════════════════════ -->
+  <section class="testi" id="testimonianze">
+    <p class="label reveal">Cosa dicono i clienti</p>
+    <h2 class="h2 reveal d1">Risultati <em>reali.</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-txt">In sei mesi siamo passati dalla terza pagina di Google alla prima. Le prenotazioni sono aumentate del 60% senza spendere un euro in pubblicità.</p>
+        <div class="testi-auth">Laura B.</div>
+        <div class="testi-role">Osteria Al Borgo · Guidonia</div>
+      </div>
+      <div class="testi-card reveal d1">
+        <p class="testi-txt">Finalmente un'agenzia che capisce la realtà di una piccola impresa. Parlano la nostra lingua e portano clienti veri, non solo like.</p>
+        <div class="testi-auth">Marco T.</div>
+        <div class="testi-role">Studio Dentistico Tiburtini · Tivoli</div>
+      </div>
+      <div class="testi-card reveal d2">
+        <p class="testi-txt">Il rebranding ha trasformato il modo in cui i clienti ci percepiscono. Ora siamo riconoscibili e coerenti su tutti i canali.</p>
+        <div class="testi-auth">Giulia M.</div>
+        <div class="testi-role">Atelier Giulia · Roma Est</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══════════════════════════════════════════════════ -->
+  <section class="cta" id="contatti">
+    <span class="cta-tag reveal">Inizia oggi</span>
+    <h2 class="cta-h reveal d1">Pronta a far crescere<br><em>il tuo business?</em></h2>
+    <div class="cta-line reveal d2"></div>
+    <a href="mailto:ciao@guidoniamarketing.agency" class="btn-cream reveal d2">Scrivici ora</a>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="logo">Guidonia <em>Marketing</em></a>
+        <p>Agenzia di marketing radicata nel territorio di Guidonia Montecelio. Crescita organica, identità forte, clienti reali.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Servizi</h4>
+        <ul>
+          <li><a href="#servizi">Social Media Marketing</a></li>
+          <li><a href="#servizi">SEO & Content</a></li>
+          <li><a href="#servizi">Branding & Identità</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Agenzia</h4>
+        <ul>
+          <li><a href="#processo">Come lavoriamo</a></li>
+          <li><a href="#testimonianze">Risultati</a></li>
+          <li><a href="#territorio">Il territorio</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contatti</h4>
+        <ul>
+          <li><a href="mailto:ciao@guidoniamarketing.agency">ciao@guidoniamarketing.agency</a></li>
+          <li><a href="https://guidoniamarketing.agency">guidoniamarketing.agency</a></li>
+          <li><a href="#contatti">Richiedi una consulenza</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Guidonia Marketing. Tutti i diritti riservati.</span>
+      <span>Guidonia Montecelio, Roma</span>
+    </div>
+  </footer>
+
+  <script>
+    /* Cursor */
+    const cur = document.getElementById('cur');
+    const curR = document.getElementById('curR');
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
+    (function loop(){ rx+=(mx-rx)*.11; ry+=(my-ry)*.11; curR.style.left=rx+'px'; curR.style.top=ry+'px'; requestAnimationFrame(loop); })();
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ cur.classList.add('hov'); curR.classList.add('hov'); });
+      el.addEventListener('mouseleave',()=>{ cur.classList.remove('hov'); curR.classList.remove('hov'); });
+    });
+
+    /* Header scroll */
+    const hdr = document.getElementById('hdr');
+    window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled', window.scrollY>50));
+
+    /* Reveal on scroll */
+    const io = new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } }),{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    /* Territory radar — cycling locations with smooth fade */
+    const locations = [
+      { name: 'Guidonia Montecelio', x: 50, y: 48 },
+      { name: 'Tivoli',              x: 62, y: 32 },
+      { name: 'Villanova',           x: 35, y: 38 },
+      { name: 'Villalba',            x: 58, y: 62 },
+      { name: 'Bagni di Tivoli',     x: 70, y: 55 },
+      { name: 'Villa Adriana',       x: 38, y: 65 },
+    ];
+    let locIdx = 0;
+    const pin    = document.getElementById('terrPin');
+    const nameEl = document.getElementById('terrName');
+
+    function setPin(loc) {
+      pin.style.left      = loc.x + '%';
+      pin.style.top       = loc.y + '%';
+      pin.style.transform = 'translate(-50%, -50%)';
+      nameEl.textContent  = loc.name;
+    }
+
+    function cyclePin() {
+      // Fade out
+      pin.classList.add('fade');
+      setTimeout(() => {
+        // Reposition + rename while invisible
+        locIdx = (locIdx + 1) % locations.length;
+        setPin(locations[locIdx]);
+        // Fade in
+        pin.classList.remove('fade');
+      }, 650);
+    }
+
+    // Set initial position immediately
+    setPin(locations[0]);
+    setInterval(cyclePin, 3000);
+  </script>
+</body>
+</html>
