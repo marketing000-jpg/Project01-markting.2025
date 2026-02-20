@@ -200,3 +200,25 @@ shakeStyle.textContent = `
   }
 `;
 document.head.appendChild(shakeStyle);
+
+/* ─── HAMBURGER MENU LOGIC ────────────────────────────────────── */
+const toggle = document.querySelector('.nav-toggle');
+const overlay = document.querySelector('.menu-overlay');
+const menuLinks = document.querySelectorAll('.menu-links a');
+
+if (toggle && overlay) {
+  toggle.addEventListener('click', () => {
+    const isActive = toggle.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = isActive ? 'hidden' : '';
+  });
+
+  // Chiudi quando si clicca un link
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+}
