@@ -1,0 +1,248 @@
+/* ===================================================================
+   GUIDONIA MARKETING — animations.css
+   Cursor, keyframes, reveal on scroll, transitions animate
+   =================================================================== */
+
+/* ─── CURSOR ─ 4-pointed flash ───────────────────────────────── */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: var(--lemon);
+    clip-path: polygon(50% 0%, 55% 45%, 100% 50%, 55% 55%, 50% 100%, 45% 55%, 0% 50%, 45% 45%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 15px var(--lemon);
+    animation: star-flash 1s ease-in-out infinite;
+    transition: width .3s var(--ease), height .3s var(--ease);
+}
+
+.cursor-ring {
+    display: none !important;
+}
+
+.cursor.hov {
+    width: 18px;
+    height: 18px;
+    background: var(--olive);
+}
+
+.cursor-ring.hov {
+    width: 52px;
+    height: 52px;
+    opacity: 0.2;
+}
+
+/* ─── STICKER ANIMATIONS ─────────────────────────────────────── */
+@keyframes floating-rotated {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(15deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(13deg);
+    }
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-2deg);
+    }
+}
+
+/* ─── HERO KEYFRAMES ─────────────────────────────────────────── */
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ─── MARQUEE ────────────────────────────────────────────────── */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ─── RADAR RING PULSE ───────────────────────────────────────── */
+@keyframes radar-pulse {
+    0% {
+        width: 10px;
+        height: 10px;
+        opacity: 0.7;
+        border-color: rgba(244, 241, 225, 0.5);
+    }
+
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+        border-color: rgba(244, 241, 225, 0);
+    }
+}
+
+/* ─── STAR FLASH (cursor + radar dot) ───────────────────────── */
+@keyframes star-flash {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.7;
+        filter: brightness(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 1;
+        filter: brightness(1.6) drop-shadow(0 0 10px var(--lemon));
+    }
+}
+
+/* ─── TERRITORY PIN PING ─────────────────────────────────────── */
+@keyframes ping {
+    0% {
+        box-shadow: 0 0 0 0 rgba(245, 239, 160, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(245, 239, 160, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(245, 239, 160, 0);
+    }
+}
+
+/* ─── WHATSAPP PULSE ─────────────────────────────────────────── */
+@keyframes wa-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45), 0 0 0 12px rgba(37, 211, 102, 0);
+    }
+}
+
+/* ─── FAQ DROP ───────────────────────────────────────────────── */
+@keyframes faq-drop {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── FORM SHAKE ─────────────────────────────────────────────── */
+@keyframes form-shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-6px);
+    }
+
+    40% {
+        transform: translateX(6px);
+    }
+
+    60% {
+        transform: translateX(-4px);
+    }
+
+    80% {
+        transform: translateX(4px);
+    }
+}
+
+/* ─── REVEAL ON SCROLL ───────────────────────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .85s var(--ease), transform .85s var(--ease);
+}
+
+.reveal.on {
+    opacity: 1;
+    transform: none;
+}
+
+.d1 {
+    transition-delay: .08s;
+}
+
+.d2 {
+    transition-delay: .16s;
+}
+
+.d3 {
+    transition-delay: .24s;
+}
+
+.d4 {
+    transition-delay: .32s;
+}
+
+/* ─── HERO ENTRY ANIMATIONS ──────────────────────────────────── */
+.hero-eyebrow {
+    opacity: 0;
+    animation: up 1s var(--ease) .2s forwards;
+}
+
+.hero-h1 {
+    opacity: 0;
+    animation: up 1s var(--ease) .4s forwards;
+}
+
+.hero-p {
+    opacity: 0;
+    animation: up 1s var(--ease) .6s forwards;
+}
+
+.hero-ctas {
+    opacity: 0;
+    animation: up 1s var(--ease) .8s forwards;
+}
+
+.hero-stat {
+    opacity: 0;
+    animation: up 1s var(--ease) 1s forwards;
+}
