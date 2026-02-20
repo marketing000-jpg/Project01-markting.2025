@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina non trovata | Guidonia Marketing</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <style>
+        .error-404 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem;
+            background: var(--cream);
+        }
+
+        .error-content {
+            max-width: 600px;
+        }
+
+        .error-code {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            font-style: italic;
+            color: var(--bordeaux);
+            line-height: 1;
+            margin-bottom: 1rem;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor" id="cur"></div>
+    <div class="cursor-ring" id="curR"></div>
+
+    <header id="hdr">
+        <a href="/" class="logo">Guidonia <em>Marketing</em></a>
+        <nav>
+            <a href="/#servizi">Servizi</a>
+            <a href="/contatti.html" class="btn-nav">Inizia ora</a>
+        </nav>
+    </header>
+
+    <main class="error-404">
+        <div class="error-content reveal">
+            <div class="error-code">404</div>
+            <h1 class="h2">Ti sei perso tra le vie di <em>Guidonia?</em></h1>
+            <p class="body-txt" style="margin: 2rem 0;">La pagina che cercavi non è qui. Forse è stata spostata o il
+                link è errato. Ma non preoccuparti, possiamo riportarti sulla strada giusta per far crescere il tuo
+                business.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/" class="btn-dark">Torna alla Home</a>
+                <a href="/servizi.html" class="btn-cream">Vedi i Servizi</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

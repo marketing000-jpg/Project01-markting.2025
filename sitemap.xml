@@ -1,102 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- ── HOMEPAGE ─── -->
-  <url>
-    <loc>https://guidoniamarketing.agency/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- ── PAGINE CORE ─── -->
-  <url>
-    <loc>https://guidoniamarketing.agency/servizi</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://guidoniamarketing.agency/contatti</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://guidoniamarketing.agency/chi-siamo</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ── PAGINE LOCALI /zone/ ─── -->
-  <url>
-    <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-guidonia-montecelio</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-tivoli</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-villanova</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-villalba</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-villa-adriana</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-bagni-di-tivoli</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── BLOG ─── -->
-  <url>
-    <loc>https://guidoniamarketing.agency/blog/</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://guidoniamarketing.agency/blog/come-apparire-su-google-maps-guidonia</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://guidoniamarketing.agency/blog/gestione-social-media-piccola-impresa-tivoli</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://guidoniamarketing.agency/blog/seo-locale-cos-e-come-funziona-roma-est</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://guidoniamarketing.agency/blog/quanto-costa-agenzia-marketing-piccola-impresa</loc>
-    <lastmod>2026-02-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
+  <url><loc>https://guidoniamarketing.agency/</loc><priority>1.0</priority></url>
+  <url><loc>https://guidoniamarketing.agency/servizi</loc><priority>0.9</priority></url>
+  <url><loc>https://guidoniamarketing.agency/servizi/seo-locale-guidonia</loc><priority>0.85</priority></url>
+  <url><loc>https://guidoniamarketing.agency/servizi/social-media-marketing</loc><priority>0.85</priority></url>
+  <url><loc>https://guidoniamarketing.agency/servizi/branding-identita-visiva</loc><priority>0.85</priority></url>
+  <url><loc>https://guidoniamarketing.agency/zone/agenzia-marketing-guidonia-montecelio</loc><priority>0.9</priority></url>
+  <url><loc>https://guidoniamarketing.agency/zone/agenzia-marketing-tivoli</loc><priority>0.8</priority></url>
+  <url><loc>https://guidoniamarketing.agency/zone/agenzia-marketing-villanova</loc><priority>0.8</priority></url>
+  <url><loc>https://guidoniamarketing.agency/zone/agenzia-marketing-villalba</loc><priority>0.8</priority></url>
+  <url><loc>https://guidoniamarketing.agency/zone/agenzia-marketing-villa-adriana</loc><priority>0.8</priority></url>
+  <url><loc>https://guidoniamarketing.agency/zone/agenzia-marketing-bagni-di-tivoli</loc><priority>0.8</priority></url>
+  <url><loc>https://guidoniamarketing.agency/case-studies</loc><priority>0.8</priority></url>
+  <url><loc>https://guidoniamarketing.agency/chi-siamo</loc><priority>0.7</priority></url>
+  <url><loc>https://guidoniamarketing.agency/contatti</loc><priority>0.7</priority></url>
+  <url><loc>https://guidoniamarketing.agency/blog/</loc><priority>0.6</priority></url>
 </urlset>
