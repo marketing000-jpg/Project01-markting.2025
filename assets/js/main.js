@@ -204,21 +204,25 @@ document.head.appendChild(shakeStyle);
 /* ─── HAMBURGER MENU LOGIC ────────────────────────────────────── */
 const toggle = document.querySelector('.nav-toggle');
 const overlay = document.querySelector('.menu-overlay');
+const backdrop = document.querySelector('.menu-backdrop');
+const closeBtn = document.querySelector('.menu-close');
 const menuLinks = document.querySelectorAll('.menu-links a');
 
 if (toggle && overlay) {
-  toggle.addEventListener('click', () => {
-    const isActive = toggle.classList.toggle('active');
-    overlay.classList.toggle('active');
+  const toggleMenu = (forceClose = false) => {
+    const isActive = forceClose ? false : !overlay.classList.contains('active');
+    toggle.classList.toggle('active', isActive);
+    overlay.classList.toggle('active', isActive);
+    if (backdrop) backdrop.classList.toggle('active', isActive);
     document.body.style.overflow = isActive ? 'hidden' : '';
-  });
+  };
+
+  toggle.addEventListener('click', () => toggleMenu());
+  if (backdrop) backdrop.addEventListener('click', () => toggleMenu(true));
+  if (closeBtn) closeBtn.addEventListener('click', () => toggleMenu(true));
 
   // Chiudi quando si clicca un link
   menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      toggle.classList.remove('active');
-      overlay.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', () => toggleMenu(true));
   });
 }
