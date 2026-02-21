@@ -1,3 +1,4 @@
+if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; window.scrollTo(0,0); }
 /* ─── CURSOR ──────────────────────────────────────────────────── */
 const cur = document.getElementById('cur');
 const curR = document.getElementById('curR');
@@ -183,7 +184,7 @@ if (leadForm) {
 
     // Redirect to WhatsApp after 1.8s
     setTimeout(() => {
-      window.open(`https://wa.me/3900000000?text=${waMsg}`, '_blank');
+      window.open(`https://wa.me/393347871260?text=${waMsg}`, '_blank');
     }, 1800);
   });
 }
@@ -226,3 +227,47 @@ if (toggle && overlay) {
     link.addEventListener('click', () => toggleMenu(true));
   });
 }
+/* ─── PORTFOLIO FOLDER LOGIC ──────────────────────────────────── */
+const folderTabs = document.querySelectorAll('.folder-tab');
+const folderItems = document.querySelectorAll('.folder-item');
+
+if (folderTabs.length > 0) {
+  folderTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-target');
+
+      // Update tabs
+      folderTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Update content items
+      folderItems.forEach(item => {
+        if (item.id === `port-${target}`) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    });
+
+    // Hover effect for cursor
+    tab.addEventListener('mouseenter', () => {
+      if (cur && curR) {
+        cur.classList.add('hov');
+        curR.classList.add('hov');
+      }
+    });
+    tab.addEventListener('mouseleave', () => {
+      if (cur && curR) {
+        cur.classList.remove('hov');
+        curR.classList.remove('hov');
+      }
+    });
+  });
+}
+
+// Add portfolio folder to cursor hover scale list
+document.querySelectorAll('.folder-tab').forEach(el => {
+  el.addEventListener('mouseenter', () => { cur.style.width = '35px'; cur.style.height = '35px'; });
+  el.addEventListener('mouseleave', () => { cur.style.width = '20px'; cur.style.height = '20px'; });
+});
