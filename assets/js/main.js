@@ -271,3 +271,92 @@ document.querySelectorAll('.folder-tab').forEach(el => {
   el.addEventListener('mouseenter', () => { cur.style.width = '35px'; cur.style.height = '35px'; });
   el.addEventListener('mouseleave', () => { cur.style.width = '20px'; cur.style.height = '20px'; });
 });
+
+/* ═══════════════════════════════════════════════════════════════
+   ROI CALCULATOR LOGIC
+═══════════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  const btnValore = document.querySelectorAll('#roiValoreContainer .roi-btn');
+  const btnClienti = document.querySelectorAll('#roiClientiContainer .roi-btn');
+  const risultatoVal = document.getElementById('roiRisultato');
+  const badgeVal = document.getElementById('roiBadge');
+
+  if (!risultatoVal || !badgeVal) return;
+
+  let valCLV = 200;
+  let valNum = 10;
+  const costoServizio = 500;
+  const convRate = 0.4;
+
+  let isUpdating = false;
+
+  function formatEuro(num) {
+    return '€ ' + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+
+  function doCalculate(isPillClick = false) {
+    const ricavo = Math.round(valCLV * valNum * convRate);
+    const roi = Math.round((ricavo / costoServizio) * 10) / 10;
+    
+    // Animation triggers
+    if (isPillClick) {
+      risultatoVal.classList.remove('updating');
+      void risultatoVal.offsetWidth; // trigger reflow
+      risultatoVal.classList.add('updating');
+      
+      // Update text in the middle of fade out
+      setTimeout(() => {
+        updateDOM(ricavo, roi);
+      }, 150);
+    } else {
+      updateDOM(ricavo, roi);
+    }
+  }
+
+  function updateDOM(ricavo, roi) {
+    // Numeri
+    risultatoVal.textContent = formatEuro(ricavo) + ' / mese in più';
+    
+    // Badge styles based on ROI
+    if (roi < 1) {
+      badgeVal.textContent = "ROI stimato: in crescita";
+      badgeVal.style.color = "rgba(244,241,225,0.5)";
+      badgeVal.style.background = "rgba(245,239,160,0.05)";
+      badgeVal.style.borderColor = "rgba(245,239,160,0.1)";
+    } else {
+      let suffix = roi >= 5 ? "× 🔥" : "×";
+      badgeVal.textContent = "ROI stimato: " + roi + suffix;
+      
+      if (roi >= 10) {
+        badgeVal.style.color = "var(--bordeaux)";
+        badgeVal.style.background = "rgba(242, 200, 196, 0.1)";
+        badgeVal.style.borderColor = "var(--bordeaux)";
+      } else {
+        badgeVal.style.color = "var(--lemon)";
+        badgeVal.style.background = "rgba(245,239,160,0.1)";
+        badgeVal.style.borderColor = "rgba(245,239,160,0.2)";
+      }
+    }
+  }
+
+  // Event Listeners Value
+  btnValore.forEach(b => {
+    b.addEventListener('click', (e) => {
+      btnValore.forEach(x => x.classList.remove('active'));
+      e.target.classList.add('active');
+      valCLV = parseInt(e.target.getAttribute('data-valore'));
+      doCalculate(true);
+    });
+  });
+
+  // Event Listeners Numero Clienti
+  btnClienti.forEach(b => {
+    b.addEventListener('click', (e) => {
+      btnClienti.forEach(x => x.classList.remove('active'));
+      e.target.classList.add('active');
+      valNum = parseInt(e.target.getAttribute('data-clienti'));
+      doCalculate(true);
+    });
+  });
+
+});
