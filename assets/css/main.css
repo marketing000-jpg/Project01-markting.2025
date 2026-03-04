@@ -371,9 +371,20 @@ header.scrolled {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Center content vertically even at high heights */
-    align-items: flex-start;
-    padding: 4rem 3rem;
+    align-items: center;
+    padding: 6rem 4rem;
+}
+
+.hero-r-content {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
 }
 
 .hero-r-dot {
@@ -428,6 +439,11 @@ header.scrolled {
 .hero-stat {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centered in the brown section */
+    text-align: center;
 }
 
 .hero-stat::before {
@@ -462,6 +478,107 @@ header.scrolled {
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: rgba(242, 239, 228, .55);
+}
+
+/* ── VIDEO CARD — LIQUID GLASS ───────────────────────────────────── */
+.hero-video-wrap {
+    position: relative;
+    width: 92%;
+    max-width: 480px;
+    z-index: 10;
+}
+
+.liquid-glass-card {
+    position: relative;
+    border-radius: 28px;
+    padding: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    /* Slightly more visible base */
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 50px 120px -20px rgba(0, 0, 0, 0.75),
+        inset 0 0 40px rgba(255, 255, 255, 0.1),
+        0 0 1px 1px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transform: perspective(1200px) rotateY(-6deg) rotateX(3deg);
+    transition: transform 1s var(--ease), box-shadow 0.6s var(--ease), border-color 0.6s var(--ease);
+}
+
+.liquid-glass-card:hover {
+    transform: perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1.05);
+    box-shadow:
+        0 60px 140px -20px rgba(0, 0, 0, 0.85),
+        inset 0 0 50px rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.liquid-glass-card::before {
+    content: '';
+    position: absolute;
+    inset: -60%;
+    background: conic-gradient(from 0deg,
+            transparent 0%,
+            rgba(184, 212, 236, 0.4) 15%,
+            transparent 30%,
+            rgba(254, 245, 192, 0.4) 45%,
+            transparent 60%,
+            rgba(216, 162, 174, 0.4) 75%,
+            transparent 100%);
+    z-index: 0;
+    filter: blur(30px);
+    display: block;
+}
+
+.liquid-glass-card video,
+.liquid-glass-card img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 1;
+    border-radius: 22px;
+    object-fit: cover;
+}
+
+.liquid-glass-card video {
+    aspect-ratio: 1080 / 1350;
+    background: #000;
+    /* Loader placeholder */
+}
+
+.liquid-glass-card img {
+    height: 100%;
+    max-height: 550px;
+}
+
+@keyframes rotate-liquid {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Sizing for the Chi Siamo section image card */
+.intro-img-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    z-index: 10;
+    justify-self: center;
+}
+
+/* Adjusting radar rings to center on the video card wrap */
+.hero-video-wrap .radar-ring,
+.hero-video-wrap .hero-r-dot,
+.intro-img-wrap .radar-ring,
+.intro-img-wrap .hero-r-dot {
+    top: 50%;
+    left: 50%;
 }
 
 /* ── MARQUEE ─────────────────────────────────────────────────────── */
@@ -2145,7 +2262,9 @@ footer {
     }
 
     .hero-r {
-        height: 280px;
+        height: auto;
+        min-height: 480px;
+        padding: 4rem 2rem;
     }
 
     .hero-sticker-icons {

@@ -1,4 +1,4 @@
-if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; window.scrollTo(0,0); }
+if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; window.scrollTo(0, 0); }
 /* ─── CURSOR ──────────────────────────────────────────────────── */
 const cur = document.getElementById('cur');
 const curR = document.getElementById('curR');
@@ -19,6 +19,13 @@ const io = new IntersectionObserver(entries => entries.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
 }), { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const heroVid = document.querySelector('.liquid-glass-card video');
+if (heroVid) {
+  const vObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => entry.isIntersecting ? heroVid.play() : heroVid.pause());
+  }, { threshold: 0.1 });
+  vObserver.observe(heroVid);
+}
 
 /* ─── TERRITORY RADAR ─────────────────────────────────────────── */
 const locations = [
@@ -276,87 +283,80 @@ document.querySelectorAll('.folder-tab').forEach(el => {
    ROI CALCULATOR LOGIC
 ═══════════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
-  const btnValore = document.querySelectorAll('#roiValoreContainer .roi-btn');
-  const btnClienti = document.querySelectorAll('#roiClientiContainer .roi-btn');
+  const btnFatturato = document.querySelectorAll('#roiFatturatoContainer .roi-btn');
   const risultatoVal = document.getElementById('roiRisultato');
+  const risultatoNetto = document.getElementById('roiRisultatoNetto');
   const badgeVal = document.getElementById('roiBadge');
+  const badgeExtra = document.getElementById('roiBadgeExtra');
+  const resSmall = document.getElementById('roiResSmall');
 
   if (!risultatoVal || !badgeVal) return;
 
-  let valCLV = 200;
-  let valNum = 10;
-  const costoServizio = 500;
-  const convRate = 0.4;
-
-  let isUpdating = false;
+  let valFatturato = 3500; // Default internally
+  const costoAgenzia = 500;
 
   function formatEuro(num) {
-    return '€ ' + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return '€ ' + Math.round(num).toLocaleString('it-IT');
   }
 
   function doCalculate(isPillClick = false) {
-    const ricavo = Math.round(valCLV * valNum * convRate);
-    const roi = Math.round((ricavo / costoServizio) * 10) / 10;
-    
+    const crescitaSEO = valFatturato * 0.28;
+    const guadagnoNetto = crescitaSEO - costoAgenzia;
+    const roi = Math.round((guadagnoNetto / costoAgenzia) * 10) / 10;
+
     // Animation triggers
     if (isPillClick) {
       risultatoVal.classList.remove('updating');
-      void risultatoVal.offsetWidth; // trigger reflow
+      void risultatoVal.offsetWidth;
       risultatoVal.classList.add('updating');
-      
-      // Update text in the middle of fade out
       setTimeout(() => {
-        updateDOM(ricavo, roi);
+        updateDOM(crescitaSEO, guadagnoNetto, roi);
       }, 150);
     } else {
-      updateDOM(ricavo, roi);
+      updateDOM(crescitaSEO, guadagnoNetto, roi);
     }
   }
 
-  function updateDOM(ricavo, roi) {
-    // Numeri
-    risultatoVal.textContent = formatEuro(ricavo) + ' / mese in più';
-    
-    // Badge styles based on ROI
-    if (roi < 1) {
-      badgeVal.textContent = "ROI stimato: in crescita";
-      badgeVal.style.color = "rgba(242,239,228,0.5)";
-      badgeVal.style.background = "rgba(253,241,187,0.05)";
-      badgeVal.style.borderColor = "rgba(253,241,187,0.1)";
+  function updateDOM(crescitaSEO, guadagnoNetto, roi) {
+    // We always show the 6-month projection for visual consistency as requested
+    resSmall.textContent = "Con SEO locale nei primi 6 mesi aggiungi mediamente al tuo fatturato";
+    risultatoVal.textContent = formatEuro(crescitaSEO * 6) + " in 6 mesi";
+
+    if (guadagnoNetto <= 0) {
+      risultatoNetto.textContent = "sottraendo €500/mese di investimento, raggiungi il punto di pareggio e generi profitto netto costante già dai primi mesi.";
+
+      badgeVal.textContent = "Break-even garantito al mese 2";
+      badgeVal.style.color = "var(--sky)";
+      badgeVal.style.background = "rgba(184, 212, 236, 0.1)";
+      badgeVal.style.borderColor = "var(--sky)";
+      if (badgeExtra) badgeExtra.textContent = "";
     } else {
-      let suffix = roi >= 5 ? "× 🔥" : "×";
-      badgeVal.textContent = "ROI stimato: " + roi + suffix;
-      
-      if (roi >= 10) {
-        badgeVal.style.color = "var(--blush-dark)";
-        badgeVal.style.background = "rgba(236, 206, 204, 0.1)";
-        badgeVal.style.borderColor = "var(--blush-dark)";
+      risultatoNetto.textContent = `sottraendo €500/mese di investimento, il tuo guadagno netto è ${formatEuro(guadagnoNetto * 6)} nei primi 6 mesi`;
+
+      badgeVal.textContent = "ROI: " + roi + "× il tuo investimento";
+      badgeVal.style.color = "var(--lemon)";
+      badgeVal.style.background = "rgba(253,241,187,0.1)";
+      badgeVal.style.borderColor = "rgba(253,241,187,0.2)";
+
+      if (roi >= 3) {
+        if (badgeExtra) {
+          badgeExtra.textContent = `Ogni €1 investito ne genera ${roi}`;
+        }
       } else {
-        badgeVal.style.color = "var(--lemon)";
-        badgeVal.style.background = "rgba(253,241,187,0.1)";
-        badgeVal.style.borderColor = "rgba(253,241,187,0.2)";
+        if (badgeExtra) badgeExtra.textContent = "";
       }
     }
   }
 
-  // Event Listeners Value
-  btnValore.forEach(b => {
+  btnFatturato.forEach(b => {
     b.addEventListener('click', (e) => {
-      btnValore.forEach(x => x.classList.remove('active'));
-      e.target.classList.add('active');
-      valCLV = parseInt(e.target.getAttribute('data-valore'));
+      btnFatturato.forEach(x => x.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+      valFatturato = parseInt(e.currentTarget.getAttribute('data-fatturato'));
       doCalculate(true);
     });
   });
 
-  // Event Listeners Numero Clienti
-  btnClienti.forEach(b => {
-    b.addEventListener('click', (e) => {
-      btnClienti.forEach(x => x.classList.remove('active'));
-      e.target.classList.add('active');
-      valNum = parseInt(e.target.getAttribute('data-clienti'));
-      doCalculate(true);
-    });
-  });
-
+  // Mostra risultato immediatamente
+  doCalculate();
 });

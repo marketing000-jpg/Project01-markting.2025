@@ -16,6 +16,10 @@
   <meta name="geo.position" content="41.9907;12.7173" />
   <meta name="ICBM" content="41.9907, 12.7173" />
   <link rel="canonical" href="https://guidoniamarketing.agency/" />
+  <!-- Favicons for search engines -->
+  <link rel="icon" type="image/png" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.png?v=9">
+  <link rel="apple-touch-icon" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.png?v=9">
+  <link rel="shortcut icon" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.png?v=9">
   <meta property="og:title" content="Agenzia Marketing Guidonia Montecelio | SEO Locale e Social Media per PMI" />
   <meta property="og:description"
     content="Portiamo la tua attività in prima pagina su Google a Guidonia, Tivoli e Roma Est. SEO locale, social media, branding. Consulenza gratuita." />
@@ -34,7 +38,7 @@
     "image": "https://guidoniamarketing.agency/og-image.jpg",
     "description": "Agenzia di marketing locale a Guidonia Montecelio. Specializzata in SEO locale, Social Media Marketing e Branding per piccole e medie imprese della zona di Guidonia, Tivoli e Roma Est.",
     "telephone": "+39 334 787 1260",
-    "email": "ciao@guidoniamarketing.agency",
+    "email": "guidoniamarketing@gmail.com",
     "priceRange": "€€",
     "address": {
       "@type": "PostalAddress",
@@ -171,7 +175,6 @@
     <link rel="stylesheet" href="assets/css/animations.css" />
   </noscript>
 
-  <link rel="icon" type="image/png" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.png?v=9">
   <!-- Preload logo: visible immediately in header -->
   <link rel="preload" as="image" href="assets/img/logo/guidonia_marketing_logo_v9.png" />
   <!-- Critical CSS inline: prevents white flash while main.css loads -->
@@ -385,14 +388,20 @@
         <span>SOCIAL MEDIA BRANDING DESIGN MARKETING SEO SOCIAL MEDIA BRANDING DESIGN MARKETING SEO SOCIAL MEDIA
           BRANDING DESIGN MARKETING SEO SOCIAL MEDIA</span>
       </div>
-      <div class="radar-ring"></div>
-      <div class="radar-ring"></div>
-      <div class="radar-ring"></div>
-      <div class="hero-r-dot"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-n">94%</div>
-        <div class="hero-stat-line"></div>
-        <div class="hero-stat-l">Dei clienti trovano<br>la tua attività su Google</div>
+
+      <div class="hero-r-content">
+        <!-- Liquid Glass Video Card -->
+        <div class="hero-video-wrap reveal">
+          <div class="liquid-glass-card">
+            <video src="assets/video/hero%20video%20guidonia.webm" autoplay loop muted playsinline preload="metadata"
+              poster="assets/img/hero-video-poster.jpg"></video>
+          </div>
+          <!-- Radar rings moved here for better context -->
+          <div class="radar-ring"></div>
+          <div class="radar-ring"></div>
+          <div class="radar-ring"></div>
+          <div class="hero-r-dot"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -789,17 +798,14 @@
       <p class="body-txt">Radicati nel territorio tra Guidonia, Tivoli e Roma Est, conosciamo il tuo mercato meglio di
         chiunque altro. Il SEO locale è la nostra specialità.</p>
     </div>
-    <div class="stats reveal d2">
-      <div class="stat-card">
-        <div class="stat-n">+340%</div>
-        <div class="stat-label">Traffico organico medio nei primi 6 mesi</div>
+    <div class="intro-img-wrap reveal d2">
+      <div class="liquid-glass-card">
+        <img src="assets/img/foto/Guidonia_Marketing_agency_foto.png" alt="Staff Guidonia Marketing Agency">
       </div>
-      <div class="stat-card">
-        <div class="stat-n">3.2×</div>
-        <div class="stat-label">Più richieste senza aumentare il budget</div>
-      </div>
-      <p class="stats-footnote" style="font-size: 0.8rem; grid-column: 1 / -1; margin-top: 1rem;">*Media
-        sui clienti attivi nei primi 6 mesi — dati interni 2025.</p>
+      <!-- Decorative rings as used in hero -->
+      <div class="radar-ring"></div>
+      <div class="radar-ring"></div>
+      <div class="hero-r-dot"></div>
     </div>
   </section>
 
@@ -1085,35 +1091,32 @@
     <div class="roi-container">
       <div class="roi-left reveal">
         <div class="roi-eyebrow">CALCOLATORE ROI</div>
-        <h2 class="roi-h2">Quanto vale un <em>cliente</em><br>per la tua attività?</h2>
-        <p class="roi-desc">Scopri il ritorno reale<br>che puoi ottenere con SEO locale.</p>
+        <h2 class="roi-h2">Quanto ti costa<br>non farsi trovare?</h2>
+        <p class="roi-desc">Ogni mese senza SEO locale<br>è fatturato che va ai tuoi competitor.</p>
         <div class="roi-line"></div>
       </div>
 
       <div class="roi-right reveal d1">
-        <div class="roi-label">Qual è il valore medio di un tuo cliente?</div>
-        <div class="roi-options" id="roiValoreContainer">
-          <button class="roi-btn" data-valore="50">€50</button>
-          <button class="roi-btn active" data-valore="200">€200</button>
-          <button class="roi-btn" data-valore="500">€500</button>
-          <button class="roi-btn" data-valore="1000">€1.000+</button>
-        </div>
-
-        <div class="roi-label" style="margin-top: 32px;">Quanti clienti in più vuoi al mese?</div>
-        <div class="roi-options" id="roiClientiContainer">
-          <button class="roi-btn" data-clienti="5">5</button>
-          <button class="roi-btn active" data-clienti="10">10</button>
-          <button class="roi-btn" data-clienti="20">20</button>
-          <button class="roi-btn" data-clienti="50">50</button>
+        <div class="roi-label">Qual è il fatturato mensile della tua attività?</div>
+        <div class="roi-options" id="roiFatturatoContainer">
+          <button class="roi-btn" data-fatturato="1000">€0–2K</button>
+          <button class="roi-btn active" data-fatturato="3500">€2K–5K</button>
+          <button class="roi-btn" data-fatturato="10000">€5K–15K</button>
+          <button class="roi-btn" data-fatturato="20000">€15K+</button>
         </div>
 
         <div class="roi-separator"></div>
 
-        <div class="roi-res-small">Con SEO locale potresti guadagnare</div>
-        <div class="roi-res-val" id="roiRisultato">€ 800 / mese in più</div>
-        <div class="roi-res-sub">con un investimento di €500/mese</div>
+        <div class="roi-res-small" id="roiResSmall">Con SEO locale nei primi 6 mesi aggiungi mediamente al tuo fatturato
+        </div>
+        <div class="roi-res-val" id="roiRisultato">€ 0</div>
+        <div class="roi-res-sub" id="roiRisultatoNetto">con un investimento di €500/mese</div>
 
-        <div class="roi-badge" id="roiBadge">ROI stimato: 1.6×</div>
+        <div class="roi-badge-wrap" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <div class="roi-badge" id="roiBadge">ROI stimato: 1.6×</div>
+          <div class="roi-badge-extra" id="roiBadgeExtra"
+            style="font-family: var(--fb); font-weight: 300; font-size: 13px; color: var(--lemon); opacity: 0.7;"></div>
+        </div>
 
         <button class="roi-cta"
           onclick="document.getElementById('contatti').scrollIntoView({behavior: 'smooth'})">VOGLIO QUESTI RISULTATI
@@ -1377,7 +1380,7 @@
           Tivoli e Roma Est.</p>
         <address class="foot-address">
           <a href="tel:+393347871260">📞 334 787 1260</a><br>
-          <a href="mailto:ciao@guidoniamarketing.agency">✉ ciao@guidoniamarketing.agency</a><br>
+          <a href="mailto:guidoniamarketing@gmail.com">✉ guidoniamarketing@gmail.com</a><br>
           <span>📍 Guidonia Montecelio, RM 00012</span>
         </address>
       </div>
