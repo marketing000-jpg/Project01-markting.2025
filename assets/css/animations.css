@@ -99,14 +99,14 @@
         width: 10px;
         height: 10px;
         opacity: 0.7;
-        border-color: rgba(244, 241, 225, 0.5);
+        border-color: rgba(242, 239, 228, 0.5);
     }
 
     100% {
         width: 500px;
         height: 500px;
         opacity: 0;
-        border-color: rgba(244, 241, 225, 0);
+        border-color: rgba(242, 239, 228, 0);
     }
 }
 
@@ -130,15 +130,15 @@
 /* ─── TERRITORY PIN PING ─────────────────────────────────────── */
 @keyframes ping {
     0% {
-        box-shadow: 0 0 0 0 rgba(245, 239, 160, 0.5);
+        box-shadow: 0 0 0 0 rgba(253, 241, 187, 0.5);
     }
 
     70% {
-        box-shadow: 0 0 0 10px rgba(245, 239, 160, 0);
+        box-shadow: 0 0 0 10px rgba(253, 241, 187, 0);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(245, 239, 160, 0);
+        box-shadow: 0 0 0 0 rgba(253, 241, 187, 0);
     }
 }
 

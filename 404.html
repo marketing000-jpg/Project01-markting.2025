@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pagina non trovata | Guidonia Marketing</title>
     <meta name="robots" content="noindex, follow" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/main.css?v=2" />
-    <link rel="stylesheet" href="assets/css/animations.css" />
+      <!-- Fonts: non-blocking -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    onload="this.rel='stylesheet'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  </noscript>
+  <link rel="stylesheet" href="assets/css/main.css?v=3" />
+  <link rel="preload" as="style" href="assets/css/animations.css"
+    onload="this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="assets/css/animations.css" /></noscript>
     <style>
         .error-404 {
             min-height: 100vh;
@@ -32,23 +38,16 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 8rem;
             font-style: italic;
-            color: var(--bordeaux);
+            color: var(--blush-dark);
             line-height: 1;
             margin-bottom: 1rem;
             opacity: 0.1;
         }
     </style>
 
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "vl0pnjjkb8");
-    </script>
+    
 
-  <link rel="icon" type="image/png" href="assets/img/logo/GUIDONIA_MARKETING_AGENCY_LOGO.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.png?v=9">
 </head>
 
 <body>
@@ -56,7 +55,7 @@
     <div class="cursor-ring" id="curR"></div>
 
     <header id="hdr">
-        <a href="index.html" class="logo" style="display: inline-flex; align-items: center;"><img src="assets/img/logo/GUIDONIA_MARKETING_AGENCY_LOGO.png" alt="Guidonia Marketing Logo" class="brand-logo" style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;">Guidonia <em>Marketing</em></a>
+        <a href="index.html" class="logo" style="display: inline-flex; align-items: center;"><img src="assets/img/logo/guidonia_marketing_logo_v9.png" alt="Guidonia Marketing Logo" class="brand-logo" style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;" loading="lazy">Guidonia <em>Marketing</em></a>
         <nav>
             <a href="index.html#servizi">Servizi</a>
             <a href="contatti.html" class="btn-nav">Inizia ora</a>
@@ -78,6 +77,17 @@
     </main>
 
     <script src="assets/js/main.js"></script>
+  <!-- Microsoft Clarity: deferred -->
+  <script>
+    window.addEventListener('load', function() {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vl0pnjjkb8");
+    });
+  </script>
+
 </body>
 
 </html>

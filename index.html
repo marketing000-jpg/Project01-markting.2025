@@ -30,10 +30,10 @@
     "@type": "MarketingAgency",
     "name": "Guidonia Marketing",
     "url": "https://guidoniamarketing.agency",
-    "logo": "https://guidoniamarketing.agency/assets/img/logo/GUIDONIA_MARKETING_AGENCY_LOGO.png",
+    "logo": "https://guidoniamarketing.agency/assets/img/logo/guidonia_marketing_logo_v9.png",
     "image": "https://guidoniamarketing.agency/og-image.jpg",
     "description": "Agenzia di marketing locale a Guidonia Montecelio. Specializzata in SEO locale, Social Media Marketing e Branding per piccole e medie imprese della zona di Guidonia, Tivoli e Roma Est.",
-    "telephone": "+39-06-0000-0000",
+    "telephone": "+39 334 787 1260",
     "email": "ciao@guidoniamarketing.agency",
     "priceRange": "€€",
     "address": {
@@ -152,25 +152,99 @@
   }
   </script>
 
+  <!-- Fonts: non-blocking load, avoids render-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/main.css?v=2" />
-  <link rel="stylesheet" href="assets/css/animations.css" />
+  <!-- Load fonts async – media trick prevents render-blocking -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    onload="this.rel='stylesheet'" />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+  </noscript>
+  <link rel="stylesheet" href="assets/css/main.css?v=3" />
+  <!-- Animations CSS deferred — non-critical -->
+  <link rel="preload" as="style" href="assets/css/animations.css" onload="this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/animations.css" />
+  </noscript>
 
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "vl0pnjjkb8");
-  </script>
+  <link rel="icon" type="image/png" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.png?v=9">
+  <!-- Preload logo: visible immediately in header -->
+  <link rel="preload" as="image" href="assets/img/logo/guidonia_marketing_logo_v9.png" />
+  <!-- Critical CSS inline: prevents white flash while main.css loads -->
+  <style>
+    :root {
+      --cream: #f2efe4;
+      --choco: #4d3735;
+      --choco-light: #654836;
+      --olive: #9ea66b;
+      --blush-dark: #d8a2ae;
+      --metodo-color: var(--lemon);
+    }
 
-  <link rel="icon" type="image/png" href="assets/img/logo/GUIDONIA_MARKETING_AGENCY_LOGO.png">
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: clamp(15px, 1.1vw, 17px)
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--choco);
+      font-family: sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+      cursor: none
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2000;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background: rgba(242, 239, 228, .4);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px)
+    }
+
+    .brand-logo {
+      height: 38px;
+      width: auto;
+      border-radius: 4px
+    }
+
+    .hero {
+      min-height: calc(100vh - 385px);
+      max-height: 980px;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      overflow: hidden
+    }
+
+    .hero-l {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 4rem;
+      background-color: #c1d7e9
+    }
+  </style>
 </head>
 
 <body>
@@ -190,8 +264,11 @@
 
   <!-- ══ HEADER ══════════════════════════════════════════════════════ -->
   <header id="hdr">
-    <a href="index.html" class="logo" style="display: inline-flex; align-items: center;"><img src="assets/img/logo/GUIDONIA_MARKETING_AGENCY_LOGO.png"
-        alt="Guidonia Marketing Logo" class="brand-logo" style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;">Guidonia <em>Marketing</em></a>
+    <a href="index.html" class="logo" style="display: inline-flex; align-items: center;"><img
+        src="assets/img/logo/guidonia_marketing_logo_v9.png" alt="Guidonia Marketing Logo" class="brand-logo" width="38"
+        height="38" fetchpriority="high"
+        style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;">Guidonia
+      <em>Marketing</em></a>
     <nav class="nav-desktop">
       <a href="servizi.html">Servizi</a>
       <a href="case-studies.html">Risultati</a>
@@ -356,35 +433,40 @@
 
       <button class="story-item" id="story-btn-0" data-category="0" aria-label="Social Media">
         <div class="story-ring story-ring-1">
-          <div class="story-inner"><span class="story-icon">▶</span></div>
+          <div class="story-inner"><img src="assets/img/stories/icon_social_media.png" alt="Social Media"
+              class="story-img"></div>
         </div>
         <span class="story-label">Social Media</span>
       </button>
 
       <button class="story-item" id="story-btn-1" data-category="1" aria-label="SEO Locale">
         <div class="story-ring story-ring-2">
-          <div class="story-inner"><span class="story-icon jost">SEO</span></div>
+          <div class="story-inner"><img src="assets/img/stories/icon_seo_locale.png" alt="SEO Locale" class="story-img">
+          </div>
         </div>
         <span class="story-label">SEO Locale</span>
       </button>
 
       <button class="story-item" id="story-btn-2" data-category="2" aria-label="Branding">
         <div class="story-ring story-ring-3">
-          <div class="story-inner"><span class="story-icon serif-b">B</span></div>
+          <div class="story-inner"><img src="assets/img/stories/icon_branding.png" alt="Branding" class="story-img">
+          </div>
         </div>
         <span class="story-label">Branding</span>
       </button>
 
       <button class="story-item" id="story-btn-3" data-category="3" aria-label="Google Maps">
         <div class="story-ring story-ring-4">
-          <div class="story-inner"><span class="story-icon jost-sm">GMB</span></div>
+          <div class="story-inner"><img src="assets/img/stories/icon_google_maps.png" alt="Google Maps"
+              class="story-img"></div>
         </div>
         <span class="story-label">Google Maps</span>
       </button>
 
       <button class="story-item" id="story-btn-4" data-category="4" aria-label="Risultati">
         <div class="story-ring story-ring-5">
-          <div class="story-inner"><span class="story-icon star">★</span></div>
+          <div class="story-inner"><img src="assets/img/stories/icon_risultati.png" alt="Risultati" class="story-img">
+          </div>
         </div>
         <span class="story-label">Risultati</span>
       </button>
@@ -721,31 +803,7 @@
     </div>
   </section>
 
-  <!-- ══ TESTIMONIALS ══════════════════════════════════════════════ -->
-  <section class="testi" id="testimonianze">
-    <p class="label reveal">Cosa dicono i clienti</p>
-    <h2 class="h2 reveal d1">Risultati <em>reali.</em></h2>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <p class="testi-txt">In sei mesi siamo passati dalla terza pagina di Google alla prima. Le prenotazioni sono
-          aumentate del 60% senza spendere un euro in pubblicità.</p>
-        <div class="testi-auth">Laura B.</div>
-        <div class="testi-role">Osteria Al Borgo · Guidonia Montecelio</div>
-      </div>
-      <div class="testi-card reveal d1">
-        <p class="testi-txt">Finalmente un'agenzia che capisce la realtà di una piccola impresa. Parlano la nostra
-          lingua e portano clienti veri, non solo like.</p>
-        <div class="testi-auth">Marco T.</div>
-        <div class="testi-role">Studio Dentistico Tiburtini · Tivoli</div>
-      </div>
-      <div class="testi-card reveal d2">
-        <p class="testi-txt">Il rebranding ha trasformato il modo in cui i clienti ci percepiscono. Ora siamo
-          riconoscibili e coerenti su tutti i canali. Più chiamate, più lavoro.</p>
-        <div class="testi-auth">Giulia M.</div>
-        <div class="testi-role">Atelier Giulia · Roma Est</div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- ══ TERRITORY ═══════════════════════════════════════════════════ -->
   <section class="territory" id="territorio">
@@ -777,37 +835,250 @@
     </div>
   </section>
 
-  <!-- ══ PROCESS ═════════════════════════════════════════════════════ -->
-  <section class="process" id="processo">
-    <p class="label reveal">Come lavoriamo</p>
-    <h2 class="h2 reveal d1">Un metodo <em>semplice.</em><br>Risultati concreti.</h2>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-n">— 01</div>
-        <h3 class="step-t">Ascolto</h3>
-        <p class="step-d">Partiamo da te: il tuo business a Guidonia o Roma Est, i tuoi clienti ideali, i tuoi
-          obiettivi. Nessun template. Solo strategia su misura.</p>
+  <!-- ══ METODO WHEEL ══════════════════════════════════════════════════ -->
+  <section id="metodo" class="reveal">
+    <div class="metodo-container">
+
+      <!-- CONTENUTI (TOP) -->
+      <div class="metodo-content">
+        <div class="metodo-eyebrow">Il nostro metodo</div>
+        <div id="metodoStepContent" class="metodo-step-box">
+          <!-- Dinamico via JS -->
+        </div>
+
+        <!-- NAV DOTS -->
+        <div class="metodo-nav">
+          <div class="metodo-dot active" data-step="0">
+            <div class="dot-progress"></div>
+          </div>
+          <div class="metodo-dot" data-step="1">
+            <div class="dot-progress"></div>
+          </div>
+          <div class="metodo-dot" data-step="2">
+            <div class="dot-progress"></div>
+          </div>
+          <div class="metodo-dot" data-step="3">
+            <div class="dot-progress"></div>
+          </div>
+        </div>
       </div>
-      <div class="step reveal d1">
-        <div class="step-n">— 02</div>
-        <h3 class="step-t">Analisi</h3>
-        <p class="step-d">Studiamo il territorio, i competitor locali di Guidonia e Tivoli, le keyword che portano
-          clienti pronti ad acquistare nella tua zona.</p>
+
+      <!-- AREA GRAFICA (BOTTOM) -->
+      <div class="metodo-graph-area">
+        <svg class="graph-svg" viewBox="0 0 1200 400">
+          <defs>
+            <linearGradient id="graphGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="var(--metodo-color)" stop-opacity="0.9" />
+              <stop offset="100%" stop-color="var(--metodo-color)" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+
+          <!-- L'area gialla che cresce -->
+          <path id="graphFill" class="graph-fill"
+            d="M0,400 L0,320 C240,320 360,330 480,320 C660,300 780,150 900,140 C1020,130 1080,110 1200,100 L1200,400 Z"
+            fill="url(#graphGradient)" />
+
+          <!-- La linea del grafico -->
+          <path id="graphLine" class="graph-line"
+            d="M0,320 C240,320 360,330 480,320 C660,300 780,150 900,140 C1020,130 1080,110 1200,100" />
+
+          <!-- Punti sul grafico -->
+          <circle class="graph-point" data-step="0" cx="120" cy="320" />
+          <circle class="graph-point" data-step="1" cx="480" cy="320" />
+          <circle class="graph-point" data-step="2" cx="900" cy="140" />
+          <circle class="graph-point" data-step="3" cx="1140" cy="105" />
+        </svg>
+
+        <!-- I nodi ora sono tooltips posizionati sui puntos -->
+        <div class="metodo-nodo" data-step="0" style="left: 10%; top: 80%;">
+          <span class="nodo-numero">01</span>
+          <span class="nodo-label">Ascolto</span>
+        </div>
+        <div class="metodo-nodo" data-step="1" style="left: 40%; top: 80%;">
+          <span class="nodo-numero">02</span>
+          <span class="nodo-label">Analisi</span>
+        </div>
+        <div class="metodo-nodo" data-step="2" style="left: 75%; top: 35%;">
+          <span class="nodo-numero">03</span>
+          <span class="nodo-label">Costruzione</span>
+        </div>
+        <div class="metodo-nodo" data-step="3" style="left: 95%; top: 26.25%;">
+          <span class="nodo-numero">04</span>
+          <span class="nodo-label">Crescita</span>
+        </div>
       </div>
-      <div class="step reveal d2">
-        <div class="step-n">— 03</div>
-        <h3 class="step-t">Costruzione</h3>
-        <p class="step-d">Creiamo contenuti SEO-ottimizzati, ottimizziamo la presenza online, impostiamo i canali. Tutto
-          con cura artigianale, non industriale.</p>
-      </div>
-      <div class="step reveal d3">
-        <div class="step-n">— 04</div>
-        <h3 class="step-t">Crescita</h3>
-        <p class="step-d">Monitoriamo, ottimizziamo, scaliamo. I risultati si misurano in clienti reali e fatturato —
-          non in numeri su uno schermo.</p>
-      </div>
+
     </div>
   </section>
+
+  <script>
+    const metodoData = [
+      {
+        pill: "Fase 01 — Strategia",
+        title: "L'ascolto è il nostro <em>punto zero.</em>",
+        desc: "Partiamo da te: il tuo business a Guidonia o Roma Est, i tuoi clienti ideali, i tuoi obiettivi reali. Nessun template pre-impostato, solo strategia su misura per la tua zona.",
+        detail: "Personalizzazione <b>100%</b>",
+        color: "#c1d7e9", // Sky
+        glow: "rgba(193, 215, 233, 0.12)"
+      },
+      {
+        pill: "Fase 02 — Intelligence",
+        title: "Analisi profonda del <em>territorio.</em>",
+        desc: "Studiamo i competitor locali di Guidonia, Tivoli e dintorni. Identifichiamo le keyword esatte che portano clienti pronti ad acquistare, non solo traffico genericamente.",
+        detail: "Focus <b>Data-Driven</b>",
+        color: "#d5bdfc", // Pastel Purple
+        glow: "rgba(213, 189, 252, 0.12)"
+      },
+      {
+        pill: "Fase 03 — Execution",
+        title: "Costruzione di valore <em>digitale.</em>",
+        desc: "Creiamo contenuti SEO-ottimizzati e ottimizziamo la tua presenza su Google My Business. Ogni pezzo del puzzle è curato artigianalmente per convertire navigatori in clienti.",
+        detail: "Cura <b>Artigianale</b>",
+        color: "#eccecc", // Blush
+        glow: "rgba(236, 206, 204, 0.12)"
+      },
+      {
+        pill: "Fase 04 — Performance",
+        title: "Crescita e scalata dei <em>risultati.</em>",
+        desc: "Monitoriamo, ottimizziamo e scaliamo. I risultati si misurano in fatturato e nuovi contatti nella sede della tua attività a Guidonia — non sono semplici numeri su uno schermo.",
+        detail: "Successo <b>Misurabile</b>",
+        color: "#9ea66b", // Olive
+        glow: "rgba(158, 166, 107, 0.12)"
+      }
+    ];
+
+    let currentStep = 0;
+    let metodoTimer = null;
+    const stepDuration = 5000;
+    let isAutoPlaying = true;
+
+    function updateMetodo(index) {
+      const data = metodoData[index];
+      const box = document.getElementById('metodoStepContent');
+
+      const rgbValues = [
+        "193, 215, 233", // Step 01
+        "213, 189, 252", // Step 02 (Purple)
+        "236, 206, 204", // Step 03
+        "158, 166, 107"   // Step 04
+      ];
+      const currentRGB = rgbValues[index];
+
+      // Fade out
+      box.classList.add('step-fade-out');
+
+      setTimeout(() => {
+        // Update Content
+        box.innerHTML = `
+          <div class="metodo-pill" style="--nodo-rgb: ${currentRGB}">${data.pill}</div>
+          <h3 class="metodo-h3" style="--nodo-rgb: ${currentRGB}">${data.title}</h3>
+          <p class="metodo-desc">${data.desc}</p>
+          <div class="metodo-sep" style="--nodo-rgb: ${currentRGB}"></div>
+          <div class="metodo-detail"><b>+</b> ${data.detail}</div>
+        `;
+
+        // Update Global Variables
+        document.documentElement.style.setProperty('--nodo-rgb', currentRGB);
+
+        // Update Nodes (Tooltips)
+        document.querySelectorAll('.metodo-nodo').forEach((n, i) => {
+          n.classList.toggle('active', i === index);
+        });
+
+        // Update Points on SVG
+        document.querySelectorAll('.graph-point').forEach((p, i) => {
+          const isActive = i <= index;
+          p.classList.toggle('active', isActive);
+          if (isActive) {
+            p.style.stroke = "var(--metodo-color)";
+          }
+        });
+
+        // Update Graph Line Progress
+        const line = document.getElementById('graphLine');
+        const fill = document.getElementById('graphFill');
+        const totalLength = line.getTotalLength();
+
+        // Ensure dasharray matches real length
+        line.style.strokeDasharray = totalLength;
+
+        // Update Colors
+        document.documentElement.style.setProperty('--metodo-color', data.color);
+        line.style.stroke = "var(--metodo-color)";
+
+        // Dynamic fractions for each point (X positions: 120, 480, 900, 1140 out of 1200)
+        const fractions = [120 / 1200, 480 / 1200, 900 / 1200, 1140 / 1200];
+        const currentLength = totalLength * fractions[index];
+        line.style.strokeDashoffset = totalLength - currentLength;
+
+        // Fill follows similar logic with clip-path
+        fill.style.clipPath = `inset(0 ${100 - (fractions[index] * 100)}% 0 0)`;
+
+        // Update Dots
+        document.querySelectorAll('.metodo-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === index);
+          const prog = d.querySelector('.dot-progress');
+          if (prog) prog.style.width = '0%';
+        });
+
+        box.classList.remove('step-fade-out');
+        box.classList.add('step-fade-in');
+        setTimeout(() => box.classList.remove('step-fade-in'), 600);
+      }, 300);
+
+      currentStep = index;
+    }
+
+    function startMetodoAutoplay() {
+      if (!isAutoPlaying) return;
+
+      let startTime = Date.now();
+      clearInterval(metodoTimer);
+
+      metodoTimer = setInterval(() => {
+        const elapsed = Date.now() - startTime;
+        const progress = (elapsed / stepDuration) * 100;
+
+        const activeDot = document.querySelector('.metodo-dot.active .dot-progress');
+        if (activeDot) activeDot.style.width = Math.min(progress, 100) + '%';
+
+        if (elapsed >= stepDuration) {
+          let next = (currentStep + 1) % 4;
+          updateMetodo(next);
+          startTime = Date.now();
+        }
+      }, 50);
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize graph line lengths
+      const line = document.getElementById('graphLine');
+      line.style.strokeDasharray = line.getTotalLength();
+      line.style.strokeDashoffset = line.getTotalLength();
+
+      updateMetodo(0);
+
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && isAutoPlaying) {
+          startMetodoAutoplay();
+        } else {
+          clearInterval(metodoTimer);
+        }
+      }, { threshold: 0.3 });
+
+      observer.observe(document.getElementById('metodo'));
+
+      document.querySelectorAll('.metodo-nodo, .metodo-dot, .graph-point').forEach(el => {
+        el.addEventListener('click', () => {
+          isAutoPlaying = false;
+          clearInterval(metodoTimer);
+          document.querySelectorAll('.dot-progress').forEach(p => p.style.width = '0%');
+          updateMetodo(parseInt(el.dataset.step));
+        });
+      });
+    });
+  </script>
 
   <!-- ══ ROI CALCULATOR ══════════════════════════════════════════════ -->
   <section class="reveal" id="calcolatore-roi">
@@ -978,6 +1249,33 @@
     </div>
   </section>
 
+
+  <!-- ══ TESTIMONIALS ══════════════════════════════════════════════ -->
+  <section class="testi" id="testimonianze">
+    <p class="label reveal">Cosa dicono i clienti</p>
+    <h2 class="h2 reveal d1">Risultati <em>reali.</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-txt">In sei mesi siamo passati dalla terza pagina di Google alla prima. Le prenotazioni sono
+          aumentate del 60% senza spendere un euro in pubblicità.</p>
+        <div class="testi-auth">Laura B.</div>
+        <div class="testi-role">Osteria Al Borgo · Guidonia Montecelio</div>
+      </div>
+      <div class="testi-card reveal d1">
+        <p class="testi-txt">Finalmente un'agenzia che capisce la realtà di una piccola impresa. Parlano la nostra
+          lingua e portano clienti veri, non solo like.</p>
+        <div class="testi-auth">Marco T.</div>
+        <div class="testi-role">Studio Dentistico Tiburtini · Tivoli</div>
+      </div>
+      <div class="testi-card reveal d2">
+        <p class="testi-txt">Il rebranding ha trasformato il modo in cui i clienti ci percepiscono. Ora siamo
+          riconoscibili e coerenti su tutti i canali. Più chiamate, più lavoro.</p>
+        <div class="testi-auth">Giulia M.</div>
+        <div class="testi-role">Atelier Giulia · Roma Est</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ FAQ ═══════════════════════════════════════════════════════════ -->
   <section class="faq-section" id="faq">
     <div class="faq-inner">
@@ -1070,12 +1368,15 @@
   <footer>
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="index.html" class="logo" style="display: inline-flex; align-items: center;"><img src="assets/img/logo/GUIDONIA_MARKETING_AGENCY_LOGO.png"
-            alt="Guidonia Marketing Logo" class="brand-logo" style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;">Guidonia <em>Marketing</em></a>
+        <a href="index.html" class="logo" style="display: inline-flex; align-items: center;"><img
+            src="assets/img/logo/guidonia_marketing_logo_v9.png" alt="Guidonia Marketing Logo" class="brand-logo"
+            style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;"
+            loading="lazy">Guidonia
+          <em>Marketing</em></a>
         <p>Agenzia di marketing locale specializzata in SEO, Social Media e Branding per le PMI di Guidonia Montecelio,
           Tivoli e Roma Est.</p>
         <address class="foot-address">
-          <a href="tel:+390600000000">📞 06 0000 0000</a><br>
+          <a href="tel:+393347871260">📞 334 787 1260</a><br>
           <a href="mailto:ciao@guidoniamarketing.agency">✉ ciao@guidoniamarketing.agency</a><br>
           <span>📍 Guidonia Montecelio, RM 00012</span>
         </address>
@@ -1129,10 +1430,10 @@
       const CATEGORIES = [
         {
           name: 'Social Media',
-          avatarBg: 'linear-gradient(135deg,#4A1228,#F2C8C4)',
+          avatarBg: 'linear-gradient(135deg,#d8a2ae,#eccecc)',
           slides: [
             {
-              bg: 'linear-gradient(160deg,#4A1228 0%,#E91E8C 60%,#F2C8C4 100%)',
+              bg: 'linear-gradient(160deg,#d8a2ae 0%,#d8a2ae 60%,#eccecc 100%)',
               photo: 'assets/img/stories/Social Media_guidonia_marketing_agency_1.png?v=3',
               title: 'Trasformiamo follower in clienti.',
               desc: 'Strategia editoriale mensile, gestione di Instagram, Facebook e TikTok. Contenuti che parlano ai tuoi clienti di Guidonia e Roma Est.',
@@ -1144,7 +1445,7 @@
               ]
             },
             {
-              bg: 'linear-gradient(160deg,#E91E8C 0%,#4A1228 100%)',
+              bg: 'linear-gradient(160deg,#d8a2ae 0%,#d8a2ae 100%)',
               photo: 'assets/img/stories/Social Media_guidonia_marketing_agency_2.png?v=3',
               title: 'Content che converte, ogni giorno.',
               desc: 'Non post generici. Contenuti studiati per il tuo pubblico locale.',
@@ -1159,10 +1460,10 @@
         },
         {
           name: 'SEO Locale',
-          avatarBg: 'linear-gradient(135deg,#7A9444,#F5EFA0)',
+          avatarBg: 'linear-gradient(135deg,#9ea66b,#fdf1bb)',
           slides: [
             {
-              bg: 'linear-gradient(160deg,#2E4A0E 0%,#7A9444 50%,#F5EFA0 100%)',
+              bg: 'linear-gradient(160deg,#4d3735 0%,#9ea66b 50%,#fdf1bb 100%)',
               photo: 'assets/img/stories/SEO_LOCALE_guidonia_marketing_agency_1.png?v=3',
               title: 'Prima pagina Google. Senza pagare un click.',
               desc: 'SEO locale per le ricerche che contano nella tua zona. Keyword reali, ottimizzazione GMB, contenuti che rankano.',
@@ -1174,7 +1475,7 @@
               ]
             },
             {
-              bg: 'linear-gradient(160deg,#7A9444 0%,#2E4A0E 100%)',
+              bg: 'linear-gradient(160deg,#9ea66b 0%,#4d3735 100%)',
               photo: 'assets/img/stories/SEO_Locale_guidonia_marketing_agency_2.png?v=3',
               title: 'Le keyword giuste per Guidonia.',
               desc: 'Sappiamo esattamente come cercano i tuoi clienti: keyword locali che portano visite reali, non traffico generico.',
@@ -1186,7 +1487,7 @@
               ]
             },
             {
-              bg: 'linear-gradient(160deg,#2E4A0E 0%,#7A9444 50%,#F5EFA0 100%)',
+              bg: 'linear-gradient(160deg,#4d3735 0%,#9ea66b 50%,#fdf1bb 100%)',
               photo: 'assets/img/stories/SEO_Locale_guidonia_marketing_agency_3.png?v=3',
               title: 'Ottimizzazione on-page mirata.',
               desc: 'Ristrutturiamo il sito per piacere sia ai tuoi clienti che a Google.',
@@ -1198,7 +1499,7 @@
               ]
             },
             {
-              bg: 'linear-gradient(160deg,#7A9444 0%,#2E4A0E 100%)',
+              bg: 'linear-gradient(160deg,#9ea66b 0%,#4d3735 100%)',
               photo: 'assets/img/stories/SEO_LOCALE_guidonia_marketing_agency_4.png?v=3',
               title: 'Contenuti che si posizionano.',
               desc: 'Creiamo testi che rispondono alle domande dei tuoi clienti.',
@@ -1213,10 +1514,10 @@
         },
         {
           name: 'Branding',
-          avatarBg: 'linear-gradient(135deg,#2E1A1A,#4A1228)',
+          avatarBg: 'linear-gradient(135deg,#4d3735,#d8a2ae)',
           slides: [
             {
-              bg: 'linear-gradient(160deg,#1A0E0E 0%,#4A1228 60%,#6B4040 100%)',
+              bg: 'linear-gradient(160deg,#4d3735 0%,#d8a2ae 60%,#654836 100%)',
               photo: 'assets/img/stories/Branding_identità_guidonia_marketing_agency_1.png?v=3',
               title: 'Un\'identità che si riconosce al primo sguardo.',
               desc: 'Logo, palette, tono di voce — costruiti attorno a ciò che rende unica la tua impresa nel territorio di Guidonia e Roma.',
@@ -1228,7 +1529,7 @@
               ]
             },
             {
-              bg: 'linear-gradient(160deg,#4A1228 0%,#2E1A1A 100%)',
+              bg: 'linear-gradient(160deg,#d8a2ae 0%,#4d3735 100%)',
               photo: 'assets/img/stories/Branding_identità_guidonia_marketing_agency_2.png?v=3',
               title: 'I clienti scelgono chi riconoscono.',
               desc: 'Un brand coerente su tutti i canali vale più di qualsiasi campagna. Costruiamo un\'identità che parla al cliente.',
@@ -1240,7 +1541,7 @@
               ]
             },
             {
-              bg: 'linear-gradient(160deg,#1A0E0E 0%,#4A1228 60%,#6B4040 100%)',
+              bg: 'linear-gradient(160deg,#4d3735 0%,#d8a2ae 60%,#654836 100%)',
               photo: 'assets/img/stories/Branding_identità_guidonia_marketing_agency_3.png?v=3',
               title: 'Design che fa la differenza.',
               desc: 'Dai biglietti da visita al sito web, creiamo un look coerente e professionale attrattivo.',
@@ -1252,7 +1553,7 @@
               ]
             },
             {
-              bg: 'linear-gradient(160deg,#4A1228 0%,#2E1A1A 100%)',
+              bg: 'linear-gradient(160deg,#d8a2ae 0%,#4d3735 100%)',
               photo: 'assets/img/stories/Branding_identità_guidonia_marketing_agency_4.png?v=3',
               title: 'Tono di voce e personalità.',
               desc: 'Definiamo come la tua azienda deve rivolgersi al pubblico per instaurare autorevolezza.',
@@ -1264,7 +1565,7 @@
               ]
             },
             {
-              bg: 'linear-gradient(160deg,#1A0E0E 0%,#4A1228 60%,#6B4040 100%)',
+              bg: 'linear-gradient(160deg,#4d3735 0%,#d8a2ae 60%,#654836 100%)',
               photo: 'assets/img/stories/Branding_identità_guidonia_marketing_agency_5.png?v=3',
               title: 'Materializziamo la tua visione.',
               desc: 'Trasformiamo i tuoi obiettivi aziendali in un marchio solido, distintivo e memorabile.',
@@ -1279,10 +1580,10 @@
         },
         {
           name: 'Google Maps',
-          avatarBg: 'linear-gradient(135deg,#AECDE1,#ffffff)',
+          avatarBg: 'linear-gradient(135deg,#c1d7e9,#f2efe4)',
           slides: [
             {
-              bg: 'linear-gradient(160deg,#1A3A5C 0%,#AECDE1 70%,#ffffff 100%)',
+              bg: 'linear-gradient(160deg,#9baec8 0%,#c1d7e9 70%,#f2efe4 100%)',
               photo: 'assets/img/stories/GOOGLE_MAPS_guidonia_marketing_agency_1png.png?v=3',
               title: 'Quando cercano te, ti trovano.',
               desc: 'Ottimizzazione completa della scheda Google My Business. Categorie, foto, recensioni, post settimanali. Il local pack di Guidonia vale più di qualsiasi ads.',
@@ -1294,7 +1595,7 @@
               ]
             },
             {
-              bg: 'linear-gradient(160deg,#AECDE1 0%,#1A3A5C 100%)',
+              bg: 'linear-gradient(160deg,#c1d7e9 0%,#9baec8 100%)',
               photo: '',
               title: 'Gestione recensioni che costruisce fiducia.',
               desc: 'Ogni recensione è strategia. Rispondiamo professionalmente a ogni feedback, costruiamo una reputazione solida che convince i nuovi clienti a sceglierti.',
@@ -1309,10 +1610,10 @@
         },
         {
           name: 'Risultati',
-          avatarBg: 'linear-gradient(135deg,#F5EFA0,#7A9444)',
+          avatarBg: 'linear-gradient(135deg,#fdf1bb,#9ea66b)',
           slides: [
             {
-              bg: 'linear-gradient(160deg,#4A3C00 0%,#7A9444 50%,#F5EFA0 100%)',
+              bg: 'linear-gradient(160deg,#9ea66b 0%,#9ea66b 50%,#fdf1bb 100%)',
               photo: '',
               title: 'Numeri reali. Clienti reali.',
               desc: 'Non promettiamo like. Promettiamo clienti, prenotazioni, chiamate, vendite. Report mensile con dati reali — nessun numero nascosto, nessun abbellimento.',
@@ -1324,7 +1625,7 @@
               ]
             },
             {
-              bg: 'linear-gradient(160deg,#7A9444 0%,#F5EFA0 100%)',
+              bg: 'linear-gradient(160deg,#9ea66b 0%,#fdf1bb 100%)',
               photo: '',
               title: 'Crescita che si misura in fatturato.',
               desc: 'Ogni euro investito con noi è tracciato. Sappiamo quanti clienti ha portato ogni campagna. Lavoriamo solo su strategie che producono ritorno verificabile.',
@@ -1605,6 +1906,17 @@
       });
 
     })();
+  </script>
+
+  <!-- Microsoft Clarity: deferred to avoid blocking initial render -->
+  <script>
+    window.addEventListener('load', function () {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vl0pnjjkb8");
+    });
   </script>
 
 </body>

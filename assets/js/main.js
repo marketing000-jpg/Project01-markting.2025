@@ -320,21 +320,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Badge styles based on ROI
     if (roi < 1) {
       badgeVal.textContent = "ROI stimato: in crescita";
-      badgeVal.style.color = "rgba(244,241,225,0.5)";
-      badgeVal.style.background = "rgba(245,239,160,0.05)";
-      badgeVal.style.borderColor = "rgba(245,239,160,0.1)";
+      badgeVal.style.color = "rgba(242,239,228,0.5)";
+      badgeVal.style.background = "rgba(253,241,187,0.05)";
+      badgeVal.style.borderColor = "rgba(253,241,187,0.1)";
     } else {
       let suffix = roi >= 5 ? "× 🔥" : "×";
       badgeVal.textContent = "ROI stimato: " + roi + suffix;
       
       if (roi >= 10) {
-        badgeVal.style.color = "var(--bordeaux)";
-        badgeVal.style.background = "rgba(242, 200, 196, 0.1)";
-        badgeVal.style.borderColor = "var(--bordeaux)";
+        badgeVal.style.color = "var(--blush-dark)";
+        badgeVal.style.background = "rgba(236, 206, 204, 0.1)";
+        badgeVal.style.borderColor = "var(--blush-dark)";
       } else {
         badgeVal.style.color = "var(--lemon)";
-        badgeVal.style.background = "rgba(245,239,160,0.1)";
-        badgeVal.style.borderColor = "rgba(245,239,160,0.2)";
+        badgeVal.style.background = "rgba(253,241,187,0.1)";
+        badgeVal.style.borderColor = "rgba(253,241,187,0.2)";
       }
     }
   }
