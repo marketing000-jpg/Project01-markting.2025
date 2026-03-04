@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agenzia Marketing Guidonia Montecelio | SEO Locale e Social Media per PMI</title>
+  <title>Agenzia Marketing Guidonia Montecelio | SEO, Social Media e Branding</title>
   <meta name="description"
-    content="Portiamo la tua attività in prima pagina su Google a Guidonia, Tivoli e Roma Est. SEO locale, social media, branding. Consulenza gratuita." />
+    content="Agenzia di marketing a Guidonia Montecelio. SEO locale, gestione social media e branding per le piccole imprese di Tivoli e Roma Est. Consulenza gratuita." />
   <meta name="keywords"
-    content="agenzia marketing Guidonia Montecelio, SEO Guidonia, social media marketing Tivoli, branding Roma Est, marketing digitale piccole imprese Guidonia, SEO locale Roma Est, agenzia web Guidonia" />
+    content="agenzia marketing guidonia montecelio, agenzia seo guidonia, gestione social media guidonia, agenzia marketing roma est, marketing piccole imprese guidonia, seo locale roma est, consulente seo guidonia" />
   <meta name="author" content="Guidonia Marketing" />
   <meta name="robots" content="index, follow" />
   <meta name="geo.region" content="IT-RM" />
@@ -71,6 +71,33 @@
       "Google My Business",
       "Content Marketing"
     ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servizi Marketing",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "name": "Gestione Social Media Guidonia",
+          "provider": { "@type": "LocalBusiness", "name": "Guidonia Marketing" },
+          "areaServed": "Guidonia Montecelio",
+          "serviceType": "Social Media Marketing"
+        },
+        {
+          "@type": "Service", 
+          "name": "SEO Locale Guidonia",
+          "provider": { "@type": "LocalBusiness", "name": "Guidonia Marketing" },
+          "areaServed": "Guidonia Montecelio",
+          "serviceType": "SEO"
+        },
+        {
+          "@type": "Service",
+          "name": "Branding Guidonia",
+          "provider": { "@type": "LocalBusiness", "name": "Guidonia Marketing" },
+          "areaServed": "Guidonia Montecelio",
+          "serviceType": "Branding"
+        }
+      ]
+    },
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -150,6 +177,30 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Certo! Puoi scriverci direttamente su WhatsApp cliccando il pulsante verde che trovi sul sito. Rispondiamo solitamente entro poche ore durante l'orario lavorativo (Lun–Ven 9:00–18:00)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Fate gestione social media a Guidonia Montecelio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sì, gestiamo Instagram, Facebook e TikTok per le attività di Guidonia, Tivoli e Roma Est."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto costa la gestione social media mensile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I nostri pacchetti partono da €500/mese e includono SEO locale, social media e report mensile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Lavorate anche con ristoranti e negozi di Guidonia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sì, il nostro focus principale sono ristoranti, negozi, artigiani, studi medici e palestre di Guidonia e Roma Est."
         }
       }
     ]
@@ -233,8 +284,8 @@
     }
 
     .hero {
-      min-height: calc(100vh - 385px);
-      max-height: 980px;
+      min-height: calc(100vh - 100px);
+      max-height: 1200px;
       display: grid;
       grid-template-columns: 55% 45%;
       overflow: hidden
@@ -244,8 +295,36 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 8rem 4rem;
-      background-color: #c1d7e9
+      padding: 8rem 4rem 18rem;
+      background-color: #c1d7e9;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* RESPONSIVE HERO FIXES */
+    @media (max-width: 1200px) {
+      .hero-l {
+        padding: 8rem 4rem 12rem;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        max-height: none;
+        overflow: hidden;
+      }
+
+      .hero-l {
+        padding: 8rem 1.8rem 4rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 1.2rem !important;
+      }
     }
   </style>
 </head>
@@ -336,12 +415,14 @@
         Il tuo business<br>merita di essere<br><em>trovato.</em>
       </h1>
       <p class="hero-p">
-        Portiamo le piccole imprese di Guidonia Montecelio, Tivoli e Roma Est alla prima pagina di Google — con SEO
-        locale, social media e branding. Zero euro in pubblicità pagata.
+        Siamo l'<strong>agenzia marketing Guidonia Montecelio</strong> che porta le piccole imprese, i ristoranti e i
+        negozi di Tivoli e Roma Est alla prima pagina di Google. Con la nostra <strong>agenzia seo guidonia</strong> e
+        la <strong>gestione social media guidonia</strong>, trasformiamo la tua presenza online in fatturato reale. Zero
+        euro in pubblicità pagata.
       </p>
       <div class="hero-ctas">
         <a href="#contatti" class="btn-dark">Parliamo del tuo progetto</a>
-        <a href="#servizi" class="link-ghost">Vedi come lavoriamo <span>→</span></a>
+        <a href="case-studies.html" class="link-ghost">Vedi come lavoriamo <span>→</span></a>
       </div>
     </div>
 
@@ -442,15 +523,16 @@
 
       <button class="story-item" id="story-btn-0" data-category="0" aria-label="Social Media">
         <div class="story-ring story-ring-1">
-          <div class="story-inner"><img src="assets/img/stories/icon_social_media.png" alt="Social Media"
-              class="story-img"></div>
+          <div class="story-inner"><img src="assets/img/stories/icon_social_media.png"
+              alt="gestione social media guidonia" class="story-img"></div>
         </div>
         <span class="story-label">Social Media</span>
       </button>
 
       <button class="story-item" id="story-btn-1" data-category="1" aria-label="SEO Locale">
         <div class="story-ring story-ring-2">
-          <div class="story-inner"><img src="assets/img/stories/icon_seo_locale.png" alt="SEO Locale" class="story-img">
+          <div class="story-inner"><img src="assets/img/stories/icon_seo_locale.png"
+              alt="consulente seo guidonia montecelio" class="story-img">
           </div>
         </div>
         <span class="story-label">SEO Locale</span>
@@ -800,7 +882,7 @@
     </div>
     <div class="intro-img-wrap reveal d2">
       <div class="liquid-glass-card">
-        <img src="assets/img/foto/Guidonia_Marketing_agency_foto.png" alt="Staff Guidonia Marketing Agency">
+        <img src="assets/img/foto/Guidonia_Marketing_agency_foto.png" alt="agenzia marketing guidonia staff">
       </div>
       <!-- Decorative rings as used in hero -->
       <div class="radar-ring"></div>
@@ -1360,6 +1442,36 @@
           <div class="faq-a">
             <p>Certo! Clicca il pulsante verde WhatsApp che trovi sul sito o scrivici direttamente. Rispondiamo
               solitamente <strong>entro poche ore</strong> durante l'orario lavorativo (Lun–Ven 9:00–18:00).</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal d2" id="faq-9">
+          <summary class="faq-q">Fate gestione social media a Guidonia Montecelio?</summary>
+          <div class="faq-a">
+            <p>Sì, siamo specializzati nella <strong>gestione social media guidonia</strong>. Gestiamo Instagram,
+              Facebook e TikTok per le attività di Guidonia, Tivoli e Roma Est, creando contenuti che attirano clienti
+              veri.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal" id="faq-10">
+          <summary class="faq-q">Quanto costa la gestione social media mensile?</summary>
+          <div class="faq-a">
+            <p>I nostri pacchetti di <strong>gestione social media mensile</strong> partono da
+              <strong>€500/mese</strong> e includono SEO locale, social media e report mensili dettagliati per
+              monitorare
+              la crescita.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal d1" id="faq-11">
+          <summary class="faq-q">Lavorate anche con ristoranti e negozi di Guidonia?</summary>
+          <div class="faq-a">
+            <p>Assolutamente sì. Il nostro focus principale come <strong>agenzia marketing guidonia</strong> sono
+              proprio
+              i <strong>ristoranti, i negozi, gli artigiani, gli studi medici</strong> e le palestre di Guidonia e Roma
+              Est che vogliono dominare il mercato locale.</p>
           </div>
         </details>
 

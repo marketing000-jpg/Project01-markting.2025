@@ -213,12 +213,13 @@ header.scrolled {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 8rem 4rem;
-    /* More balanced vertical padding */
+    padding: 8rem 4rem 18rem;
+    /* Large bottom padding on desktop to keep away from marquee */
     background-color: var(--sky);
     background-image: repeating-linear-gradient(90deg, transparent, transparent 45px, rgba(242, 239, 228, .6) 45px, rgba(242, 239, 228, .6) 90px);
     position: relative;
     overflow: visible;
+    z-index: 5;
 }
 
 .sticker {
@@ -255,13 +256,15 @@ header.scrolled {
 
 .hero-h1 {
     font-family: var(--ft);
-    font-size: clamp(3.2rem, 6.8vw, 7.5rem);
+    font-size: clamp(2.8rem, 6.4vw, 7rem);
+    /* Slightly smaller max and min for better fit */
     font-weight: 400;
-    line-height: 0.9;
+    line-height: 0.95;
     color: var(--choco);
     margin-bottom: 2.2rem;
     text-transform: uppercase;
     letter-spacing: -0.04em;
+    word-break: break-word;
 }
 
 .hero-h1 em {
@@ -310,7 +313,17 @@ header.scrolled {
     background: var(--choco);
     padding: 1rem 2.4rem;
     text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    z-index: 10;
     transition: background .3s, transform .2s;
+}
+
+@media (max-width: 480px) {
+    .btn-dark {
+        font-size: 0.72rem;
+        padding: 1rem 1.8rem;
+    }
 }
 
 .btn-dark:hover {
@@ -368,6 +381,7 @@ header.scrolled {
     background: #4d3735;
     position: relative;
     overflow: hidden;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2255,16 +2269,42 @@ footer {
     .hero {
         grid-template-columns: 1fr;
         min-height: auto;
+        max-height: none;
+        overflow: visible;
     }
 
     .hero-l {
-        padding: 8rem 2rem 4rem;
+        padding: 7rem 1.8rem 4rem;
+        /* Balanced mobile padding */
+    }
+
+    .hero-h1 {
+        font-size: clamp(2.4rem, 12vw, 3.8rem);
+        /* Mobile specific font scaling */
+        line-height: 1;
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
     }
 
     .hero-r {
         height: auto;
-        min-height: 480px;
-        padding: 4rem 2rem;
+        min-height: 550px;
+        /* Increased to fit the aspect ratio video better */
+        padding: 4rem 1.8rem 8rem;
+        /* Extra bottom padding for safety */
+        background: var(--choco);
+        /* Ensure background covers the whole area */
+        overflow: hidden;
+        /* Contain background text within the section */
+    }
+
+    .hero-r-text-bg span {
+        font-size: 3.5rem;
+        /* Smaller font on mobile for backround letters */
     }
 
     .hero-sticker-icons {
