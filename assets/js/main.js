@@ -21,9 +21,28 @@ const io = new IntersectionObserver(entries => entries.forEach(e => {
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 const heroVid = document.querySelector('.liquid-glass-card video');
 if (heroVid) {
+  // Explicitly set muted to true to allow autoplay on all browsers
+  heroVid.muted = true;
+  heroVid.defaultMuted = true;
+
+  const startVideo = () => {
+    heroVid.play().catch(err => {
+      console.log("Video play failed:", err);
+      // Fallback for some browsers that require a user interaction even for muted video
+      document.addEventListener('click', () => heroVid.play(), { once: true });
+    });
+  };
+
+  // Play immediately if visible
   const vObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => entry.isIntersecting ? heroVid.play() : heroVid.pause());
-  }, { threshold: 0.1 });
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startVideo();
+        // Once it starts playing, we can stop observing if we don't want to pause it
+        // vObserver.unobserve(heroVid); 
+      }
+    });
+  }, { threshold: 0.01 }); // Very low threshold to start as soon as it appears
   vObserver.observe(heroVid);
 }
 
@@ -359,4 +378,102 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mostra risultato immediatamente
   doCalculate();
+});
+
+/* ─── IPHONE INFINITE CAROUSEL (Mobile) ───────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.querySelector('.phones-grid');
+  if (!grid) return;
+
+  const originalItems = Array.from(grid.querySelectorAll('.phone-wrapper'));
+  if (originalItems.length === 0) return;
+
+  let isCloned = false;
+  let allItems = originalItems;
+
+  function initCarousel() {
+    if (window.innerWidth <= 1180 && !isCloned) {
+      // Clone sets to create infinite scroll illusion
+      // 4 loop sections total: 1 original + 3 cloned
+      for (let i = 0; i < 3; i++) {
+        originalItems.forEach(item => {
+          let clone = item.cloneNode(true);
+          clone.classList.add('mobile-clone');
+          grid.appendChild(clone);
+        });
+      }
+      isCloned = true;
+      allItems = Array.from(grid.querySelectorAll('.phone-wrapper'));
+
+      // Start from the second block to allow scrolling left
+      setTimeout(() => {
+        const gap = parseInt(window.getComputedStyle(grid).gap || 15);
+        const blockWidth = (originalItems[0].offsetWidth + gap) * originalItems.length;
+        grid.scrollTo({ left: blockWidth, behavior: 'instant' });
+        updateFocus();
+      }, 100);
+    }
+  }
+
+  function updateFocus() {
+    if (window.innerWidth > 1180) return;
+    const center = grid.scrollLeft + grid.clientWidth / 2;
+
+    let minDiff = Infinity;
+    let focusedNode = null;
+
+    allItems.forEach(item => {
+      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+      const diff = Math.abs(center - itemCenter);
+      if (diff < minDiff) {
+        minDiff = diff;
+        focusedNode = item;
+      }
+    });
+
+    allItems.forEach(item => {
+      if (item === focusedNode) item.classList.add('focused');
+      else item.classList.remove('focused');
+    });
+  }
+
+  let isJumping = false;
+  grid.addEventListener('scroll', () => {
+    if (window.innerWidth > 1180 || !isCloned || isJumping) return;
+    updateFocus();
+
+    const gap = parseInt(window.getComputedStyle(grid).gap || 15);
+    const blockWidth = (originalItems[0].offsetWidth + gap) * originalItems.length;
+    const sLeft = grid.scrollLeft;
+
+    // Use safe bounds and jump exactly one full block instead of 2 to avoid threshold collisions
+    const thresholdLeft = blockWidth * 0.5;
+    const thresholdRight = blockWidth * 2.5;
+
+    if (sLeft <= thresholdLeft) {
+      isJumping = true;
+      grid.style.scrollSnapType = 'none'; // Disable snap to prevent flicker
+      grid.scrollBy({ left: blockWidth, behavior: 'instant' });
+      setTimeout(() => {
+        grid.style.scrollSnapType = '';
+        isJumping = false;
+      }, 50);
+    } else if (sLeft >= thresholdRight) {
+      isJumping = true;
+      grid.style.scrollSnapType = 'none'; // Disable snap to prevent flicker
+      grid.scrollBy({ left: -blockWidth, behavior: 'instant' });
+      setTimeout(() => {
+        grid.style.scrollSnapType = '';
+        isJumping = false;
+      }, 50);
+    }
+  });
+
+  // Check on resize (useful for dev tools, rarely used on real devices but safe)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1180 && !isCloned) initCarousel();
+    else if (window.innerWidth <= 1180) updateFocus();
+  });
+
+  initCarousel();
 });
