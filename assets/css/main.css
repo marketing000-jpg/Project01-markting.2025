@@ -5,7 +5,7 @@
 
 :root {
     /* BASE */
-    --cream: #f5f1e4;
+    --cream: #e8f0e4;
 
     /* SECONDARI — più luminosi per evitare l'effetto "opaco" */
     --choco: #5c3d3a;
@@ -845,9 +845,7 @@ header.scrolled {
 /* ── PORTFOLIO FOLDER — ARTISTIC REFINEMENT ──────────────────────── */
 .portfolio-section {
     background: #f7f5d5;
-    /* Soft pastel mint cream */
-    padding: 6rem 4rem 10rem 4rem;
-    /* Added bottom padding for rotation space */
+    padding: 6rem 4rem 16rem 4rem;
     overflow: hidden;
 }
 
@@ -2431,28 +2429,50 @@ footer {
 .page-hero {
     min-height: 50vh;
     background-color: var(--sky);
-    background-image: repeating-linear-gradient(90deg, transparent, transparent 45px, rgba(242, 239, 228, .6) 45px, rgba(242, 239, 228, .6) 90px);
+    background-image: none;
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     padding: 12rem 4rem 7rem;
 }
 
+/* Soft noise + radial texture instead of stripes */
+.page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 80% 50%, rgba(255, 255, 255, 0.45) 0%, transparent 65%),
+        radial-gradient(ellipse at 15% 80%, rgba(158, 166, 107, 0.18) 0%, transparent 55%);
+    z-index: 0;
+    pointer-events: none;
+}
+
 .page-hero-inner {
-    max-width: 680px;
+    max-width: 760px;
+    position: relative;
+    z-index: 2;
 }
 
 .page-h1 {
-    font-family: var(--fd);
-    font-size: clamp(2.8rem, 5vw, 5rem);
-    font-weight: 300;
-    line-height: 1.1;
+    font-family: var(--ft);
+    font-size: clamp(3rem, 5.5vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
     color: var(--choco);
     margin-bottom: 1.5rem;
 }
 
 .page-h1 em {
+    font-family: var(--fd);
     font-style: italic;
-    color: var(--blush-dark);
+    text-transform: none;
+    font-weight: 300;
+    color: var(--choco-light);
+    letter-spacing: 0.02em;
 }
 
 /* Contact Page */

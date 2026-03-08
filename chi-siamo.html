@@ -9,11 +9,7 @@
         content="Siamo l'unica agenzia di marketing nata a Guidonia Montecelio. Conosciamo il territorio, i tuoi clienti e il tuo mercato locale meglio di chiunque altro." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://guidoniamarketing.agency/chi-siamo" />
-    <!-- Favicons for search engines -->
-    <link rel="icon" type="image/png" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.png?v=9">
-    <link rel="apple-touch-icon" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.png?v=9">
-    <link rel="shortcut icon" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.png?v=9">
-    <!-- Fonts: non-blocking -->
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.webp?v=9">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style"
@@ -29,16 +25,453 @@
     <noscript>
         <link rel="stylesheet" href="assets/css/animations.css" />
     </noscript>
+    <style>
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--olive), var(--lemon));
+            z-index: 9999;
+            transition: width .1s linear
+        }
 
+        /* HERO */
+        .pg-hero {
+            position: relative;
+            width: 100%;
+            height: clamp(420px, 58vh, 620px);
+            overflow: hidden;
+            background: var(--choco)
+        }
 
+        .pg-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(.6) saturate(.85);
+            display: block;
+            transition: transform 8s ease
+        }
 
+        .pg-hero:hover .pg-hero-img {
+            transform: scale(1.04)
+        }
+
+        .pg-hero-ov {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(30, 20, 18, .1) 0%, rgba(30, 20, 18, .55) 60%, rgba(30, 20, 18, .92) 100%)
+        }
+
+        .pg-hero-c {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3.5rem 6rem;
+            max-width: 1100px
+        }
+
+        .pg-lbl {
+            font-family: var(--fb);
+            font-size: .65rem;
+            font-weight: 600;
+            letter-spacing: .28em;
+            text-transform: uppercase;
+            color: var(--lemon);
+            display: inline-block;
+            border: 1px solid rgba(198, 210, 78, .3);
+            padding: 5px 16px;
+            border-radius: 100px;
+            margin-bottom: 1.2rem;
+            background: rgba(158, 166, 107, .1)
+        }
+
+        .pg-h1 {
+            font-family: var(--ft);
+            font-size: clamp(2.4rem, 5vw, 4.5rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: -.02em;
+            color: #f2efe4;
+            line-height: 1.05;
+            margin: 0 0 1.2rem
+        }
+
+        .pg-h1 em {
+            font-family: var(--fd);
+            font-style: italic;
+            text-transform: none;
+            font-weight: 300;
+            color: rgba(242, 239, 228, .7)
+        }
+
+        .pg-sub {
+            font-family: var(--fb);
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(242, 239, 228, .65);
+            line-height: 1.7;
+            max-width: 560px
+        }
+
+        /* STORIA */
+        .storia-section {
+            background: var(--cream);
+            padding: 8rem 6rem
+        }
+
+        .storia-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 7rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start
+        }
+
+        .storia-text .label {
+            margin-bottom: .5rem
+        }
+
+        .storia-h2 {
+            font-family: var(--ft);
+            font-size: clamp(2rem, 3vw, 3.2rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--choco);
+            line-height: 1.05;
+            margin: 0 0 2rem
+        }
+
+        .storia-h2 em {
+            font-family: var(--fd);
+            font-style: italic;
+            text-transform: none;
+            font-weight: 300;
+            color: var(--olive)
+        }
+
+        .storia-p {
+            font-family: var(--fb);
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(77, 55, 53, .82);
+            line-height: 1.85;
+            margin-bottom: 1.4rem
+        }
+
+        .storia-p strong {
+            font-weight: 500;
+            color: var(--choco)
+        }
+
+        .storia-img {
+            border-radius: 12px;
+            overflow: hidden;
+            position: sticky;
+            top: 120px
+        }
+
+        .storia-img img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+            transition: transform .6s ease
+        }
+
+        .storia-img:hover img {
+            transform: scale(1.02)
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 3rem
+        }
+
+        .about-stat {
+            background: #ebe8db;
+            border-radius: 12px;
+            padding: 1.6rem 1.2rem;
+            text-align: center;
+            transition: transform .3s, box-shadow .3s
+        }
+
+        .about-stat:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .07)
+        }
+
+        .about-stat-n {
+            font-family: var(--fd);
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: var(--choco);
+            line-height: 1;
+            display: block;
+            margin-bottom: 6px
+        }
+
+        .about-stat-l {
+            font-family: var(--fb);
+            font-size: .68rem;
+            font-weight: 400;
+            color: rgba(77, 55, 53, .55);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            line-height: 1.4
+        }
+
+        /* FOUNDER */
+        .founder-section {
+            background: #ebe8db;
+            padding: 8rem 6rem
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 6rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center
+        }
+
+        .founder-img-wrap {
+            position: relative
+        }
+
+        .founder-img-wrap img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 12px;
+            display: block;
+            filter: saturate(.9)
+        }
+
+        .founder-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--choco);
+            color: var(--cream);
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            font-family: var(--fb);
+            font-size: .75rem;
+            font-weight: 300;
+            line-height: 1.5;
+            max-width: 180px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .15)
+        }
+
+        .founder-badge strong {
+            font-weight: 600;
+            color: var(--lemon);
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 2px
+        }
+
+        .founder-content .label {
+            margin-bottom: .5rem
+        }
+
+        .founder-h2 {
+            font-family: var(--ft);
+            font-size: clamp(1.8rem, 3vw, 3rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--choco);
+            line-height: 1.05;
+            margin: 0 0 2rem
+        }
+
+        .founder-h2 em {
+            font-family: var(--fd);
+            font-style: italic;
+            text-transform: none;
+            font-weight: 300;
+            color: var(--olive)
+        }
+
+        .founder-p {
+            font-family: var(--fb);
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(77, 55, 53, .82);
+            line-height: 1.82;
+            margin-bottom: 1.4rem
+        }
+
+        .founder-sig {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(77, 55, 53, .1)
+        }
+
+        .founder-sig-name {
+            font-family: var(--fd);
+            font-size: 1.8rem;
+            font-style: italic;
+            font-weight: 300;
+            color: var(--choco);
+            margin: 0 0 .2rem
+        }
+
+        .founder-sig-role {
+            font-family: var(--fb);
+            font-size: .65rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--olive)
+        }
+
+        /* VALORI */
+        .values-section {
+            background: var(--choco);
+            padding: 8rem 6rem
+        }
+
+        .values-head {
+            max-width: 600px;
+            margin-bottom: 4rem
+        }
+
+        .values-head .label {
+            color: var(--olive)
+        }
+
+        .values-head .h2 {
+            color: var(--cream)
+        }
+
+        .values-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: rgba(255, 255, 255, .05)
+        }
+
+        .val-card {
+            background: var(--choco);
+            padding: 3rem 2.5rem;
+            transition: background .3s
+        }
+
+        .val-card:hover {
+            background: rgba(158, 166, 107, .08)
+        }
+
+        .val-num {
+            font-family: var(--fd);
+            font-size: 4rem;
+            font-weight: 300;
+            font-style: italic;
+            color: rgba(242, 239, 228, .08);
+            line-height: 1;
+            margin-bottom: 1.5rem
+        }
+
+        .val-title {
+            font-family: var(--ft);
+            font-size: 1.3rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--cream);
+            margin: 0 0 1rem;
+            line-height: 1
+        }
+
+        .val-desc {
+            font-family: var(--fb);
+            font-size: .92rem;
+            font-weight: 300;
+            color: rgba(242, 239, 228, .55);
+            line-height: 1.75
+        }
+
+        .val-ico {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(158, 166, 107, .15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem
+        }
+
+        /* CTA */
+        .about-cta {
+            background: var(--cream);
+            padding: 7rem 6rem;
+            text-align: center
+        }
+
+        .about-cta .cta-line {
+            max-width: 60px;
+            height: 1px;
+            background: var(--olive);
+            margin: 2rem auto
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:960px) {
+            .pg-hero-c {
+                padding: 2rem
+            }
+
+            .storia-section,
+            .founder-section,
+            .values-section,
+            .about-cta {
+                padding: 5rem 2rem
+            }
+
+            .storia-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem
+            }
+
+            .storia-img {
+                position: static
+            }
+
+            .founder-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem
+            }
+
+            .founder-badge {
+                right: 10px;
+                bottom: 10px
+            }
+
+            .values-grid-3 {
+                grid-template-columns: 1fr
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+    </style>
 </head>
 
 <body>
-
+    <div class="reading-progress" id="readingProgress"></div>
     <div class="cursor" id="cur"></div>
     <div class="cursor-ring" id="curR"></div>
-
     <a href="https://wa.me/393347871260" class="whatsapp-btn" id="waBtn" target="_blank" rel="noopener"
         aria-label="WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -47,41 +480,31 @@
         </svg>
         <span class="whatsapp-tooltip">Scrivici su WhatsApp</span>
     </a>
-
     <header id="hdr">
-        <a href="index.html" class="logo" style="display: inline-flex; align-items: center;"><img
-                src="assets/img/logo/guidonia_marketing_logo_v9.png" alt="Guidonia Marketing Logo" class="brand-logo"
-                style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;"
+        <a href="index.html" class="logo" style="display:inline-flex;align-items:center;"><img
+                src="assets/img/logo/guidonia_marketing_logo_v9.webp" alt="Guidonia Marketing Logo" class="brand-logo"
+                style="height:38px!important;width:auto!important;margin-right:12px;object-fit:contain;border-radius:4px;"
                 loading="lazy">Guidonia <em>Marketing</em></a>
         <nav class="nav-desktop">
-            <a href="servizi.html">Servizi</a>
-            <a href="case-studies.html">Risultati</a>
-            <a href="chi-siamo.html">Chi Siamo</a>
-            <a href="index.html#faq">FAQ</a>
+            <a href="servizi.html">Servizi</a><a href="risultati.html">Risultati</a>
+            <a href="chi-siamo.html">Chi Siamo</a><a href="index.html#faq">FAQ</a>
         </nav>
         <div class="header-actions">
             <a href="contatti.html" class="btn-nav">Inizia ora</a>
-            <div class="nav-toggle" id="menuToggle">
-                <span></span><span></span><span></span>
-            </div>
+            <div class="nav-toggle" id="menuToggle"><span></span><span></span><span></span></div>
         </div>
     </header>
-
     <div class="menu-backdrop"></div>
     <div class="menu-overlay">
         <button class="menu-close" aria-label="Chiudi menu">&times;</button>
         <div class="menu-inner">
             <div class="menu-links">
-                <a href="index.html">Home</a>
-                <a href="servizi.html">Servizi</a>
-                <a href="case-studies.html">Risultati</a>
-                <a href="chi-siamo.html">Chi Siamo</a>
-                <a href="blog/">Blog & Guide</a>
-                <a href="index.html#faq">FAQ</a>
-                <a href="contatti.html">Contatti</a>
+                <a href="index.html">Home</a><a href="servizi.html">Servizi</a><a href="risultati.html">Risultati</a>
+                <a href="chi-siamo.html">Chi Siamo</a><a href="blog/">Blog &amp; Guide</a>
+                <a href="index.html#faq">FAQ</a><a href="contatti.html">Contatti</a>
             </div>
             <div class="menu-whatsapp-wrap">
-                <a href="https://wa.me/393347871260?text=Ciao%20Guidonia%20Marketing!%20Vorrei%20sapere%20come%20potete%20aiutare%20la%20mia%20attività%20a%20crescere%20online."
+                <a href="https://wa.me/393347871260?text=Ciao%20Guidonia%20Marketing!%20Vorrei%20sapere%20come%20potete%20aiutare%20la%20mia%20attivit%C3%A0%20a%20crescere%20online."
                     class="btn-whatsapp-nav" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
                         <path
@@ -93,125 +516,138 @@
         </div>
     </div>
 
-    <section class="page-hero">
-        <div class="page-hero-inner reveal">
-            <p class="label">Chi siamo</p>
-            <h1 class="page-h1">Non siamo a Milano.<br>Siamo <em>qui.</em></h1>
-            <p class="body-txt">Siamo l'agenzia di marketing che ha scelto di restare a Guidonia Montecelio, perché
+    <!-- HERO -->
+    <div class="pg-hero">
+        <img class="pg-hero-img" src="assets/img/hero-chi-siamo.webp" alt="Team Guidonia Marketing al lavoro"
+            loading="eager">
+        <div class="pg-hero-ov"></div>
+        <div class="pg-hero-c">
+            <span class="pg-lbl">Chi siamo</span>
+            <h1 class="pg-h1">Non siamo a Milano.<br>Siamo <em>qui.</em></h1>
+            <p class="pg-sub">Siamo l'agenzia di marketing che ha scelto di restare a Guidonia Montecelio, perché
                 conosciamo questo territorio meglio di qualsiasi agenzia di Roma centro.</p>
         </div>
-    </section>
+    </div>
 
-    <section class="about-section">
-        <div class="about-grid reveal">
-            <div class="about-text">
+    <!-- STORIA -->
+    <section class="storia-section">
+        <div class="storia-grid">
+            <div class="storia-text reveal">
                 <p class="label">La nostra storia</p>
-                <h2 class="h2">Nati a Guidonia.<br><em>Cresciuti con Guidonia.</em></h2>
-                <p class="body-txt">Guidonia Marketing nasce da una osservazione semplice: le piccole imprese del
+                <h2 class="storia-h2">Nati a Guidonia.<br><em>Cresciuti con Guidonia.</em></h2>
+                <p class="storia-p">Guidonia Marketing nasce da un'osservazione semplice: le piccole imprese del
                     territorio tra Guidonia Montecelio, Tivoli e Roma Est non hanno accesso agli stessi strumenti di
                     marketing delle grandi aziende. Eppure hanno prodotti e servizi eccellenti che meritano di essere
                     trovati online.</p>
-                <div class="image-placeholder reveal d1"
-                    style="background: var(--cream); height: 300px; margin: 2rem 0; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--blush-dark); opacity: 0.6;">
-                    <span style="font-family: 'Jost', sans-serif; font-size: 0.9rem; color: var(--blush-dark);">[FOTO
-                        TEAM/UFFICIO A GUIDONIA]</span>
-                </div>
-                <p class="body-txt">La nostra missione è semplice: portare le PMI locali alla prima pagina di Google
-                    senza sprecare un euro in pubblicità pagata. Solo crescita organica, solo risultati che durano.</p>
-                <p class="body-txt">Conosciamo le abitudini di ricerca di chi vive a Guidonia. Sappiamo che qualcuno che
+                <p class="storia-p">La nostra missione è portare le PMI locali alla <strong>prima pagina di
+                        Google</strong> senza sprecare un euro in pubblicità pagata. Solo crescita organica, solo
+                    risultati che durano.</p>
+                <p class="storia-p">Conosciamo le abitudini di ricerca di chi vive a Guidonia. Sappiamo che qualcuno che
                     cerca "pizzeria Guidonia Montecelio" è pronto a comprare stasera. Questo è il vantaggio del SEO
-                    locale.</p>
+                    locale: <strong>arrivare al momento giusto</strong>.</p>
+                <div class="stats-row">
+                    <div class="about-stat reveal">
+                        <span class="about-stat-n">+340%</span>
+                        <span class="about-stat-l">Traffico organico medio in 6 mesi</span>
+                    </div>
+                    <div class="about-stat reveal d1">
+                        <span class="about-stat-n">3.2×</span>
+                        <span class="about-stat-l">Più clienti senza aumentare il budget</span>
+                    </div>
+                    <div class="about-stat reveal d2">
+                        <span class="about-stat-n">100%</span>
+                        <span class="about-stat-l">Crescita organica — zero ads</span>
+                    </div>
+                </div>
             </div>
-            <div class="about-stats">
-                <div class="stat-card reveal d1">
-                    <div class="stat-n">+340%</div>
-                    <div class="stat-label">Traffico organico medio in 6 mesi</div>
-                </div>
-                <div class="stat-card reveal d2">
-                    <div class="stat-n">3.2×</div>
-                    <div class="stat-label">Più clienti senza aumentare il budget</div>
-                </div>
-                <div class="stat-card reveal d3">
-                    <div class="stat-n">100%</div>
-                    <div class="stat-label">Crescita organica — zero pubblicità pagata</div>
-                </div>
+            <div class="storia-img reveal d1">
+                <img src="assets/img/chi-siamo-storia.webp" alt="Guidonia Marketing — il nostro studio" loading="lazy">
             </div>
         </div>
     </section>
 
-    <!-- ── FOUNDER STORY ────────────────────────────────────────────── -->
-    <section class="founder-section reveal" style="padding: 10rem 4rem; background: var(--cream);">
-        <div class="founder-grid"
-            style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: center; max-width: 1200px; margin: 0 auto;">
-            <div class="founder-img"
-                style="background: var(--cream); height: 500px; border: 1px dashed var(--blush-dark); display: flex; align-items: center; justify-content: center; position: relative;">
-                <span style="font-family: 'Jost', sans-serif; font-size: 0.9rem; color: var(--blush-dark);">[FOTO
-                    FONDATORE IN UN LUOGO ICONICO DI GUIDONIA]</span>
+    <!-- FOUNDER -->
+    <section class="founder-section">
+        <div class="founder-grid">
+            <div class="founder-img-wrap reveal">
+                <img src="assets/img/foto/fondatrice.webp" alt="La fondatrice di Guidonia Marketing" loading="lazy">
+                <div class="founder-badge">
+                    <strong>Guidonia Marketing</strong>
+                    Fondata e gestita a Guidonia Montecelio, RM
+                </div>
             </div>
-            <div class="founder-content">
-                <p class="label">La Visione</p>
-                <h2 class="h2">Perché ho scelto di<br><em>restare a casa.</em></h2>
-                <p class="body-txt">Mentre molti colleghi scappavano verso le grandi agenzie di Milano o del centro di
-                    Roma, ho capito che il vero valore non era nei grattacieli, ma nelle strade che percorro ogni
+            <div class="founder-content reveal d1">
+                <p class="label">La visione</p>
+                <h2 class="founder-h2">Perché ho scelto di<br><em>restare a casa.</em></h2>
+                <p class="founder-p">Mentre molti colleghi si spostavano verso le grandi agenzie di Milano o del centro
+                    di Roma, ho capito che il vero valore non era nei grattacieli, ma nelle strade che percorro ogni
                     giorno.</p>
-                <p class="body-txt">Ho fondato Guidonia Marketing perché credo che un commerciante di Via Roma o un
-                    artigiano di Villanova meritino una visibilità d'élite senza dover pagare i prezzi gonfiati delle
+                <p class="founder-p">Ho fondato Guidonia Marketing perché credo che un commerciante di Via Roma o un
+                    artigiano di Villanova meriti una visibilità d'élite senza dover pagare i prezzi gonfiati delle
                     agenzie "di città" che non hanno mai messo piede nel nostro territorio.</p>
-                <p class="body-txt">Quello che offriamo non è solo SEO o Social Media. È la conoscenza profonda di come
-                    ragionano e cosa cercano i tuoi vicini di casa. Perché quando un'attività locale cresce, cresce
-                    tutto il territorio.</p>
-                <div class="founder-signature" style="margin-top: 3rem;">
-                    <p
-                        style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; color: var(--blush-dark); margin-bottom: 0.2rem;">
-                        Il Fondatore</p>
-                    <p class="label" style="letter-spacing: 0.1em;">Guidonia Marketing</p>
+                <p class="founder-p">Quello che offriamo non è solo SEO o Social Media. È la conoscenza profonda di come
+                    ragionano e cosa cercano i tuoi vicini di casa. Perché quando un'attività locale cresce,
+                    <strong>cresce tutto il territorio</strong>.
+                </p>
+                <div class="founder-sig">
+                    <p class="founder-sig-name">La Fondatrice</p>
+                    <p class="founder-sig-role">Guidonia Marketing · Guidonia Montecelio</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- VALORI -->
     <section class="values-section">
-        <p class="label reveal">I nostri valori</p>
-        <h2 class="h2 reveal d1">Principi che <em>non negoziamo.</em></h2>
-        <div class="values-grid">
-            <div class="value-item reveal">
-                <div class="value-num">01</div>
-                <h3 class="value-title">Trasparenza totale</h3>
-                <p class="value-desc">Ogni mese ricevi un report con i numeri reali: posizioni di ranking, traffico,
-                    richieste generate. Nessun dato nascosto, nessun abbellimento.</p>
+        <div class="values-head reveal">
+            <p class="label">I nostri valori</p>
+            <h2 class="h2">Principi che <em>non negoziamo.</em></h2>
+        </div>
+        <div class="values-grid-3">
+            <div class="val-card reveal">
+                <div class="val-ico">📊</div>
+                <div class="val-num">01</div>
+                <h3 class="val-title">Trasparenza totale</h3>
+                <p class="val-desc">Ogni mese ricevi un report con i numeri reali: posizioni di ranking, traffico,
+                    richieste generate. Nessun dato nascosto, nessun abbellimento dei risultati.</p>
             </div>
-            <div class="value-item reveal d1">
-                <div class="value-num">02</div>
-                <h3 class="value-title">Crescita organica</h3>
-                <p class="value-desc">Non crediamo nella pubblicità a pagamento come soluzione principale. Il SEO e il
+            <div class="val-card reveal d1">
+                <div class="val-ico">🌱</div>
+                <div class="val-num">02</div>
+                <h3 class="val-title">Crescita organica</h3>
+                <p class="val-desc">Non crediamo nella pubblicità a pagamento come soluzione principale. Il SEO e il
                     branding costruiscono un asset permanente — non svanisce quando smetti di pagare.</p>
             </div>
-            <div class="value-item reveal d2">
-                <div class="value-num">03</div>
-                <h3 class="value-title">Territorio prima di tutto</h3>
-                <p class="value-desc">Le nostre strategie sono costruite attorno al territorio di Guidonia e Roma Est.
-                    Non applichiamo template generici: ogni piano è specifico per la tua zona e il tuo mercato locale.
-                </p>
+            <div class="val-card reveal d2">
+                <div class="val-ico">📍</div>
+                <div class="val-num">03</div>
+                <h3 class="val-title">Territorio prima di tutto</h3>
+                <p class="val-desc">Le nostre strategie sono costruite attorno al territorio di Guidonia e Roma Est. Non
+                    applichiamo template generici: ogni piano è specifico per la tua zona e il tuo mercato locale.</p>
             </div>
         </div>
     </section>
 
-    <section class="cta">
-        <span class="cta-tag reveal">Lavora con noi</span>
+    <!-- CTA -->
+    <section class="about-cta">
+        <span class="label reveal">Lavora con noi</span>
         <h2 class="cta-h reveal d1">Pronto a far crescere<br><em>la tua attività?</em></h2>
         <div class="cta-line reveal d2"></div>
-        <a href="contatti" class="btn-cream reveal d2">Inizia una conversazione gratuita</a>
+        <a href="contatti" class="btn-dark reveal d2" style="display:inline-block;margin-top:1rem;">Inizia una
+            conversazione gratuita</a>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="foot-grid">
             <div class="foot-brand">
-                <a href="index.html" class="logo" style="display: inline-flex; align-items: center;"><img
-                        src="assets/img/logo/guidonia_marketing_logo_v9.png" alt="Guidonia Marketing Logo"
+                <a href="index.html" class="logo" style="display:inline-flex;align-items:center;"><img
+                        src="assets/img/logo/guidonia_marketing_logo_v9.webp" alt="Guidonia Marketing"
                         class="brand-logo"
-                        style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;"
+                        style="height:38px!important;width:auto!important;margin-right:12px;object-fit:contain;border-radius:4px;"
                         loading="lazy">Guidonia <em>Marketing</em></a>
-                <p>Agenzia di marketing locale a Guidonia Montecelio. SEO, Social Media e Branding per PMI.</p>
+                <p>Agenzia di marketing locale specializzata in SEO, Social Media e Branding per le PMI di Guidonia
+                    Montecelio, Tivoli e Roma Est.</p>
                 <address class="foot-address">
                     <a href="tel:+393347871260">📞 334 787 1260</a>
                     <a href="mailto:guidoniamarketing@gmail.com">✉ guidoniamarketing@gmail.com</a>
@@ -221,17 +657,19 @@
             <div class="foot-col">
                 <h4>Servizi</h4>
                 <ul>
-                    <li><a href="servizi">SEO Locale</a></li>
-                    <li><a href="servizi">Social Media</a></li>
-                    <li><a href="servizi">Branding</a></li>
+                    <li><a href="servizi#seo-locale">SEO Locale</a></li>
+                    <li><a href="servizi#social-media">Social Media</a></li>
+                    <li><a href="servizi#branding">Branding</a></li>
+                    <li><a href="blog/">Blog &amp; Guide</a></li>
                 </ul>
             </div>
             <div class="foot-col">
                 <h4>Agenzia</h4>
                 <ul>
                     <li><a href="chi-siamo">Chi siamo</a></li>
-                    <li><a href="contatti">Contatti</a></li>
+                    <li><a href="risultati">Risultati</a></li>
                     <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="contatti">Contatti</a></li>
                 </ul>
             </div>
             <div class="foot-col">
@@ -239,27 +677,19 @@
                 <ul>
                     <li><a href="zone/agenzia-marketing-guidonia-montecelio">Guidonia</a></li>
                     <li><a href="zone/agenzia-marketing-tivoli">Tivoli</a></li>
-
+                    <li><a href="zone/agenzia-marketing-villanova">Villanova</a></li>
+                    <li><a href="zone/agenzia-marketing-villa-adriana">Villa Adriana</a></li>
                 </ul>
             </div>
         </div>
         <div class="foot-bottom"><span>© 2025 Guidonia Marketing. Tutti i diritti riservati.</span><span>Guidonia
-                Montecelio · Roma Est</span></div>
+                Montecelio · Roma Est · Tivoli</span></div>
     </footer>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/analytics.js" defer></script>
-    <!-- Microsoft Clarity: deferred -->
-    <script>
-        window.addEventListener('load', function () {
-            (function (c, l, a, r, i, t, y) {
-                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-                t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-                y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-            })(window, document, "clarity", "script", "vl0pnjjkb8");
-        });
-    </script>
-
+    <script>(function () { var b = document.getElementById('readingProgress'); if (!b) return; window.addEventListener('scroll', function () { b.style.width = (Math.min(window.scrollY / (document.body.scrollHeight - window.innerHeight), 1) * 100) + '%' }, { passive: true }) })();</script>
+    <script>window.addEventListener('load', function () { (function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y) })(window, document, "clarity", "script", "vl0pnjjkb8") });</script>
 </body>
 
 </html>

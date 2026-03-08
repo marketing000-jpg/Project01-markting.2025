@@ -6,32 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Servizi Marketing Guidonia | SEO Locale, Social Media e Branding</title>
     <meta name="description"
-        content="SEO locale, gestione Instagram e Facebook, branding e Google My Business per le PMI di Guidonia, Tivoli e Roma Est. Da €500/mese." />
-    <meta name="keywords"
-        content="seo locale guidonia, gestione social media roma est, social media manager tivoli, branding piccola impresa guidonia, google my business guidonia" />
+        content="SEO locale, gestione Instagram e Facebook, branding e Google My Business per le PMI di Guidonia, Tivoli e Roma Est. Pacchetti da €500/mese." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://guidoniamarketing.agency/servizi" />
-    <meta property="og:title" content="Servizi di Marketing a Guidonia | SEO, Social Media, Branding" />
-    <meta property="og:description"
-        content="SEO locale, gestione social media e branding per le PMI di Guidonia e Tivoli. Pacchetti da €500/mese. Crescita organica, zero pubblicità pagata." />
-    <meta property="og:url" content="https://guidoniamarketing.agency/servizi" />
-
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": ["SEO Locale","Social Media Marketing","Branding","Google My Business"],
-    "provider": {
-      "@type": "MarketingAgency",
-      "name": "Guidonia Marketing",
-      "url": "https://guidoniamarketing.agency",
-      "address": {"@type": "PostalAddress", "addressLocality": "Guidonia Montecelio", "addressRegion": "RM", "addressCountry": "IT"}
-    },
-    "areaServed": ["Guidonia Montecelio","Tivoli","Roma Est","Monterotondo","Mentana"]
-  }
-  </script>
-
-    <!-- Fonts: non-blocking -->
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":["SEO Locale","Social Media Marketing","Branding"],"provider":{"@type":"MarketingAgency","name":"Guidonia Marketing","url":"https://guidoniamarketing.agency"},"areaServed":["Guidonia Montecelio","Tivoli","Roma Est"]}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style"
@@ -47,60 +26,365 @@
     <noscript>
         <link rel="stylesheet" href="assets/css/animations.css" />
     </noscript>
+    <link rel="icon" type="image/png" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.webp?v=9">
+    <style>
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--olive), var(--lemon));
+            z-index: 9999;
+            transition: width .1s linear
+        }
 
+        .pg-hero {
+            position: relative;
+            width: 100%;
+            height: clamp(420px, 58vh, 620px);
+            overflow: hidden;
+            background: var(--choco)
+        }
 
+        .pg-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(.65) saturate(.85);
+            display: block;
+            transition: transform 8s ease
+        }
 
-    <link rel="icon" type="image/png" href="assets/img/favicon/favicon_guidonia_marketing_logo_v9.png?v=9">
+        .pg-hero:hover .pg-hero-img {
+            transform: scale(1.04)
+        }
+
+        .pg-hero-ov {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(30, 20, 18, .1) 0%, rgba(30, 20, 18, .6) 65%, rgba(30, 20, 18, .9) 100%)
+        }
+
+        .pg-hero-c {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3.5rem 6rem;
+            max-width: 1100px
+        }
+
+        .pg-lbl {
+            font-family: var(--fb);
+            font-size: .65rem;
+            font-weight: 600;
+            letter-spacing: .28em;
+            text-transform: uppercase;
+            color: var(--lemon);
+            display: inline-block;
+            border: 1px solid rgba(198, 210, 78, .3);
+            padding: 5px 16px;
+            border-radius: 100px;
+            margin-bottom: 1.2rem;
+            background: rgba(158, 166, 107, .1)
+        }
+
+        .pg-h1 {
+            font-family: var(--ft);
+            font-size: clamp(2.4rem, 5vw, 4.5rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: -.02em;
+            color: #f2efe4;
+            line-height: 1.05;
+            margin: 0 0 1.2rem
+        }
+
+        .pg-h1 em {
+            font-family: var(--fd);
+            font-style: italic;
+            text-transform: none;
+            font-weight: 300;
+            color: rgba(242, 239, 228, .7)
+        }
+
+        .pg-sub {
+            font-family: var(--fb);
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(242, 239, 228, .65);
+            line-height: 1.7;
+            max-width: 560px
+        }
+
+        .svc-item {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            padding: 6rem 6rem;
+            border-bottom: 1px solid rgba(77, 55, 53, .08);
+            transition: background .3s;
+            background: var(--cream)
+        }
+
+        .svc-item:hover {
+            background: rgba(158, 166, 107, .04)
+        }
+
+        .svc-item--alt {
+            background: rgba(77, 55, 53, .018)
+        }
+
+        .svc-num {
+            font-family: var(--fd);
+            font-size: 5rem;
+            font-weight: 300;
+            font-style: italic;
+            color: rgba(77, 55, 53, .1);
+            line-height: 1;
+            user-select: none
+        }
+
+        .svc-body {
+            padding-left: 3rem;
+            border-left: 1px solid rgba(77, 55, 53, .1)
+        }
+
+        .svc-tag {
+            font-family: var(--fb);
+            font-size: .62rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--olive);
+            display: inline-block;
+            margin-bottom: 1rem
+        }
+
+        .svc-title {
+            font-family: var(--ft);
+            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: -.01em;
+            color: var(--choco);
+            line-height: 1.05;
+            margin: 0 0 1.4rem
+        }
+
+        .svc-desc {
+            font-family: var(--fb);
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(77, 55, 53, .82);
+            line-height: 1.82;
+            max-width: 640px;
+            margin-bottom: 2.5rem
+        }
+
+        .svc-desc strong {
+            font-weight: 500;
+            color: var(--choco)
+        }
+
+        .svc-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem
+        }
+
+        .svc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: .7rem
+        }
+
+        .svc-list li {
+            font-family: var(--fb);
+            font-size: .9rem;
+            font-weight: 300;
+            color: rgba(77, 55, 53, .8);
+            padding-left: 1.4rem;
+            position: relative;
+            line-height: 1.6
+        }
+
+        .svc-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--olive);
+            font-size: .8rem
+        }
+
+        .svc-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem
+        }
+
+        .svc-stat-card {
+            background: var(--choco);
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: .3rem
+        }
+
+        .svc-stat-n {
+            font-family: var(--fd);
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: var(--lemon);
+            line-height: 1
+        }
+
+        .svc-stat-l {
+            font-family: var(--fb);
+            font-size: .7rem;
+            font-weight: 400;
+            color: rgba(242, 239, 228, .55);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            line-height: 1.4
+        }
+
+        .svc-pr-row {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(77, 55, 53, .08)
+        }
+
+        .svc-price {
+            font-family: var(--fd);
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--choco)
+        }
+
+        .svc-price span {
+            font-size: 1rem;
+            opacity: .5;
+            font-family: var(--fb);
+            font-weight: 300
+        }
+
+        .svc-acts {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        .pricing-dark {
+            background: var(--choco);
+            padding: 8rem 6rem;
+            position: relative;
+            overflow: hidden
+        }
+
+        .pricing-dark::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            border: 1px solid rgba(158, 166, 107, .1);
+            top: -200px;
+            right: -100px
+        }
+
+        .pricing-inner {
+            max-width: 800px;
+            position: relative;
+            z-index: 1
+        }
+
+        .zones-strip {
+            background: #ebe8db;
+            padding: 6rem 6rem
+        }
+
+        @media(max-width:900px) {
+            .pg-hero-c {
+                padding: 2rem
+            }
+
+            .svc-item {
+                grid-template-columns: 1fr;
+                padding: 4rem 2rem;
+                gap: 1.5rem
+            }
+
+            .svc-num {
+                font-size: 3rem
+            }
+
+            .svc-body {
+                padding-left: 0;
+                border-left: none;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(77, 55, 53, .1)
+            }
+
+            .svc-cols {
+                grid-template-columns: 1fr;
+                gap: 2rem
+            }
+
+            .pricing-dark,
+            .zones-strip {
+                padding: 4rem 2rem
+            }
+        }
+    </style>
 </head>
 
 <body>
-
+    <div class="reading-progress" id="readingProgress"></div>
     <div class="cursor" id="cur"></div>
     <div class="cursor-ring" id="curR"></div>
-
     <a href="https://wa.me/393347871260?text=Ciao!%20Vorrei%20sapere%20di%20pi%C3%B9%20sui%20vostri%20servizi."
-        class="whatsapp-btn" id="waBtn" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp">
+        class="whatsapp-btn" id="waBtn" target="_blank" rel="noopener" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24" fill="currentColor">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
         </svg>
         <span class="whatsapp-tooltip">Scrivici su WhatsApp</span>
     </a>
-
     <header id="hdr">
-        <a href="index.html" class="logo" style="display: inline-flex; align-items: center;"><img
-                src="assets/img/logo/guidonia_marketing_logo_v9.png" alt="Guidonia Marketing Logo" class="brand-logo"
-                style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;"
+        <a href="index.html" class="logo" style="display:inline-flex;align-items:center;"><img
+                src="assets/img/logo/guidonia_marketing_logo_v9.webp" alt="Guidonia Marketing Logo" class="brand-logo"
+                style="height:38px!important;width:auto!important;margin-right:12px;object-fit:contain;border-radius:4px;"
                 loading="lazy">Guidonia <em>Marketing</em></a>
         <nav class="nav-desktop">
-            <a href="servizi.html">Servizi</a>
-            <a href="case-studies.html">Risultati</a>
-            <a href="chi-siamo.html">Chi Siamo</a>
-            <a href="index.html#faq">FAQ</a>
+            <a href="servizi.html">Servizi</a><a href="risultati.html">Risultati</a>
+            <a href="chi-siamo.html">Chi Siamo</a><a href="index.html#faq">FAQ</a>
         </nav>
         <div class="header-actions">
             <a href="contatti.html" class="btn-nav">Inizia ora</a>
-            <div class="nav-toggle" id="menuToggle">
-                <span></span><span></span><span></span>
-            </div>
+            <div class="nav-toggle" id="menuToggle"><span></span><span></span><span></span></div>
         </div>
     </header>
-
     <div class="menu-backdrop"></div>
     <div class="menu-overlay">
         <button class="menu-close" aria-label="Chiudi menu">&times;</button>
         <div class="menu-inner">
             <div class="menu-links">
-                <a href="index.html">Home</a>
-                <a href="servizi.html">Servizi</a>
-                <a href="case-studies.html">Risultati</a>
-                <a href="chi-siamo.html">Chi Siamo</a>
-                <a href="blog/">Blog & Guide</a>
-                <a href="index.html#faq">FAQ</a>
-                <a href="contatti.html">Contatti</a>
+                <a href="index.html">Home</a><a href="servizi.html">Servizi</a><a href="risultati.html">Risultati</a>
+                <a href="chi-siamo.html">Chi Siamo</a><a href="blog/">Blog &amp; Guide</a>
+                <a href="index.html#faq">FAQ</a><a href="contatti.html">Contatti</a>
             </div>
             <div class="menu-whatsapp-wrap">
-                <a href="https://wa.me/393347871260?text=Ciao%20Guidonia%20Marketing!%20Vorrei%20sapere%20come%20potete%20aiutare%20la%20mia%20attività%20a%20crescere%20online."
+                <a href="https://wa.me/393347871260?text=Ciao%20Guidonia%20Marketing!%20Vorrei%20sapere%20come%20potete%20aiutare%20la%20mia%20attivit%C3%A0%20a%20crescere%20online."
                     class="btn-whatsapp-nav" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
                         <path
@@ -112,169 +396,172 @@
         </div>
     </div>
 
-    <!-- ── PAGE HERO ───────────────────────────────────────────────── -->
-    <section class="page-hero">
-        <div class="page-hero-inner reveal">
-            <p class="label">I nostri servizi</p>
-            <h1 class="page-h1">Tutto quello che serve<br>per <em>crescere online.</em></h1>
-            <p class="body-txt">I nostri servizi di marketing su misura per le piccole imprese di Guidonia Montecelio,
-                Tivoli e
-                Roma Est. Dominare il mercato locale con la <strong>seo locale guidonia</strong>, la <strong>gestione
-                    social media roma est</strong> e il <strong>branding piccola impresa</strong>.</p>
+    <!-- HERO -->
+    <div class="pg-hero">
+        <img class="pg-hero-img" src="assets/img/hero-servizi.webp" alt="Servizi di marketing locale per PMI italiane"
+            loading="eager">
+        <div class="pg-hero-ov"></div>
+        <div class="pg-hero-c">
+            <span class="pg-lbl">I nostri servizi</span>
+            <h1 class="pg-h1">Tutto quello che serve<br>per <em>crescere online.</em></h1>
+            <p class="pg-sub">SEO locale, social media e branding su misura per le PMI di Guidonia Montecelio, Tivoli e
+                Roma Est. Crescita organica — nessun euro sprecato in pubblicità.</p>
         </div>
-    </section>
+    </div>
 
-    <!-- ── SERVIZI DETTAGLIO ─────────────────────────────────────────── -->
-    <section class="svc-page-section">
-
-        <!-- SEO Locale -->
-        <article class="svc-page-item reveal" id="seo-locale">
-            <div class="svc-page-num">01</div>
-            <div class="svc-page-content">
-                <h2 class="svc-page-title">SEO Locale a Guidonia e Tivoli</h2>
-                <p class="svc-page-desc">Portiamo la tua attività alla <strong>prima pagina di Google</strong> per le
+    <!-- SERVIZI -->
+    <main>
+        <!-- 01 SEO -->
+        <article class="svc-item reveal" id="seo-locale">
+            <div class="svc-num">01</div>
+            <div class="svc-body">
+                <span class="svc-tag">SEO Locale · Google Maps</span>
+                <h2 class="svc-title">SEO Locale<br>a Guidonia e Tivoli</h2>
+                <p class="svc-desc">Portiamo la tua attività alla <strong>prima pagina di Google</strong> per le
                     ricerche locali più importanti. Un ristorante a Guidonia deve apparire quando qualcuno cerca
-                    "ristorante Guidonia Montecelio" — non pagando, ma ottimizzando.</p>
-                <ul class="svc-page-list">
-                    <li>Analisi keyword locali (Guidonia, Tivoli, Roma Est)</li>
-                    <li>Ottimizzazione Google My Business completa</li>
-                    <li>SEO on-page e tecnico del sito</li>
-                    <li>Link building locale e citazioni NAP</li>
-                    <li>Report mensile con ranking reali</li>
-                </ul>
-                <div class="svc-page-result">
-                    <span class="svc-result-n">+340%</span>
-                    <span class="svc-result-l">Traffico organico medio nei primi 6 mesi</span>
+                    "ristorante Guidonia Montecelio" — non pagando, ma <strong>ottimizzando</strong>.</p>
+                <div class="svc-cols">
+                    <ul class="svc-list">
+                        <li>Analisi keyword locali (Guidonia, Tivoli, Roma Est)</li>
+                        <li>Ottimizzazione Google My Business completa</li>
+                        <li>SEO on-page e tecnico del sito web</li>
+                        <li>Link building locale e citazioni NAP</li>
+                        <li>Report mensile con ranking reali e tracciabili</li>
+                    </ul>
+                    <div class="svc-stats">
+                        <div class="svc-stat-card"><span class="svc-stat-n">+340%</span><span
+                                class="svc-stat-l">Traffico organico medio nei primi 6 mesi</span></div>
+                        <div class="svc-stat-card"><span class="svc-stat-n">4 mesi</span><span class="svc-stat-l">Tempo
+                                medio per scalare la prima pagina</span></div>
+                    </div>
                 </div>
-                <div class="svc-page-price"
-                    style="margin-top: 2rem; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 1.1rem; color: var(--blush-dark);">
-                    Pacchetti da <span style="font-size: 1.5rem; font-weight: 600;">€500</span>/mese
-                </div>
-                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                    <a href="contatti?servizio=seo" class="btn-dark"
-                        style="display:inline-block;margin-top:2rem">Richiedi SEO audit gratuito</a>
-                    <a href="servizi/seo-locale-guidonia" class="link-ghost"
-                        style="display:inline-block;margin-top:2rem">Dettagli del servizio <span>→</span></a>
-                </div>
-            </div>
-        </article>
-
-        <!-- Social Media -->
-        <article class="svc-page-item svc-page-item--alt reveal" id="social-media">
-            <div class="svc-page-num">02</div>
-            <div class="svc-page-content">
-                <h2 class="svc-page-title">Gestione Social Media a Guidonia e Roma Est</h2>
-                <p class="svc-page-desc">Costruiamo community reali attorno al tuo brand a Guidonia e Roma Est. Non post
-                    generici — contenuti che <strong>parlano ai tuoi clienti locali</strong> e li trasformano da
-                    follower a clienti paganti.</p>
-                <ul class="svc-page-list">
-                    <li>Strategia editoriale mensile personalizzata</li>
-                    <li>Creazione contenuti: testo + grafica + video</li>
-                    <li>Gestione Instagram, Facebook, TikTok</li>
-                    <li>Community management e risposta ai commenti</li>
-                    <li>Report mensile con metriche di engagement</li>
-                </ul>
-                <div class="svc-page-result">
-                    <span class="svc-result-n">3.2×</span>
-                    <span class="svc-result-l">Più richieste senza aumentare il budget</span>
-                </div>
-                <div class="svc-page-price"
-                    style="margin-top: 2rem; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 1.1rem; color: var(--blush-dark);">
-                    Pacchetti da <span style="font-size: 1.5rem; font-weight: 600;">€500</span>/mese
-                </div>
-                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                    <a href="contatti?servizio=social" class="btn-dark"
-                        style="display:inline-block;margin-top:2rem">Scopri il pacchetto Social</a>
-                    <a href="servizi/social-media-marketing" class="link-ghost"
-                        style="display:inline-block;margin-top:2rem">Dettagli del servizio <span>→</span></a>
+                <div class="svc-pr-row">
+                    <div class="svc-price">Da €500 <span>/ mese</span></div>
+                    <div class="svc-acts">
+                        <a href="contatti?servizio=seo" class="btn-dark">Richiedi SEO audit gratuito</a>
+                        <a href="servizi/seo-locale-guidonia" class="link-ghost">Dettagli del servizio
+                            <span>→</span></a>
+                    </div>
                 </div>
             </div>
         </article>
 
-        <!-- Branding -->
-        <article class="svc-page-item reveal" id="branding">
-            <div class="svc-page-num">03</div>
-            <div class="svc-page-content">
-                <h2 class="svc-page-title">Branding e Identità Visiva per PMI di Guidonia</h2>
-                <p class="svc-page-desc">Un'identità visiva che comunica prima ancora che parli. I clienti di Guidonia
+        <!-- 02 Social -->
+        <article class="svc-item svc-item--alt reveal" id="social-media">
+            <div class="svc-num">02</div>
+            <div class="svc-body">
+                <span class="svc-tag">Social Media Marketing · Community</span>
+                <h2 class="svc-title">Gestione Social Media<br>a Guidonia e Roma Est</h2>
+                <p class="svc-desc">Costruiamo community reali attorno al tuo brand. Non post generici — contenuti che
+                    <strong>parlano ai tuoi clienti locali</strong> e li trasformano da follower in clienti paganti.</p>
+                <div class="svc-cols">
+                    <ul class="svc-list">
+                        <li>Strategia editoriale mensile personalizzata</li>
+                        <li>Creazione contenuti: testo + grafica + video reel</li>
+                        <li>Gestione Instagram, Facebook, TikTok</li>
+                        <li>Community management e risposta ai commenti</li>
+                        <li>Report mensile con metriche di engagement reali</li>
+                    </ul>
+                    <div class="svc-stats">
+                        <div class="svc-stat-card"><span class="svc-stat-n">3.2×</span><span class="svc-stat-l">Più
+                                richieste senza aumentare il budget</span></div>
+                        <div class="svc-stat-card"><span class="svc-stat-n">+280%</span><span class="svc-stat-l">Reach
+                                organica media in 3 mesi</span></div>
+                    </div>
+                </div>
+                <div class="svc-pr-row">
+                    <div class="svc-price">Da €500 <span>/ mese</span></div>
+                    <div class="svc-acts">
+                        <a href="contatti?servizio=social" class="btn-dark">Scopri il pacchetto Social</a>
+                        <a href="servizi/social-media-marketing" class="link-ghost">Dettagli del servizio
+                            <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 03 Branding -->
+        <article class="svc-item reveal" id="branding">
+            <div class="svc-num">03</div>
+            <div class="svc-body">
+                <span class="svc-tag">Branding · Identità Visiva</span>
+                <h2 class="svc-title">Branding e Identità Visiva<br>per PMI di Guidonia</h2>
+                <p class="svc-desc">Un'identità visiva che comunica prima ancora che tu parli. I clienti di Guidonia
                     scelgono chi riconoscono — un brand forte <strong>riduce il tempo decisionale</strong> e aumenta la
                     fiducia immediata.</p>
-                <ul class="svc-page-list">
-                    <li>Logo design e varianti</li>
-                    <li>Palette colori e tipografia</li>
-                    <li>Brand guidelines complete</li>
-                    <li>Template per social media</li>
-                    <li>Immagini coordinated per web e stampa</li>
-                </ul>
-                <div class="svc-page-price"
-                    style="margin-top: 2rem; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 1.1rem; color: var(--blush-dark);">
-                    Pacchetti da <span style="font-size: 1.5rem; font-weight: 600;">€500</span>/mese
+                <div class="svc-cols">
+                    <ul class="svc-list">
+                        <li>Logo design professionale e varianti responsive</li>
+                        <li>Palette colori e sistema tipografico completo</li>
+                        <li>Brand guidelines pronte all'uso</li>
+                        <li>Template per social media pronti da pubblicare</li>
+                        <li>Immagini coordinate per web e stampa</li>
+                    </ul>
+                    <div class="svc-stats">
+                        <div class="svc-stat-card"><span class="svc-stat-n">100%</span><span
+                                class="svc-stat-l">Riconoscibilità del brand in 90 giorni</span></div>
+                        <div class="svc-stat-card"><span class="svc-stat-n">Unico</span><span class="svc-stat-l">Nessun
+                                template — ogni progetto su misura</span></div>
+                    </div>
                 </div>
-                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-                    <a href="contatti?servizio=branding" class="btn-dark"
-                        style="display:inline-block;margin-top:2rem">Parla del tuo brand</a>
-                    <a href="servizi/branding-identita-visiva" class="link-ghost"
-                        style="display:inline-block;margin-top:2rem">Dettagli del servizio <span>→</span></a>
+                <div class="svc-pr-row">
+                    <div class="svc-price">Da €500 <span>/ mese</span></div>
+                    <div class="svc-acts">
+                        <a href="contatti?servizio=branding" class="btn-dark">Parla del tuo brand</a>
+                        <a href="servizi/branding-identita-visiva" class="link-ghost">Dettagli del servizio
+                            <span>→</span></a>
+                    </div>
                 </div>
             </div>
         </article>
+    </main>
 
-    </section>
-
-    <!-- ── PRICING NOTE ──────────────────────────────────────────────── -->
-    <section class="pricing-note reveal">
-        <div class="pricing-note-inner">
-            <p class="label">Trasparenza</p>
-            <h2 class="h2">Prezzi chiari.<br><em>Nessuna sorpresa.</em></h2>
-            <p class="body-txt">Non pubblichiamo listini fissi perché ogni attività è diversa. Un bar a Guidonia e uno
-                studio medico a Tivoli hanno esigenze completamente diverse. Quello che possiamo dirti: i nostri
-                pacchetti partono da €500/mese e ogni centesimo è tracciabile in un report mensile.</p>
-            <a href="contatti" class="btn-dark" style="display:inline-block;margin-top:2rem">Richiedi un preventivo
-                gratuito →</a>
+    <!-- PRICING CALLOUT -->
+    <section class="pricing-dark">
+        <div class="pricing-inner">
+            <p class="label reveal" style="color:var(--olive);">Trasparenza</p>
+            <h2 class="h2 reveal d1" style="color:var(--cream);">Prezzi chiari.<br><em>Nessuna sorpresa.</em></h2>
+            <p class="body-txt reveal d2" style="color:rgba(242,239,228,.65);max-width:580px;">Non pubblichiamo listini
+                fissi perché ogni attività è diversa. Un bar a Guidonia e uno studio medico a Tivoli hanno esigenze
+                completamente diverse. I nostri pacchetti partono da <strong
+                    style="color:var(--lemon);">€500/mese</strong> e ogni centesimo è tracciabile in un report mensile.
+            </p>
+            <a href="contatti" class="btn-cream reveal d3" style="display:inline-block;margin-top:2.5rem;">Richiedi un
+                preventivo gratuito →</a>
         </div>
     </section>
 
-    <!-- ── ZONE SERVED ───────────────────────────────────────────────── -->
-    <section class="zones-section reveal">
+    <!-- ZONE -->
+    <section class="zones-strip reveal">
         <p class="label">Zone che serviamo</p>
         <h2 class="h2">Il territorio <em>è nostro.</em></h2>
         <div class="zones-grid">
-            <a href="zone/agenzia-marketing-guidonia-montecelio" class="zone-card">
-                <span class="zone-name">Guidonia Montecelio</span>
-                <span class="zone-arrow">→</span>
-            </a>
-            <a href="zone/agenzia-marketing-tivoli" class="zone-card">
-                <span class="zone-name">Tivoli</span>
-                <span class="zone-arrow">→</span>
-            </a>
-            <a href="zone/agenzia-marketing-villanova" class="zone-card">
-                <span class="zone-name">Villanova</span>
-                <span class="zone-arrow">→</span>
-            </a>
-            <a href="zone/agenzia-marketing-villalba" class="zone-card">
-                <span class="zone-name">Villalba</span>
-                <span class="zone-arrow">→</span>
-            </a>
-            <a href="zone/agenzia-marketing-villa-adriana" class="zone-card">
-                <span class="zone-name">Villa Adriana</span>
-                <span class="zone-arrow">→</span>
-            </a>
-            <a href="zone/agenzia-marketing-bagni-di-tivoli" class="zone-card">
-                <span class="zone-name">Bagni di Tivoli</span>
-                <span class="zone-arrow">→</span>
-            </a>
+            <a href="zone/agenzia-marketing-guidonia-montecelio" class="zone-card"><span class="zone-name">Guidonia
+                    Montecelio</span><span class="zone-arrow">→</span></a>
+            <a href="zone/agenzia-marketing-tivoli" class="zone-card"><span class="zone-name">Tivoli</span><span
+                    class="zone-arrow">→</span></a>
+            <a href="zone/agenzia-marketing-villanova" class="zone-card"><span class="zone-name">Villanova</span><span
+                    class="zone-arrow">→</span></a>
+            <a href="zone/agenzia-marketing-villalba" class="zone-card"><span class="zone-name">Villalba</span><span
+                    class="zone-arrow">→</span></a>
+            <a href="zone/agenzia-marketing-villa-adriana" class="zone-card"><span class="zone-name">Villa
+                    Adriana</span><span class="zone-arrow">→</span></a>
+            <a href="zone/agenzia-marketing-bagni-di-tivoli" class="zone-card"><span class="zone-name">Bagni di
+                    Tivoli</span><span class="zone-arrow">→</span></a>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="foot-grid">
             <div class="foot-brand">
-                <a href="index.html" class="logo" style="display: inline-flex; align-items: center;"><img
-                        src="assets/img/logo/guidonia_marketing_logo_v9.png" alt="Guidonia Marketing Logo"
+                <a href="index.html" class="logo" style="display:inline-flex;align-items:center;"><img
+                        src="assets/img/logo/guidonia_marketing_logo_v9.webp" alt="Guidonia Marketing"
                         class="brand-logo"
-                        style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;"
+                        style="height:38px!important;width:auto!important;margin-right:12px;object-fit:contain;border-radius:4px;"
                         loading="lazy">Guidonia <em>Marketing</em></a>
-                <p>Agenzia di marketing locale a Guidonia Montecelio. SEO, Social Media e Branding per PMI.</p>
+                <p>Agenzia di marketing locale specializzata in SEO, Social Media e Branding per le PMI di Guidonia
+                    Montecelio, Tivoli e Roma Est.</p>
                 <address class="foot-address">
                     <a href="tel:+393347871260">📞 334 787 1260</a>
                     <a href="mailto:guidoniamarketing@gmail.com">✉ guidoniamarketing@gmail.com</a>
@@ -287,14 +574,16 @@
                     <li><a href="#seo-locale">SEO Locale</a></li>
                     <li><a href="#social-media">Social Media</a></li>
                     <li><a href="#branding">Branding</a></li>
+                    <li><a href="blog/">Blog &amp; Guide</a></li>
                 </ul>
             </div>
             <div class="foot-col">
                 <h4>Agenzia</h4>
                 <ul>
                     <li><a href="chi-siamo">Chi siamo</a></li>
-                    <li><a href="contatti">Contatti</a></li>
+                    <li><a href="risultati">Risultati</a></li>
                     <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="contatti">Contatti</a></li>
                 </ul>
             </div>
             <div class="foot-col">
@@ -303,6 +592,7 @@
                     <li><a href="zone/agenzia-marketing-guidonia-montecelio">Guidonia</a></li>
                     <li><a href="zone/agenzia-marketing-tivoli">Tivoli</a></li>
                     <li><a href="zone/agenzia-marketing-villanova">Villanova</a></li>
+                    <li><a href="zone/agenzia-marketing-villa-adriana">Villa Adriana</a></li>
                 </ul>
             </div>
         </div>
@@ -312,17 +602,8 @@
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/analytics.js" defer></script>
-    <!-- Microsoft Clarity: deferred -->
-    <script>
-        window.addEventListener('load', function () {
-            (function (c, l, a, r, i, t, y) {
-                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-                t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-                y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-            })(window, document, "clarity", "script", "vl0pnjjkb8");
-        });
-    </script>
-
+    <script>(function () { var b = document.getElementById('readingProgress'); if (!b) return; window.addEventListener('scroll', function () { b.style.width = (Math.min(window.scrollY / (document.body.scrollHeight - window.innerHeight), 1) * 100) + '%' }, { passive: true }) })();</script>
+    <script>window.addEventListener('load', function () { (function (c, l, a, r, i, t, y) { c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }; t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i; y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y) })(window, document, "clarity", "script", "vl0pnjjkb8") });</script>
 </body>
 
 </html>
