@@ -55,7 +55,7 @@
     <div class="cursor-ring" id="curR"></div>
 
     <header id="hdr">
-        <a href="./" class="logo" style="display: inline-flex; align-items: center;"><img src="assets/img/logo/guidonia_marketing_logo_v9.webp" alt="Guidonia Marketing Logo" class="brand-logo" style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;" loading="lazy">Guidonia <em>Marketing</em></a>
+        <a href="./" class="logo" style="display: inline-flex; align-items: center;"><img src="assets/img/logo/guidonia_marketing_logo_v9.webp" alt="Guidonia Marketing Logo" class="brand-logo" style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;" fetchpriority="high">Guidonia <em>Marketing</em></a>
         <nav>
             <a href="#servizi">Servizi</a>
             <a href="contatti" class="btn-nav">Inizia ora</a>
@@ -76,17 +76,8 @@
         </div>
     </main>
 
-    <script src="assets/js/main.js"></script>
-  <!-- Microsoft Clarity: deferred -->
-  <script>
-    window.addEventListener('load', function() {
-      (function (c, l, a, r, i, t, y) {
-        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", "vl0pnjjkb8");
-    });
-  </script>
+    <script src="assets/js/main.js" defer></script>
+  
 
 </body>
 

@@ -4,31 +4,37 @@
   <!-- CORE -->
   <url>
     <loc>https://guidoniamarketing.agency/</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://guidoniamarketing.agency/gestione-social-media-guidonia</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://guidoniamarketing.agency/servizi</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/risultati</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/chi-siamo</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/contatti</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36,19 +42,19 @@
   <!-- SERVIZI -->
   <url>
     <loc>https://guidoniamarketing.agency/servizi/seo-locale-guidonia</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/servizi/social-media-marketing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/servizi/branding-identita-visiva</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -56,37 +62,37 @@
   <!-- ZONE -->
   <url>
     <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-guidonia-montecelio</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-tivoli</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-villanova</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-villalba</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-villa-adriana</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/zone/agenzia-marketing-bagni-di-tivoli</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -94,49 +100,55 @@
   <!-- BLOG -->
   <url>
     <loc>https://guidoniamarketing.agency/blog/</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/blog/seo-locale-guidonia</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/blog/seo-locale-cos-e-come-funziona-roma-est</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/blog/come-apparire-su-google-maps-guidonia-montecelio-guida-2026</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/blog/gestione-social-media-guidonia</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/blog/gestione-social-media-piccola-impresa-tivoli</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/blog/quanto-costa-agenzia-marketing-piccola-impresa</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://guidoniamarketing.agency/blog/quanto-costa-gestione-social-media-mensile-piccola-impresa</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
     <loc>https://guidoniamarketing.agency/blog/differenza-seo-e-google-ads-piccola-impresa</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>

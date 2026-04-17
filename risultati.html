@@ -4,11 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Risultati Reali | Risultato Marketing a Guidonia e Tivoli</title>
+    <title>Risultati Clienti | Guidonia Marketing — Case Study</title>
     <meta name="description"
         content="Come abbiamo portato una pizzeria di Guidonia in Top 3 su Google Maps. Vedi i risultati concreti delle attività locali che hanno scelto Guidonia Marketing." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://guidoniamarketing.agency/risultati" />
+    <meta property="og:title" content="Risultati Clienti | Guidonia Marketing — Case Study" />
+    <meta property="og:description" content="+380% chiamate da Google Maps. Come abbiamo portato le PMI di Guidonia in prima pagina su Google senza un euro di pubblicità. Vedi i case study." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://guidoniamarketing.agency/risultati" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="Guidonia Marketing" />
+    <meta property="og:image" content="https://guidoniamarketing.agency/assets/img/og/og-default.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Risultati reali di marketing locale — Guidonia Marketing" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Risultati Clienti | Guidonia Marketing — Case Study" />
+    <meta name="twitter:description" content="+380% chiamate da Google Maps per PMI a Guidonia. Zero ads, solo SEO organico." />
+    <meta name="twitter:image" content="https://guidoniamarketing.agency/assets/img/og/og-default.png" />
     <!-- Fonts: non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,7 +52,7 @@
         <a href="./" class="logo" style="display: inline-flex; align-items: center;"><img
                 src="assets/img/logo/guidonia_marketing_logo_v9.webp" alt="Guidonia Marketing Logo" class="brand-logo"
                 style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;"
-                loading="lazy">Guidonia <em>Marketing</em></a>
+                fetchpriority="high">Guidonia <em>Marketing</em></a>
         <nav class="nav-desktop">
             <a href="servizi">Servizi</a>
             <a href="risultati">Risultati</a>
@@ -546,7 +560,7 @@
                         <div class="cs-glass-inner">
                             <img src="assets/img/portfolio/pizzeria-maps-vertical.webp"
                                 alt="Risultati Pizzeria Google Maps"
-                                style="object-fit: cover; object-position: top center;">
+                                style="object-fit: cover; object-position: top center;" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -569,7 +583,7 @@
                     <a href="#portfolio" class="cs-dossier-btn">Sfoglia il Dossier →</a>
                 </div>
                 <div class="cs-dossier-preview">
-                    <img src="assets/img/portfolio/cover.webp" alt="Dossier Guidonia Marketing">
+                    <img src="assets/img/portfolio/cover.webp" alt="Dossier Guidonia Marketing" loading="lazy">
                 </div>
             </div>
         </section>
@@ -590,7 +604,7 @@
                 <div class="cs-visual-box cs-order-2">
                     <div class="cs-glass-frame" style="transform: rotate(2deg);">
                         <div class="cs-glass-inner">
-                            <img src="assets/img/foto/medico-tivoli-mockup.webp" alt="Risultati Studio Medico Tivoli">
+                            <img src="assets/img/foto/medico-tivoli-mockup.webp" alt="Risultati Studio Medico Tivoli" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -667,7 +681,7 @@
                     <div class="cs-glass-frame">
                         <div class="cs-glass-inner">
                             <img src="assets/img/foto/store-villanova-mockup.webp"
-                                alt="Risultati Store Abbigliamento Villanova">
+                                alt="Risultati Store Abbigliamento Villanova" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -681,83 +695,267 @@
     <section class="portfolio-section" id="portfolio">
 
         <style>
-        .portfolio-layout {
-            display: grid;
-            grid-template-columns: 1fr 1.25fr;
-            gap: 5rem;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .port-desc-panel { position: relative; }
-        .port-desc { display: none; animation: portFadeIn .4s var(--ease); }
-        .port-desc.active { display: block; }
-        @keyframes portFadeIn {
-            from { opacity: 0; transform: translateY(12px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .port-desc-label {
-            font-family: var(--fb); font-size: 0.7rem; font-weight: 500;
-            letter-spacing: 0.22em; text-transform: uppercase; color: var(--olive); margin-bottom: 1rem;
-        }
-        .port-desc-title {
-            font-family: var(--ft); font-size: clamp(1.8rem, 2.5vw, 2.8rem); font-weight: 400;
-            line-height: 1.05; text-transform: uppercase; letter-spacing: -0.02em;
-            color: var(--choco); margin-bottom: 1rem;
-        }
-        .port-desc-title em { font-family: var(--fd); font-style: italic; text-transform: none; color: var(--choco-light); font-weight: 400; }
-        .port-desc-body {
-            font-family: var(--fb); font-size: 0.95rem; font-weight: 300;
-            color: var(--choco); opacity: 0.75; line-height: 1.75; margin-bottom: 1.8rem;
-        }
-        .port-desc-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem; }
-        .port-desc-bullets li {
-            font-family: var(--fb); font-size: 0.85rem; font-weight: 400;
-            color: var(--choco); display: flex; align-items: flex-start; gap: 0.6rem; opacity: 0.85;
-        }
-        .port-desc-bullets li::before { content: "→"; color: var(--olive); flex-shrink: 0; font-size: 0.75rem; margin-top: 0.1em; }
-        .port-desc-link {
-            font-family: var(--fb); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
-            color: var(--choco); text-decoration: none; display: inline-flex; align-items: center;
-            gap: 0.5rem; border-bottom: 1px solid rgba(77,55,53,0.2); padding-bottom: 2px;
-            transition: color .3s, border-color .3s, gap .3s;
-        }
-        .port-desc-link:hover { color: var(--olive); border-color: var(--olive); gap: 0.9rem; }
-        .port-stats-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 1.2rem; }
-        .port-stat-item {
-            text-align: center; padding: 12px 8px;
-            background: rgba(242,239,228,0.06); border: 1px solid rgba(242,239,228,0.12); border-radius: 10px;
-        }
-        .port-stat-num { font-family: var(--fd); font-size: 1.6rem; font-weight: 300; color: var(--lemon); line-height: 1; display: block; }
-        .port-stat-lbl { font-family: var(--fb); font-size: 0.6rem; font-weight: 400; letter-spacing: 0.08em; color: rgba(242,239,228,0.5); text-transform: uppercase; display: block; margin-top: 4px; }
-        .port-stats-set { display: none; }
-        .port-stats-set.active { display: contents; }
-        .port-nav-btn {
-            position: absolute; right: 1.2rem; bottom: 1.2rem; z-index: 60;
-            background: rgba(242,239,228,0.95); border: none; border-radius: 50%;
-            width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 1.4rem; color: var(--choco);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.3); transition: transform .2s, background .2s;
-        }
-        .port-nav-btn:hover { transform: scale(1.1); background: #fff; }
-        .port-dots {
-            position: absolute; bottom: 1.4rem; left: 50%; transform: translateX(-50%);
-            display: flex; gap: 6px; z-index: 60;
-        }
-        .port-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(242,239,228,0.3); transition: background .3s, transform .3s; cursor: pointer; }
-        .port-dot.active { background: rgba(242,239,228,0.95); transform: scale(1.3); }
-        .port-cta-row { margin-top: 1.4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-        .port-dossier-btn {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: var(--lemon); color: var(--choco); font-family: var(--fb);
-            font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-            padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 3px;
-            transition: background .3s, transform .2s, box-shadow .3s; white-space: nowrap;
-        }
-        .port-dossier-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
-        .port-dossier-note { font-family: var(--fb); font-size: 0.68rem; color: rgba(242,239,228,0.35); letter-spacing: 0.06em; }
-        .portfolio-header { margin-bottom: 4rem; }
-        @media (max-width: 1000px) { .portfolio-layout { grid-template-columns: 1fr; gap: 3rem; } }
+            .portfolio-layout {
+                display: grid;
+                grid-template-columns: 1fr 1.25fr;
+                gap: 5rem;
+                align-items: center;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .port-desc-panel {
+                position: relative;
+            }
+
+            .port-desc {
+                display: none;
+                animation: portFadeIn .4s var(--ease);
+            }
+
+            .port-desc.active {
+                display: block;
+            }
+
+            @keyframes portFadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(12px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .port-desc-label {
+                font-family: var(--fb);
+                font-size: 0.7rem;
+                font-weight: 500;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                color: var(--olive);
+                margin-bottom: 1rem;
+            }
+
+            .port-desc-title {
+                font-family: var(--ft);
+                font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+                font-weight: 400;
+                line-height: 1.05;
+                text-transform: uppercase;
+                letter-spacing: -0.02em;
+                color: var(--choco);
+                margin-bottom: 1rem;
+            }
+
+            .port-desc-title em {
+                font-family: var(--fd);
+                font-style: italic;
+                text-transform: none;
+                color: var(--choco-light);
+                font-weight: 400;
+            }
+
+            .port-desc-body {
+                font-family: var(--fb);
+                font-size: 0.95rem;
+                font-weight: 300;
+                color: var(--choco);
+                opacity: 0.75;
+                line-height: 1.75;
+                margin-bottom: 1.8rem;
+            }
+
+            .port-desc-bullets {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 0.6rem;
+                margin-bottom: 2rem;
+            }
+
+            .port-desc-bullets li {
+                font-family: var(--fb);
+                font-size: 0.85rem;
+                font-weight: 400;
+                color: var(--choco);
+                display: flex;
+                align-items: flex-start;
+                gap: 0.6rem;
+                opacity: 0.85;
+            }
+
+            .port-desc-bullets li::before {
+                content: "→";
+                color: var(--olive);
+                flex-shrink: 0;
+                font-size: 0.75rem;
+                margin-top: 0.1em;
+            }
+
+            .port-desc-link {
+                font-family: var(--fb);
+                font-size: 0.78rem;
+                font-weight: 500;
+                letter-spacing: 0.08em;
+                color: var(--choco);
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                border-bottom: 1px solid rgba(77, 55, 53, 0.2);
+                padding-bottom: 2px;
+                transition: color .3s, border-color .3s, gap .3s;
+            }
+
+            .port-desc-link:hover {
+                color: var(--olive);
+                border-color: var(--olive);
+                gap: 0.9rem;
+            }
+
+            .port-stats-bar {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                margin-bottom: 1.2rem;
+            }
+
+            .port-stat-item {
+                text-align: center;
+                padding: 12px 8px;
+                background: rgba(242, 239, 228, 0.06);
+                border: 1px solid rgba(242, 239, 228, 0.12);
+                border-radius: 10px;
+            }
+
+            .port-stat-num {
+                font-family: var(--fd);
+                font-size: 1.6rem;
+                font-weight: 300;
+                color: var(--lemon);
+                line-height: 1;
+                display: block;
+            }
+
+            .port-stat-lbl {
+                font-family: var(--fb);
+                font-size: 0.6rem;
+                font-weight: 400;
+                letter-spacing: 0.08em;
+                color: rgba(242, 239, 228, 0.5);
+                text-transform: uppercase;
+                display: block;
+                margin-top: 4px;
+            }
+
+            .port-stats-set {
+                display: none;
+            }
+
+            .port-stats-set.active {
+                display: contents;
+            }
+
+            .port-nav-btn {
+                position: absolute;
+                right: 1.2rem;
+                bottom: 1.2rem;
+                z-index: 60;
+                background: rgba(242, 239, 228, 0.95);
+                border: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 1.4rem;
+                color: var(--choco);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+                transition: transform .2s, background .2s;
+            }
+
+            .port-nav-btn:hover {
+                transform: scale(1.1);
+                background: #fff;
+            }
+
+            .port-dots {
+                position: absolute;
+                bottom: 1.4rem;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                gap: 6px;
+                z-index: 60;
+            }
+
+            .port-dot {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: rgba(242, 239, 228, 0.3);
+                transition: background .3s, transform .3s;
+                cursor: pointer;
+            }
+
+            .port-dot.active {
+                background: rgba(242, 239, 228, 0.95);
+                transform: scale(1.3);
+            }
+
+            .port-cta-row {
+                margin-top: 1.4rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            .port-dossier-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                background: var(--lemon);
+                color: var(--choco);
+                font-family: var(--fb);
+                font-size: 0.72rem;
+                font-weight: 600;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                padding: 0.8rem 1.8rem;
+                text-decoration: none;
+                border-radius: 3px;
+                transition: background .3s, transform .2s, box-shadow .3s;
+                white-space: nowrap;
+            }
+
+            .port-dossier-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .port-dossier-note {
+                font-family: var(--fb);
+                font-size: 0.68rem;
+                color: rgba(242, 239, 228, 0.35);
+                letter-spacing: 0.06em;
+            }
+
+            .portfolio-header {
+                margin-bottom: 4rem;
+            }
+
+            @media (max-width: 1000px) {
+                .portfolio-layout {
+                    grid-template-columns: 1fr;
+                    gap: 3rem;
+                }
+            }
         </style>
 
         <div class="portfolio-header reveal">
@@ -771,46 +969,56 @@
                 <div class="port-desc active" data-service="cover">
                     <p class="port-desc-label">Il Dossier</p>
                     <h3 class="port-desc-title">Il nostro lavoro,<br><em>tutto in un posto.</em></h3>
-                    <p class="port-desc-body">Un documento ufficiale che raccoglie i nostri servizi, il metodo, i risultato reali e i prezzi. Concreto, trasparente, senza sorprese.</p>
+                    <p class="port-desc-body">Un documento ufficiale che raccoglie i nostri servizi, il metodo, i
+                        risultato reali e i prezzi. Concreto, trasparente, senza sorprese.</p>
                     <ul class="port-desc-bullets">
                         <li>Servizi con prezzi chiari e pacchetti</li>
                         <li>Processo di lavoro step by step</li>
                         <li>Risultati documentati per ogni settore</li>
                     </ul>
-                    <a href="https://wa.me/393347871260?text=Ciao!%20Vorrei%20ricevere%20il%20dossier%20completo%20di%20Guidonia%20Marketing." class="port-desc-link" target="_blank" rel="noopener">Ricevi il dossier completo <span>&#8594;</span></a>
+                    <a href="https://wa.me/393347871260?text=Ciao!%20Vorrei%20ricevere%20il%20dossier%20completo%20di%20Guidonia%20Marketing."
+                        class="port-desc-link" target="_blank" rel="noopener">Ricevi il dossier completo
+                        <span>&#8594;</span></a>
                 </div>
                 <div class="port-desc" data-service="smm">
                     <p class="port-desc-label">Social Media Marketing</p>
                     <h3 class="port-desc-title">Contenuti che<br><em>convertono.</em></h3>
-                    <p class="port-desc-body">Non post generici. Strategia editoriale mensile su misura, contenuti visivi professionali e gestione completa di Instagram, Facebook e TikTok per i tuoi clienti locali.</p>
+                    <p class="port-desc-body">Non post generici. Strategia editoriale mensile su misura, contenuti
+                        visivi professionali e gestione completa di Instagram, Facebook e TikTok per i tuoi clienti
+                        locali.</p>
                     <ul class="port-desc-bullets">
                         <li>+340% reach media nei primi 3 mesi</li>
                         <li>Contenuti verticali per ogni piattaforma</li>
                         <li>Report mensile con dati reali</li>
                     </ul>
-                    <a href="servizi/social-media-marketing" class="port-desc-link">Scopri il servizio <span>&#8594;</span></a>
+                    <a href="servizi/social-media-marketing" class="port-desc-link">Scopri il servizio
+                        <span>&#8594;</span></a>
                 </div>
                 <div class="port-desc" data-service="seo">
                     <p class="port-desc-label">SEO Locale</p>
                     <h3 class="port-desc-title">Prima pagina<br><em>senza pagare.</em></h3>
-                    <p class="port-desc-body">Ottimizzazione Google My Business, keyword locali e contenuti che rankano. Il tuo cliente ti cercava già — noi facciamo sì che ti trovi, ogni volta.</p>
+                    <p class="port-desc-body">Ottimizzazione Google My Business, keyword locali e contenuti che rankano.
+                        Il tuo cliente ti cercava già — noi facciamo sì che ti trovi, ogni volta.</p>
                     <ul class="port-desc-bullets">
                         <li>Top 3 Google Maps in 4 mesi</li>
                         <li>+280% chiamate dirette documentate</li>
                         <li>Zero spesa in Google Ads</li>
                     </ul>
-                    <a href="servizi/seo-locale-guidonia" class="port-desc-link">Scopri il servizio <span>&#8594;</span></a>
+                    <a href="servizi/seo-locale-guidonia" class="port-desc-link">Scopri il servizio
+                        <span>&#8594;</span></a>
                 </div>
                 <div class="port-desc" data-service="branding">
                     <p class="port-desc-label">Branding &amp; Identità</p>
                     <h3 class="port-desc-title">Un brand che<br><em>si riconosce.</em></h3>
-                    <p class="port-desc-body">Logo, palette, tono di voce, template social — costruiti attorno a ciò che rende unica la tua impresa nel territorio di Guidonia e Roma Est.</p>
+                    <p class="port-desc-body">Logo, palette, tono di voce, template social — costruiti attorno a ciò che
+                        rende unica la tua impresa nel territorio di Guidonia e Roma Est.</p>
                     <ul class="port-desc-bullets">
                         <li>+85% riconoscibilità brand misurata</li>
                         <li>Consegna garantita in 3 settimane</li>
                         <li>Brand kit completo + guida utilizzo</li>
                     </ul>
-                    <a href="servizi/branding-identita-visiva" class="port-desc-link">Scopri il servizio <span>&#8594;</span></a>
+                    <a href="servizi/branding-identita-visiva" class="port-desc-link">Scopri il servizio
+                        <span>&#8594;</span></a>
                 </div>
             </div>
 
@@ -829,38 +1037,53 @@
                         </div>
                         <div class="port-stats-bar" id="portStatsBar">
                             <div class="port-stats-set active" data-service="cover">
-                                <div class="port-stat-item"><span class="port-stat-num">3</span><span class="port-stat-lbl">Risultato</span></div>
-                                <div class="port-stat-item"><span class="port-stat-num">0€</span><span class="port-stat-lbl">In ads</span></div>
-                                <div class="port-stat-item"><span class="port-stat-num">100%</span><span class="port-stat-lbl">Organico</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">3</span><span
+                                        class="port-stat-lbl">Risultato</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">0€</span><span
+                                        class="port-stat-lbl">In ads</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">100%</span><span
+                                        class="port-stat-lbl">Organico</span></div>
                             </div>
                             <div class="port-stats-set" data-service="smm">
-                                <div class="port-stat-item"><span class="port-stat-num">+340%</span><span class="port-stat-lbl">Reach media</span></div>
-                                <div class="port-stat-item"><span class="port-stat-num">2.1M</span><span class="port-stat-lbl">Views</span></div>
-                                <div class="port-stat-item"><span class="port-stat-num">0€</span><span class="port-stat-lbl">Spesa ads</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">+340%</span><span
+                                        class="port-stat-lbl">Reach media</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">2.1M</span><span
+                                        class="port-stat-lbl">Views</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">0€</span><span
+                                        class="port-stat-lbl">Spesa ads</span></div>
                             </div>
                             <div class="port-stats-set" data-service="seo">
-                                <div class="port-stat-item"><span class="port-stat-num">Top 3</span><span class="port-stat-lbl">Google Maps</span></div>
-                                <div class="port-stat-item"><span class="port-stat-num">+280%</span><span class="port-stat-lbl">Chiamate</span></div>
-                                <div class="port-stat-item"><span class="port-stat-num">4 mesi</span><span class="port-stat-lbl">Per scalare</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">Top 3</span><span
+                                        class="port-stat-lbl">Google Maps</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">+280%</span><span
+                                        class="port-stat-lbl">Chiamate</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">4 mesi</span><span
+                                        class="port-stat-lbl">Per scalare</span></div>
                             </div>
                             <div class="port-stats-set" data-service="branding">
-                                <div class="port-stat-item"><span class="port-stat-num">+85%</span><span class="port-stat-lbl">Riconoscibilità</span></div>
-                                <div class="port-stat-item"><span class="port-stat-num">3 wk</span><span class="port-stat-lbl">Consegna</span></div>
-                                <div class="port-stat-item"><span class="port-stat-num">100%</span><span class="port-stat-lbl">Custom</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">+85%</span><span
+                                        class="port-stat-lbl">Riconoscibilità</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">3 wk</span><span
+                                        class="port-stat-lbl">Consegna</span></div>
+                                <div class="port-stat-item"><span class="port-stat-num">100%</span><span
+                                        class="port-stat-lbl">Custom</span></div>
                             </div>
                         </div>
                         <div class="folder-window" id="folderWindow">
                             <div class="folder-item active" id="port-cover" data-service="cover">
-                                <img src="assets/img/portfolio/cover.webp" alt="Portfolio Guidonia Marketing" loading="lazy">
+                                <img src="assets/img/portfolio/cover.webp" alt="Portfolio Guidonia Marketing"
+                                    loading="lazy">
                             </div>
                             <div class="folder-item" id="port-smm" data-service="smm">
-                                <img src="assets/img/portfolio/smm-portfolio.webp" alt="Social Media Marketing" loading="lazy">
+                                <img src="assets/img/portfolio/smm-portfolio.webp" alt="Social Media Marketing"
+                                    loading="lazy">
                             </div>
                             <div class="folder-item" id="port-seo" data-service="seo">
                                 <img src="assets/img/portfolio/seo-case.webp" alt="SEO Locale" loading="lazy">
                             </div>
                             <div class="folder-item" id="port-branding" data-service="branding">
-                                <img src="assets/img/portfolio/branding-case.webp" alt="Branding Identity" loading="lazy">
+                                <img src="assets/img/portfolio/branding-case.webp" alt="Branding Identity"
+                                    loading="lazy">
                             </div>
                             <button class="port-nav-btn" id="portNavBtn" aria-label="Prossimo">&#8250;</button>
                             <div class="port-dots" id="portDots">
@@ -871,7 +1094,9 @@
                             </div>
                         </div>
                         <div class="port-cta-row">
-                            <a href="https://wa.me/393347871260?text=Ciao!%20Vorrei%20ricevere%20il%20dossier%20completo%20di%20Guidonia%20Marketing." class="port-dossier-btn" target="_blank" rel="noopener">&#128196; Scarica il dossier PDF</a>
+                            <a href="https://wa.me/393347871260?text=Ciao!%20Vorrei%20ricevere%20il%20dossier%20completo%20di%20Guidonia%20Marketing."
+                                class="port-dossier-btn" target="_blank" rel="noopener">&#128196; Scarica il dossier
+                                PDF</a>
                             <span class="port-dossier-note">Gratis &middot; via WhatsApp</span>
                         </div>
                         <div class="folder-footer">
@@ -887,36 +1112,36 @@
     </section>
 
     <script>
-    (function() {
-        var SERVICES = ['cover','smm','seo','branding'];
-        var SUBTITLES = {cover:'SERVIZI',smm:'SOCIAL MEDIA',seo:'SEO LOCALE',branding:'BRANDING'};
-        var currentIdx = 0;
-        var tabs = document.querySelectorAll('.folder-tab');
-        var items = document.querySelectorAll('.folder-item');
-        var descPanels = document.querySelectorAll('.port-desc');
-        var statsSets = document.querySelectorAll('.port-stats-set');
-        var dots = document.querySelectorAll('.port-dot');
-        var navBtn = document.getElementById('portNavBtn');
-        var subtitle = document.getElementById('folderSubtitle');
-        function switchTo(idx) {
-            currentIdx = ((idx % SERVICES.length) + SERVICES.length) % SERVICES.length;
-            var svc = SERVICES[currentIdx];
-            tabs.forEach(function(t,i){ t.classList.toggle('active', i===currentIdx); });
-            items.forEach(function(el){ el.classList.toggle('active', el.dataset.service===svc); });
-            descPanels.forEach(function(el){ el.classList.toggle('active', el.dataset.service===svc); });
-            statsSets.forEach(function(el){ el.classList.toggle('active', el.dataset.service===svc); });
-            dots.forEach(function(d,i){ d.classList.toggle('active', i===currentIdx); });
-            if(subtitle) subtitle.textContent = SUBTITLES[svc]||'SERVIZI';
-        }
-        tabs.forEach(function(tab,i){ tab.addEventListener('click', function(){ switchTo(i); }); });
-        if(navBtn) navBtn.addEventListener('click', function(){ switchTo(currentIdx+1); });
-        document.querySelectorAll('.folder-item img').forEach(function(img){
-            img.style.cursor='pointer';
-            img.addEventListener('click', function(){ switchTo(currentIdx+1); });
-        });
-        dots.forEach(function(dot,i){ dot.addEventListener('click', function(){ switchTo(i); }); });
-        switchTo(0);
-    })();
+        (function () {
+            var SERVICES = ['cover', 'smm', 'seo', 'branding'];
+            var SUBTITLES = { cover: 'SERVIZI', smm: 'SOCIAL MEDIA', seo: 'SEO LOCALE', branding: 'BRANDING' };
+            var currentIdx = 0;
+            var tabs = document.querySelectorAll('.folder-tab');
+            var items = document.querySelectorAll('.folder-item');
+            var descPanels = document.querySelectorAll('.port-desc');
+            var statsSets = document.querySelectorAll('.port-stats-set');
+            var dots = document.querySelectorAll('.port-dot');
+            var navBtn = document.getElementById('portNavBtn');
+            var subtitle = document.getElementById('folderSubtitle');
+            function switchTo(idx) {
+                currentIdx = ((idx % SERVICES.length) + SERVICES.length) % SERVICES.length;
+                var svc = SERVICES[currentIdx];
+                tabs.forEach(function (t, i) { t.classList.toggle('active', i === currentIdx); });
+                items.forEach(function (el) { el.classList.toggle('active', el.dataset.service === svc); });
+                descPanels.forEach(function (el) { el.classList.toggle('active', el.dataset.service === svc); });
+                statsSets.forEach(function (el) { el.classList.toggle('active', el.dataset.service === svc); });
+                dots.forEach(function (d, i) { d.classList.toggle('active', i === currentIdx); });
+                if (subtitle) subtitle.textContent = SUBTITLES[svc] || 'SERVIZI';
+            }
+            tabs.forEach(function (tab, i) { tab.addEventListener('click', function () { switchTo(i); }); });
+            if (navBtn) navBtn.addEventListener('click', function () { switchTo(currentIdx + 1); });
+            document.querySelectorAll('.folder-item img').forEach(function (img) {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function () { switchTo(currentIdx + 1); });
+            });
+            dots.forEach(function (dot, i) { dot.addEventListener('click', function () { switchTo(i); }); });
+            switchTo(0);
+        })();
     </script>
 
     <section class="cta">
@@ -933,12 +1158,14 @@
                         src="assets/img/logo/guidonia_marketing_logo_v9.webp" alt="Guidonia Marketing Logo"
                         class="brand-logo"
                         style="height: 38px !important; width: auto !important; margin-right: 12px; object-fit: contain; border-radius: 4px;"
-                        loading="lazy">Guidonia <em>Marketing</em></a>
+                        fetchpriority="high">Guidonia <em>Marketing</em></a>
                 <p>Agenzia di marketing locale specializzata in SEO, Social Media e Branding per le PMI di Guidonia
                     Montecelio, Tivoli e Roma Est.</p>
                 <address class="foot-address">
                     <a href="tel:+393347871260">📞 334 787 1260</a><br>
-                    <a href="mailto:info@guidoniamarketing.agency">✉ info@guidoniamarketing.agency</a><br><a href="https://www.instagram.com/guidonia.marketing/" target="_blank" rel="noopener">📸 Instagram</a><br>
+                    <a href="mailto:info@guidoniamarketing.agency">✉ info@guidoniamarketing.agency</a><br><a
+                        href="https://www.instagram.com/guidonia.marketing/" target="_blank" rel="noopener">📸
+                        Instagram</a><br>
                     <span>📍 Guidonia Montecelio, RM 00012</span>
                 </address>
             </div>
@@ -946,7 +1173,7 @@
                 <h4>Servizi</h4>
                 <ul>
                     <li><a href="servizi#seo-locale">SEO Locale</a></li>
-                    <li><a href="servizi#social-media">Social Media</a></li>
+                    <li><a href="gestione-social-media-guidonia">Gestione Social Media</a></li>
                     <li><a href="servizi#branding">Branding</a></li>
                     <li><a href="blog/">Blog &amp; Guide</a></li>
                 </ul>
@@ -976,18 +1203,9 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
     <script src="assets/js/analytics.js" defer></script>
-    <!-- Microsoft Clarity: deferred -->
-    <script>
-        window.addEventListener('load', function () {
-            (function (c, l, a, r, i, t, y) {
-                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-                t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-                y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-            })(window, document, "clarity", "script", "vl0pnjjkb8");
-        });
-    </script>
+
 
 </body>
 
